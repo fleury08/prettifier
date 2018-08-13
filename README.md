@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   <span align="center"> <img width="80" height="70" class="center" src="https://github.com/fleury08/prettifier/blob/master/data/images/com.github.fleury08.prettifier.png" alt="Icon"></span>
   <h1 align="center">Prettifier</h1>
@@ -90,6 +89,3 @@ To help, access the links below:
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
-=======
-# prettifier
->>>>>>> 4c9b1038de62ed3ea83eeb287a779f1d43c65122
