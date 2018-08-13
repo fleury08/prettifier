@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+
+    <schema id="com.github.fleury08.prettifier" path="/com/github/fleury08/prettifier/">
+        <key name="window-x" type="i">
+            <default>-1</default>
+            <summary>Most recent x position of Prettifier</summary>
+            <description>Most recent x position of Prettifier</description>
+        </key>
+    
+        <key name="window-y" type="i">
+            <default>-1</default>
+            <summary>Most recent y position of Prettifier</summary>
+            <description>Most recent y position of Prettifier</description>
+        </key>
+    </schema>
+
+</schemalist>
