@@ -58,6 +58,9 @@ struct _AppControllersAppController {
 	GTypeInstance parent_instance;
 	volatile int ref_count;
 	AppControllersAppControllerPrivate * priv;
+	GtkApplication* application;
+	AppViewsAppView* app_view;
+	GtkHeaderBar* headerbar;
 };
 
 struct _AppControllersAppControllerClass {
@@ -66,9 +69,6 @@ struct _AppControllersAppControllerClass {
 };
 
 struct _AppControllersAppControllerPrivate {
-	GtkApplication* application;
-	AppViewsAppView* app_view;
-	GtkHeaderBar* headerbar;
 	GtkApplicationWindow* _window;
 };
 
@@ -99,10 +99,10 @@ GType app_window_get_type (void) G_GNUC_CONST;
 static void app_controllers_app_controller_set_window (AppControllersAppController* self, GtkApplicationWindow* value);
 AppViewsAppView* app_views_app_view_new (void);
 AppViewsAppView* app_views_app_view_construct (GType object_type);
-AppWidgetsHeaderBar* app_widgets_header_bar_new (AppViewsAppView* app_view);
-AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppViewsAppView* app_view);
+AppWidgetsHeaderBar* app_widgets_header_bar_new (AppControllersAppController* app);
+AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppControllersAppController* app);
 GType app_widgets_header_bar_get_type (void) G_GNUC_CONST;
-static GtkApplicationWindow* app_controllers_app_controller_get_window (AppControllersAppController* self);
+GtkApplicationWindow* app_controllers_app_controller_get_window (AppControllersAppController* self);
 void app_controllers_app_controller_activate (AppControllersAppController* self);
 void app_controllers_app_controller_quit (AppControllersAppController* self);
 static void app_controllers_app_controller_finalize (AppControllersAppController * obj);
@@ -126,16 +126,15 @@ AppControllersAppController* app_controllers_app_controller_construct (GType obj
 	AppWindow* _tmp3_;
 	AppWindow* _tmp4_;
 	AppViewsAppView* _tmp5_;
-	AppViewsAppView* _tmp6_;
-	AppWidgetsHeaderBar* _tmp7_;
-	GtkApplicationWindow* _tmp8_;
-	AppViewsAppView* _tmp9_;
+	AppWidgetsHeaderBar* _tmp6_;
+	GtkApplicationWindow* _tmp7_;
+	AppViewsAppView* _tmp8_;
+	GtkApplicationWindow* _tmp9_;
 	GtkApplicationWindow* _tmp10_;
 	GtkApplicationWindow* _tmp11_;
-	GtkApplicationWindow* _tmp12_;
-	GtkHeaderBar* _tmp13_;
-	GtkApplication* _tmp14_;
-	GtkApplicationWindow* _tmp15_;
+	GtkHeaderBar* _tmp12_;
+	GtkApplication* _tmp13_;
+	GtkApplicationWindow* _tmp14_;
 #line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	g_return_val_if_fail (application != NULL, NULL);
 #line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
@@ -145,11 +144,11 @@ AppControllersAppController* app_controllers_app_controller_construct (GType obj
 #line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
 #line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->application);
+	_g_object_unref0 (self->application);
 #line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	self->priv->application = _tmp1_;
+	self->application = _tmp1_;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp2_ = self->priv->application;
+	_tmp2_ = self->application;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	_tmp3_ = app_window_new (_tmp2_);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
@@ -165,55 +164,53 @@ AppControllersAppController* app_controllers_app_controller_construct (GType obj
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	g_object_ref_sink (_tmp5_);
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->app_view);
+	_g_object_unref0 (self->app_view);
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	self->priv->app_view = _tmp5_;
+	self->app_view = _tmp5_;
 #line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp6_ = self->priv->app_view;
+	_tmp6_ = app_widgets_header_bar_new (self);
 #line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp7_ = app_widgets_header_bar_new (_tmp6_);
+	g_object_ref_sink (_tmp6_);
 #line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	g_object_ref_sink (_tmp7_);
+	_g_object_unref0 (self->headerbar);
 #line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->headerbar);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	self->priv->headerbar = (GtkHeaderBar*) _tmp7_;
+	self->headerbar = (GtkHeaderBar*) _tmp6_;
 #line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp8_ = self->priv->_window;
+	_tmp7_ = self->priv->_window;
 #line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp9_ = self->priv->app_view;
+	_tmp8_ = self->app_view;
 #line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	gtk_container_add ((GtkContainer*) _tmp8_, (GtkWidget*) _tmp9_);
+	gtk_container_add ((GtkContainer*) _tmp7_, (GtkWidget*) _tmp8_);
 #line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
+	_tmp9_ = self->priv->_window;
+#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
+	gtk_window_set_default_size ((GtkWindow*) _tmp9_, 800, 640);
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	_tmp10_ = self->priv->_window;
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	gtk_window_set_default_size ((GtkWindow*) _tmp10_, 800, 640);
 #line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
+	gtk_widget_set_size_request ((GtkWidget*) _tmp10_, 800, 640);
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	_tmp11_ = self->priv->_window;
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	gtk_widget_set_size_request ((GtkWidget*) _tmp11_, 800, 640);
 #line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp12_ = self->priv->_window;
+	_tmp12_ = self->headerbar;
 #line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp13_ = self->priv->headerbar;
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	gtk_window_set_titlebar ((GtkWindow*) _tmp12_, (GtkWidget*) _tmp13_);
+	gtk_window_set_titlebar ((GtkWindow*) _tmp11_, (GtkWidget*) _tmp12_);
 #line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp14_ = self->priv->application;
+	_tmp13_ = self->application;
 #line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp15_ = self->priv->_window;
+	_tmp14_ = self->priv->_window;
 #line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	gtk_application_add_window (_tmp14_, (GtkWindow*) _tmp15_);
+	gtk_application_add_window (_tmp13_, (GtkWindow*) _tmp14_);
 #line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return self;
-#line 210 "AppController.c"
+#line 207 "AppController.c"
 }
 
 
 AppControllersAppController* app_controllers_app_controller_new (GtkApplication* application) {
 #line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return app_controllers_app_controller_construct (APP_CONTROLLERS_TYPE_APP_CONTROLLER, application);
-#line 217 "AppController.c"
+#line 214 "AppController.c"
 }
 
 
@@ -227,10 +224,10 @@ void app_controllers_app_controller_activate (AppControllersAppController* self)
 #line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp0_);
 #line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_tmp1_ = self->priv->app_view;
+	_tmp1_ = self->app_view;
 #line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	gtk_widget_activate ((GtkWidget*) _tmp1_);
-#line 234 "AppController.c"
+#line 231 "AppController.c"
 }
 
 
@@ -242,11 +239,11 @@ void app_controllers_app_controller_quit (AppControllersAppController* self) {
 	_tmp0_ = self->priv->_window;
 #line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	gtk_widget_destroy ((GtkWidget*) _tmp0_);
-#line 246 "AppController.c"
+#line 243 "AppController.c"
 }
 
 
-static GtkApplicationWindow* app_controllers_app_controller_get_window (AppControllersAppController* self) {
+GtkApplicationWindow* app_controllers_app_controller_get_window (AppControllersAppController* self) {
 	GtkApplicationWindow* result;
 	GtkApplicationWindow* _tmp0_;
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
@@ -257,7 +254,7 @@ static GtkApplicationWindow* app_controllers_app_controller_get_window (AppContr
 	result = _tmp0_;
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return result;
-#line 261 "AppController.c"
+#line 258 "AppController.c"
 }
 
 
@@ -274,14 +271,14 @@ static void app_controllers_app_controller_set_window (AppControllersAppControll
 	_g_object_unref0 (self->priv->_window);
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	self->priv->_window = _tmp1_;
-#line 278 "AppController.c"
+#line 275 "AppController.c"
 }
 
 
 static void app_controllers_value_app_controller_init (GValue* value) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	value->data[0].v_pointer = NULL;
-#line 285 "AppController.c"
+#line 282 "AppController.c"
 }
 
 
@@ -290,7 +287,7 @@ static void app_controllers_value_app_controller_free_value (GValue* value) {
 	if (value->data[0].v_pointer) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		app_controllers_app_controller_unref (value->data[0].v_pointer);
-#line 294 "AppController.c"
+#line 291 "AppController.c"
 	}
 }
 
@@ -300,11 +297,11 @@ static void app_controllers_value_app_controller_copy_value (const GValue* src_v
 	if (src_value->data[0].v_pointer) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		dest_value->data[0].v_pointer = app_controllers_app_controller_ref (src_value->data[0].v_pointer);
-#line 304 "AppController.c"
+#line 301 "AppController.c"
 	} else {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		dest_value->data[0].v_pointer = NULL;
-#line 308 "AppController.c"
+#line 305 "AppController.c"
 	}
 }
 
@@ -312,37 +309,37 @@ static void app_controllers_value_app_controller_copy_value (const GValue* src_v
 static gpointer app_controllers_value_app_controller_peek_pointer (const GValue* value) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return value->data[0].v_pointer;
-#line 316 "AppController.c"
+#line 313 "AppController.c"
 }
 
 
 static gchar* app_controllers_value_app_controller_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	if (collect_values[0].v_pointer) {
-#line 323 "AppController.c"
+#line 320 "AppController.c"
 		AppControllersAppController * object;
 		object = collect_values[0].v_pointer;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		if (object->parent_instance.g_class == NULL) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 330 "AppController.c"
+#line 327 "AppController.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 334 "AppController.c"
+#line 331 "AppController.c"
 		}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		value->data[0].v_pointer = app_controllers_app_controller_ref (object);
-#line 338 "AppController.c"
+#line 335 "AppController.c"
 	} else {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		value->data[0].v_pointer = NULL;
-#line 342 "AppController.c"
+#line 339 "AppController.c"
 	}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return NULL;
-#line 346 "AppController.c"
+#line 343 "AppController.c"
 }
 
 
@@ -353,25 +350,25 @@ static gchar* app_controllers_value_app_controller_lcopy_value (const GValue* va
 	if (!object_p) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
-#line 357 "AppController.c"
+#line 354 "AppController.c"
 	}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	if (!value->data[0].v_pointer) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		*object_p = NULL;
-#line 363 "AppController.c"
+#line 360 "AppController.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		*object_p = value->data[0].v_pointer;
-#line 367 "AppController.c"
+#line 364 "AppController.c"
 	} else {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		*object_p = app_controllers_app_controller_ref (value->data[0].v_pointer);
-#line 371 "AppController.c"
+#line 368 "AppController.c"
 	}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return NULL;
-#line 375 "AppController.c"
+#line 372 "AppController.c"
 }
 
 
@@ -385,7 +382,7 @@ GParamSpec* app_controllers_param_spec_app_controller (const gchar* name, const 
 	G_PARAM_SPEC (spec)->value_type = object_type;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return G_PARAM_SPEC (spec);
-#line 389 "AppController.c"
+#line 386 "AppController.c"
 }
 
 
@@ -394,7 +391,7 @@ gpointer app_controllers_value_get_app_controller (const GValue* value) {
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_CONTROLLERS_TYPE_APP_CONTROLLER), NULL);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return value->data[0].v_pointer;
-#line 398 "AppController.c"
+#line 395 "AppController.c"
 }
 
 
@@ -414,17 +411,17 @@ void app_controllers_value_set_app_controller (GValue* value, gpointer v_object)
 		value->data[0].v_pointer = v_object;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		app_controllers_app_controller_ref (value->data[0].v_pointer);
-#line 418 "AppController.c"
+#line 415 "AppController.c"
 	} else {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		value->data[0].v_pointer = NULL;
-#line 422 "AppController.c"
+#line 419 "AppController.c"
 	}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	if (old) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		app_controllers_app_controller_unref (old);
-#line 428 "AppController.c"
+#line 425 "AppController.c"
 	}
 }
 
@@ -443,17 +440,17 @@ void app_controllers_value_take_app_controller (GValue* value, gpointer v_object
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		value->data[0].v_pointer = v_object;
-#line 447 "AppController.c"
+#line 444 "AppController.c"
 	} else {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		value->data[0].v_pointer = NULL;
-#line 451 "AppController.c"
+#line 448 "AppController.c"
 	}
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	if (old) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		app_controllers_app_controller_unref (old);
-#line 457 "AppController.c"
+#line 454 "AppController.c"
 	}
 }
 
@@ -465,7 +462,7 @@ static void app_controllers_app_controller_class_init (AppControllersAppControll
 	((AppControllersAppControllerClass *) klass)->finalize = app_controllers_app_controller_finalize;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	g_type_class_add_private (klass, sizeof (AppControllersAppControllerPrivate));
-#line 469 "AppController.c"
+#line 466 "AppController.c"
 }
 
 
@@ -476,7 +473,7 @@ static void app_controllers_app_controller_instance_init (AppControllersAppContr
 	self->priv->_window = NULL;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	self->ref_count = 1;
-#line 480 "AppController.c"
+#line 477 "AppController.c"
 }
 
 
@@ -487,14 +484,14 @@ static void app_controllers_app_controller_finalize (AppControllersAppController
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	g_signal_handlers_destroy (self);
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->application);
+	_g_object_unref0 (self->application);
 #line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->app_view);
+	_g_object_unref0 (self->app_view);
 #line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
-	_g_object_unref0 (self->priv->headerbar);
+	_g_object_unref0 (self->headerbar);
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	_g_object_unref0 (self->priv->_window);
-#line 498 "AppController.c"
+#line 495 "AppController.c"
 }
 
 
@@ -524,7 +521,7 @@ gpointer app_controllers_app_controller_ref (gpointer instance) {
 	g_atomic_int_inc (&self->ref_count);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 	return instance;
-#line 528 "AppController.c"
+#line 525 "AppController.c"
 }
 
 
@@ -537,7 +534,7 @@ void app_controllers_app_controller_unref (gpointer instance) {
 		APP_CONTROLLERS_APP_CONTROLLER_GET_CLASS (self)->finalize (self);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/controllers/AppController.vala"
 		g_type_free_instance ((GTypeInstance *) self);
-#line 541 "AppController.c"
+#line 538 "AppController.c"
 	}
 }
 

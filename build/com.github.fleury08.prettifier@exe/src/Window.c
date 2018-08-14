@@ -34,7 +34,7 @@ typedef struct _AppWindowPrivate AppWindowPrivate;
 
 typedef struct _AppConfigsSettings AppConfigsSettings;
 typedef struct _AppConfigsSettingsClass AppConfigsSettingsClass;
-typedef struct _Block2Data Block2Data;
+typedef struct _Block3Data Block3Data;
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
 struct _AppWindow {
@@ -46,7 +46,7 @@ struct _AppWindowClass {
 	GtkApplicationWindowClass parent_class;
 };
 
-struct _Block2Data {
+struct _Block3Data {
 	int _ref_count_;
 	AppWindow* self;
 	AppConfigsSettings* settings;
@@ -62,14 +62,14 @@ enum  {
 AppWindow* app_window_new (GtkApplication* app);
 AppWindow* app_window_construct (GType object_type, GtkApplication* app);
 GType app_configs_settings_get_type (void) G_GNUC_CONST;
-static Block2Data* block2_data_ref (Block2Data* _data2_);
-static void block2_data_unref (void * _userdata_);
+static Block3Data* block3_data_ref (Block3Data* _data3_);
+static void block3_data_unref (void * _userdata_);
 #define APP_CONFIGS_CONSTANTS_APP_ICON "com.github.fleury08.prettifier"
 AppConfigsSettings* app_configs_settings_get_instance (void);
 gint app_configs_settings_get_window_x (AppConfigsSettings* self);
 gint app_configs_settings_get_window_y (AppConfigsSettings* self);
 #define APP_CONFIGS_CONSTANTS_URL_CSS "/com/github/fleury08/prettifier/css/style.css"
-static gboolean __lambda4_ (Block2Data* _data2_);
+static gboolean __lambda4_ (Block3Data* _data3_);
 void app_configs_settings_set_window_x (AppConfigsSettings* self, gint value);
 void app_configs_settings_set_window_y (AppConfigsSettings* self, gint value);
 static gboolean ___lambda4__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
@@ -82,30 +82,30 @@ static gboolean ___lambda4__gtk_widget_delete_event (GtkWidget* _sender, GdkEven
          * @see style_provider
          * @see build
          */
-static Block2Data* block2_data_ref (Block2Data* _data2_) {
+static Block3Data* block3_data_ref (Block3Data* _data3_) {
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	g_atomic_int_inc (&_data2_->_ref_count_);
+	g_atomic_int_inc (&_data3_->_ref_count_);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	return _data2_;
+	return _data3_;
 #line 91 "Window.c"
 }
 
 
-static void block2_data_unref (void * _userdata_) {
-	Block2Data* _data2_;
-	_data2_ = (Block2Data*) _userdata_;
+static void block3_data_unref (void * _userdata_) {
+	Block3Data* _data3_;
+	_data3_ = (Block3Data*) _userdata_;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	if (g_atomic_int_dec_and_test (&_data2_->_ref_count_)) {
+	if (g_atomic_int_dec_and_test (&_data3_->_ref_count_)) {
 #line 100 "Window.c"
 		AppWindow* self;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-		self = _data2_->self;
+		self = _data3_->self;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-		_g_object_unref0 (_data2_->settings);
+		_g_object_unref0 (_data3_->settings);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 		_g_object_unref0 (self);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-		g_slice_free (Block2Data, _data2_);
+		g_slice_free (Block3Data, _data3_);
 #line 110 "Window.c"
 	}
 }
@@ -118,7 +118,7 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda4_ (Block2Data* _data2_) {
+static gboolean __lambda4_ (Block3Data* _data3_) {
 	AppWindow* self;
 	gboolean result = FALSE;
 	gint root_x = 0;
@@ -128,7 +128,7 @@ static gboolean __lambda4_ (Block2Data* _data2_) {
 	AppConfigsSettings* _tmp2_;
 	AppConfigsSettings* _tmp3_;
 #line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	self = _data2_->self;
+	self = _data3_->self;
 #line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	gtk_window_get_position ((GtkWindow*) self, &_tmp0_, &_tmp1_);
 #line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
@@ -136,11 +136,11 @@ static gboolean __lambda4_ (Block2Data* _data2_) {
 #line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	root_y = _tmp1_;
 #line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_tmp2_ = _data2_->settings;
+	_tmp2_ = _data3_->settings;
 #line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	app_configs_settings_set_window_x (_tmp2_, root_x);
 #line 59 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_tmp3_ = _data2_->settings;
+	_tmp3_ = _data3_->settings;
 #line 59 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	app_configs_settings_set_window_y (_tmp3_, root_y);
 #line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
@@ -162,7 +162,7 @@ static gboolean ___lambda4__gtk_widget_delete_event (GtkWidget* _sender, GdkEven
 
 AppWindow* app_window_construct (GType object_type, GtkApplication* app) {
 	AppWindow * self = NULL;
-	Block2Data* _data2_;
+	Block3Data* _data3_;
 	GtkApplication* _tmp0_;
 	AppConfigsSettings* _tmp1_;
 	AppConfigsSettings* _tmp2_;
@@ -182,23 +182,23 @@ AppWindow* app_window_construct (GType object_type, GtkApplication* app) {
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	g_return_val_if_fail (app != NULL, NULL);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_data2_ = g_slice_new0 (Block2Data);
+	_data3_ = g_slice_new0 (Block3Data);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_data2_->_ref_count_ = 1;
+	_data3_->_ref_count_ = 1;
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_tmp0_ = app;
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	self = (AppWindow*) g_object_new (object_type, "application", _tmp0_, "icon-name", APP_CONFIGS_CONSTANTS_APP_ICON, "resizable", TRUE, NULL);
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_data2_->self = g_object_ref (self);
+	_data3_->self = g_object_ref (self);
 #line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_tmp1_ = app_configs_settings_get_instance ();
 #line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
 #line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_data2_->settings = _tmp2_;
+	_data3_->settings = _tmp2_;
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_tmp3_ = _data2_->settings;
+	_tmp3_ = _data3_->settings;
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_tmp4_ = app_configs_settings_get_window_x (_tmp3_);
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
@@ -206,7 +206,7 @@ AppWindow* app_window_construct (GType object_type, GtkApplication* app) {
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	x = _tmp5_;
 #line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_tmp6_ = _data2_->settings;
+	_tmp6_ = _data3_->settings;
 #line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_tmp7_ = app_configs_settings_get_window_y (_tmp6_);
 #line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
@@ -253,13 +253,13 @@ AppWindow* app_window_construct (GType object_type, GtkApplication* app) {
 #line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	gtk_style_context_add_provider_for_screen (_tmp15_, (GtkStyleProvider*) css_provider, (guint) GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
 #line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	g_signal_connect_data ((GtkWidget*) self, "delete-event", (GCallback) ___lambda4__gtk_widget_delete_event, block2_data_ref (_data2_), (GClosureNotify) block2_data_unref, 0);
+	g_signal_connect_data ((GtkWidget*) self, "delete-event", (GCallback) ___lambda4__gtk_widget_delete_event, block3_data_ref (_data3_), (GClosureNotify) block3_data_unref, 0);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	_g_object_unref0 (css_provider);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	block2_data_unref (_data2_);
+	block3_data_unref (_data3_);
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
-	_data2_ = NULL;
+	_data3_ = NULL;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
 	return self;
 #line 266 "Window.c"

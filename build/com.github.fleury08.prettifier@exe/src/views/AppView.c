@@ -82,77 +82,79 @@ AppViewsAppView* app_views_app_view_construct (GType object_type) {
 	GtkTextView* _tmp15_;
 #line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	self = (AppViewsAppView*) g_object_new (object_type, NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+	gtk_box_set_spacing ((GtkBox*) self, 10);
+#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp0_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	g_object_ref_sink (_tmp0_);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	input_scrolled = _tmp0_;
-#line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_box_pack_start ((GtkBox*) self, (GtkWidget*) input_scrolled, TRUE, TRUE, (guint) 0);
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp1_ = (GtkTextView*) gtk_text_view_new ();
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	g_object_ref_sink (_tmp1_);
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp2_ = _tmp1_;
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	app_views_app_view_set_input_text (self, _tmp2_);
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_g_object_unref0 (_tmp2_);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp3_ = self->priv->_input_text;
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_text_view_set_wrap_mode (_tmp3_, GTK_WRAP_WORD);
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp4_ = self->priv->_input_text;
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp5_ = gtk_text_view_get_buffer (_tmp4_);
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp6_ = _tmp5_;
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
-	g_object_set (_tmp6_, "text", "Lorem Ipsum", NULL);
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+	g_object_set (_tmp6_, "text", "UNFORMATTED INPUT JSON/XML", NULL);
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp7_ = self->priv->_input_text;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_container_add ((GtkContainer*) input_scrolled, (GtkWidget*) _tmp7_);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp8_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	g_object_ref_sink (_tmp8_);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	output_scrolled = _tmp8_;
-#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_box_pack_start ((GtkBox*) self, (GtkWidget*) output_scrolled, TRUE, TRUE, (guint) 0);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp9_ = (GtkTextView*) gtk_text_view_new ();
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	g_object_ref_sink (_tmp9_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp10_ = _tmp9_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	app_views_app_view_set_output_text (self, _tmp10_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_g_object_unref0 (_tmp10_);
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp11_ = self->priv->_output_text;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_text_view_set_wrap_mode (_tmp11_, GTK_WRAP_WORD);
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp12_ = self->priv->_output_text;
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp13_ = gtk_text_view_get_buffer (_tmp12_);
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp14_ = _tmp13_;
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
-	g_object_set (_tmp14_, "text", "Lorem Ipsum", NULL);
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+	g_object_set (_tmp14_, "text", "Beautifully formatted JSON or XML", NULL);
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_tmp15_ = self->priv->_output_text;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_container_add ((GtkContainer*) output_scrolled, (GtkWidget*) _tmp15_);
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) input_scrolled);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) output_scrolled);
 #line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	_g_object_unref0 (output_scrolled);
@@ -160,14 +162,14 @@ AppViewsAppView* app_views_app_view_construct (GType object_type) {
 	_g_object_unref0 (input_scrolled);
 #line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	return self;
-#line 164 "AppView.c"
+#line 166 "AppView.c"
 }
 
 
 AppViewsAppView* app_views_app_view_new (void) {
 #line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	return app_views_app_view_construct (APP_VIEWS_TYPE_APP_VIEW);
-#line 171 "AppView.c"
+#line 173 "AppView.c"
 }
 
 
@@ -182,14 +184,14 @@ GtkTextView* app_views_app_view_get_input_text (AppViewsAppView* self) {
 	result = _tmp0_;
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	return result;
-#line 186 "AppView.c"
+#line 188 "AppView.c"
 }
 
 
 static gpointer _g_object_ref0 (gpointer self) {
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	return self ? g_object_ref (self) : NULL;
-#line 193 "AppView.c"
+#line 195 "AppView.c"
 }
 
 
@@ -198,7 +200,7 @@ void app_views_app_view_set_input_text (AppViewsAppView* self, GtkTextView* valu
 	g_return_if_fail (self != NULL);
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	if (app_views_app_view_get_input_text (self) != value) {
-#line 202 "AppView.c"
+#line 204 "AppView.c"
 		GtkTextView* _tmp0_;
 		GtkTextView* _tmp1_;
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
@@ -211,7 +213,7 @@ void app_views_app_view_set_input_text (AppViewsAppView* self, GtkTextView* valu
 		self->priv->_input_text = _tmp1_;
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		g_object_notify ((GObject *) self, "input-text");
-#line 215 "AppView.c"
+#line 217 "AppView.c"
 	}
 }
 
@@ -227,7 +229,7 @@ GtkTextView* app_views_app_view_get_output_text (AppViewsAppView* self) {
 	result = _tmp0_;
 #line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	return result;
-#line 231 "AppView.c"
+#line 233 "AppView.c"
 }
 
 
@@ -236,7 +238,7 @@ void app_views_app_view_set_output_text (AppViewsAppView* self, GtkTextView* val
 	g_return_if_fail (self != NULL);
 #line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	if (app_views_app_view_get_output_text (self) != value) {
-#line 240 "AppView.c"
+#line 242 "AppView.c"
 		GtkTextView* _tmp0_;
 		GtkTextView* _tmp1_;
 #line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
@@ -249,7 +251,7 @@ void app_views_app_view_set_output_text (AppViewsAppView* self, GtkTextView* val
 		self->priv->_output_text = _tmp1_;
 #line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		g_object_notify ((GObject *) self, "output-text");
-#line 253 "AppView.c"
+#line 255 "AppView.c"
 	}
 }
 
@@ -269,14 +271,14 @@ static void app_views_app_view_class_init (AppViewsAppViewClass * klass) {
 	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_VIEWS_APP_VIEW_INPUT_TEXT_PROPERTY, g_param_spec_object ("input-text", "input-text", "input-text", gtk_text_view_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_VIEWS_APP_VIEW_OUTPUT_TEXT_PROPERTY, g_param_spec_object ("output-text", "output-text", "output-text", gtk_text_view_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE));
-#line 273 "AppView.c"
+#line 275 "AppView.c"
 }
 
 
 static void app_views_app_view_instance_init (AppViewsAppView * self) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	self->priv = APP_VIEWS_APP_VIEW_GET_PRIVATE (self);
-#line 280 "AppView.c"
+#line 282 "AppView.c"
 }
 
 
@@ -290,7 +292,7 @@ static void app_views_app_view_finalize (GObject * obj) {
 	_g_object_unref0 (self->priv->_output_text);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 	G_OBJECT_CLASS (app_views_app_view_parent_class)->finalize (obj);
-#line 294 "AppView.c"
+#line 296 "AppView.c"
 }
 
 
@@ -328,13 +330,13 @@ static void _vala_app_views_app_view_get_property (GObject * object, guint prope
 		g_value_set_object (value, app_views_app_view_get_output_text (self));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		break;
-#line 332 "AppView.c"
+#line 334 "AppView.c"
 		default:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		break;
-#line 338 "AppView.c"
+#line 340 "AppView.c"
 	}
 }
 
@@ -356,13 +358,13 @@ static void _vala_app_views_app_view_set_property (GObject * object, guint prope
 		app_views_app_view_set_output_text (self, g_value_get_object (value));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		break;
-#line 360 "AppView.c"
+#line 362 "AppView.c"
 		default:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/views/AppView.vala"
 		break;
-#line 366 "AppView.c"
+#line 368 "AppView.c"
 	}
 }
 

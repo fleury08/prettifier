@@ -11,6 +11,9 @@
 #include <glib/gi18n-lib.h>
 #include <stdlib.h>
 #include <string.h>
+#include <json-glib/json-glib.h>
+#include <libxml/tree.h>
+#include <libxml/parser.h>
 
 
 #define APP_WIDGETS_TYPE_HEADER_BAR (app_widgets_header_bar_get_type ())
@@ -24,6 +27,22 @@ typedef struct _AppWidgetsHeaderBar AppWidgetsHeaderBar;
 typedef struct _AppWidgetsHeaderBarClass AppWidgetsHeaderBarClass;
 typedef struct _AppWidgetsHeaderBarPrivate AppWidgetsHeaderBarPrivate;
 
+#define APP_CONFIGS_TYPE_TYPE_OF_FILE (app_configs_type_of_file_get_type ())
+
+#define APP_CONTROLLERS_TYPE_APP_CONTROLLER (app_controllers_app_controller_get_type ())
+#define APP_CONTROLLERS_APP_CONTROLLER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), APP_CONTROLLERS_TYPE_APP_CONTROLLER, AppControllersAppController))
+#define APP_CONTROLLERS_APP_CONTROLLER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), APP_CONTROLLERS_TYPE_APP_CONTROLLER, AppControllersAppControllerClass))
+#define APP_CONTROLLERS_IS_APP_CONTROLLER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), APP_CONTROLLERS_TYPE_APP_CONTROLLER))
+#define APP_CONTROLLERS_IS_APP_CONTROLLER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), APP_CONTROLLERS_TYPE_APP_CONTROLLER))
+#define APP_CONTROLLERS_APP_CONTROLLER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), APP_CONTROLLERS_TYPE_APP_CONTROLLER, AppControllersAppControllerClass))
+
+typedef struct _AppControllersAppController AppControllersAppController;
+typedef struct _AppControllersAppControllerClass AppControllersAppControllerClass;
+#define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
+#define _app_controllers_app_controller_unref0(var) ((var == NULL) ? NULL : (var = (app_controllers_app_controller_unref (var), NULL)))
+typedef struct _Block1Data Block1Data;
+typedef struct _AppControllersAppControllerPrivate AppControllersAppControllerPrivate;
+
 #define APP_VIEWS_TYPE_APP_VIEW (app_views_app_view_get_type ())
 #define APP_VIEWS_APP_VIEW(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), APP_VIEWS_TYPE_APP_VIEW, AppViewsAppView))
 #define APP_VIEWS_APP_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), APP_VIEWS_TYPE_APP_VIEW, AppViewsAppViewClass))
@@ -33,15 +52,9 @@ typedef struct _AppWidgetsHeaderBarPrivate AppWidgetsHeaderBarPrivate;
 
 typedef struct _AppViewsAppView AppViewsAppView;
 typedef struct _AppViewsAppViewClass AppViewsAppViewClass;
-#define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
-
-#define APP_CONFIGS_TYPE_TYPE_OF_FILE (app_configs_type_of_file_get_type ())
 #define _g_free0(var) (var = (g_free (var), NULL))
-enum  {
-	APP_WIDGETS_HEADER_BAR_MENU_CLICKED_SIGNAL,
-	APP_WIDGETS_HEADER_BAR_NUM_SIGNALS
-};
-static guint app_widgets_header_bar_signals[APP_WIDGETS_HEADER_BAR_NUM_SIGNALS] = {0};
+#define __vala_JsonNode_free0(var) ((var == NULL) ? NULL : (var = (_vala_JsonNode_free (var), NULL)))
+#define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
 
 struct _AppWidgetsHeaderBar {
 	GtkHeaderBar parent_instance;
@@ -52,43 +65,87 @@ struct _AppWidgetsHeaderBarClass {
 	GtkHeaderBarClass parent_class;
 };
 
-struct _AppWidgetsHeaderBarPrivate {
-	GtkMenuButton* _menu_button;
-	GtkButton* _prettify_button;
-	AppViewsAppView* _app_view;
-};
-
 typedef enum  {
 	APP_CONFIGS_TYPE_OF_FILE_JSON,
 	APP_CONFIGS_TYPE_OF_FILE_XML
 } AppConfigsTypeOfFile;
 
+struct _AppWidgetsHeaderBarPrivate {
+	GtkButton* _prettify_button;
+	GtkSwitch* _format_switch;
+	GtkButton* _copy_to_clipboard;
+	AppConfigsTypeOfFile _type_of_file;
+	AppControllersAppController* _app;
+};
+
+struct _Block1Data {
+	int _ref_count_;
+	AppWidgetsHeaderBar* self;
+	AppControllersAppController* app;
+};
+
+struct _AppControllersAppController {
+	GTypeInstance parent_instance;
+	volatile int ref_count;
+	AppControllersAppControllerPrivate * priv;
+	GtkApplication* application;
+	AppViewsAppView* app_view;
+	GtkHeaderBar* headerbar;
+};
+
+struct _AppControllersAppControllerClass {
+	GTypeClass parent_class;
+	void (*finalize) (AppControllersAppController *self);
+};
+
 
 static gpointer app_widgets_header_bar_parent_class = NULL;
 
 GType app_widgets_header_bar_get_type (void) G_GNUC_CONST;
-GType app_views_app_view_get_type (void) G_GNUC_CONST;
+GType app_configs_type_of_file_get_type (void) G_GNUC_CONST;
+gpointer app_controllers_app_controller_ref (gpointer instance);
+void app_controllers_app_controller_unref (gpointer instance);
+GParamSpec* app_controllers_param_spec_app_controller (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void app_controllers_value_set_app_controller (GValue* value, gpointer v_object);
+void app_controllers_value_take_app_controller (GValue* value, gpointer v_object);
+gpointer app_controllers_value_get_app_controller (const GValue* value);
+GType app_controllers_app_controller_get_type (void) G_GNUC_CONST;
 #define APP_WIDGETS_HEADER_BAR_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), APP_WIDGETS_TYPE_HEADER_BAR, AppWidgetsHeaderBarPrivate))
 enum  {
 	APP_WIDGETS_HEADER_BAR_0_PROPERTY,
-	APP_WIDGETS_HEADER_BAR_MENU_BUTTON_PROPERTY,
-	APP_WIDGETS_HEADER_BAR_PRETTIFY_BUTTON_PROPERTY
+	APP_WIDGETS_HEADER_BAR_PRETTIFY_BUTTON_PROPERTY,
+	APP_WIDGETS_HEADER_BAR_FORMAT_SWITCH_PROPERTY,
+	APP_WIDGETS_HEADER_BAR_COPY_TO_CLIPBOARD_PROPERTY
 };
-AppWidgetsHeaderBar* app_widgets_header_bar_new (AppViewsAppView* app_view);
-AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppViewsAppView* app_view);
-static void app_widgets_header_bar_set_app_view (AppWidgetsHeaderBar* self, AppViewsAppView* value);
+AppWidgetsHeaderBar* app_widgets_header_bar_new (AppControllersAppController* app);
+AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppControllersAppController* app);
+static Block1Data* block1_data_ref (Block1Data* _data1_);
+static void block1_data_unref (void * _userdata_);
+static void app_widgets_header_bar_set_app (AppWidgetsHeaderBar* self, AppControllersAppController* value);
 static void app_widgets_header_bar_set_prettify_button (AppWidgetsHeaderBar* self, GtkButton* value);
 GtkButton* app_widgets_header_bar_get_prettify_button (AppWidgetsHeaderBar* self);
 static void __lambda5_ (AppWidgetsHeaderBar* self);
-GType app_configs_type_of_file_get_type (void) G_GNUC_CONST;
-static gchar* app_widgets_header_bar_prettify (AppWidgetsHeaderBar* self, AppConfigsTypeOfFile filetype, const gchar* text);
-static AppViewsAppView* app_widgets_header_bar_get_app_view (AppWidgetsHeaderBar* self);
+static gchar* app_widgets_header_bar_prettify (AppWidgetsHeaderBar* self, const gchar* text);
+static AppControllersAppController* app_widgets_header_bar_get_app (AppWidgetsHeaderBar* self);
+GType app_views_app_view_get_type (void) G_GNUC_CONST;
 GtkTextView* app_views_app_view_get_input_text (AppViewsAppView* self);
+GtkTextView* app_views_app_view_get_output_text (AppViewsAppView* self);
 static void ___lambda5__gtk_button_clicked (GtkButton* _sender, gpointer self);
-static void app_widgets_header_bar_set_menu_button (AppWidgetsHeaderBar* self, GtkMenuButton* value);
-GtkMenuButton* app_widgets_header_bar_get_menu_button (AppWidgetsHeaderBar* self);
-static void __lambda6_ (AppWidgetsHeaderBar* self);
+static void app_widgets_header_bar_set_copy_to_clipboard (AppWidgetsHeaderBar* self, GtkButton* value);
+GtkButton* app_widgets_header_bar_get_copy_to_clipboard (AppWidgetsHeaderBar* self);
+static void __lambda6_ (Block1Data* _data1_);
+GtkApplicationWindow* app_controllers_app_controller_get_window (AppControllersAppController* self);
 static void ___lambda6__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void app_widgets_header_bar_set_format_switch (AppWidgetsHeaderBar* self, GtkSwitch* value);
+GtkSwitch* app_widgets_header_bar_get_format_switch (AppWidgetsHeaderBar* self);
+static void __lambda7_ (AppWidgetsHeaderBar* self);
+static void app_widgets_header_bar_set_type_of_file (AppWidgetsHeaderBar* self, AppConfigsTypeOfFile value);
+static AppConfigsTypeOfFile app_widgets_header_bar_get_type_of_file (AppWidgetsHeaderBar* self);
+const gchar* app_configs_type_of_file_to_string (AppConfigsTypeOfFile self);
+static void ___lambda7__g_object_notify (GObject* _sender, GParamSpec* pspec, gpointer self);
+static gchar* app_widgets_header_bar_prettifyJSON (AppWidgetsHeaderBar* self, const gchar* text);
+static gchar* app_widgets_header_bar_prettifyXML (AppWidgetsHeaderBar* self, const gchar* text);
+static void _vala_JsonNode_free (JsonNode* self);
 static void app_widgets_header_bar_finalize (GObject * obj);
 static void _vala_app_widgets_header_bar_get_property (GObject * object, guint property_id, GValue * value, GParamSpec * pspec);
 static void _vala_app_widgets_header_bar_set_property (GObject * object, guint property_id, const GValue * value, GParamSpec * pspec);
@@ -100,301 +157,724 @@ static void _vala_app_widgets_header_bar_set_property (GObject * object, guint p
          * @see App.Configs.Properties
          * @see icon_settings
          */
+static gpointer _app_controllers_app_controller_ref0 (gpointer self) {
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return self ? app_controllers_app_controller_ref (self) : NULL;
+#line 164 "HeaderBar.c"
+}
+
+
+static Block1Data* block1_data_ref (Block1Data* _data1_) {
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_atomic_int_inc (&_data1_->_ref_count_);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return _data1_;
+#line 173 "HeaderBar.c"
+}
+
+
+static void block1_data_unref (void * _userdata_) {
+	Block1Data* _data1_;
+	_data1_ = (Block1Data*) _userdata_;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	if (g_atomic_int_dec_and_test (&_data1_->_ref_count_)) {
+#line 182 "HeaderBar.c"
+		AppWidgetsHeaderBar* self;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		self = _data1_->self;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_app_controllers_app_controller_unref0 (_data1_->app);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_object_unref0 (self);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_slice_free (Block1Data, _data1_);
+#line 192 "HeaderBar.c"
+	}
+}
+
+
 static void __lambda5_ (AppWidgetsHeaderBar* self) {
-	AppViewsAppView* _tmp0_;
-	GtkTextView* _tmp1_;
+	gchar* prettified_text = NULL;
+	AppControllersAppController* _tmp0_;
+	AppViewsAppView* _tmp1_;
 	GtkTextView* _tmp2_;
-	GtkTextBuffer* _tmp3_;
+	GtkTextView* _tmp3_;
 	GtkTextBuffer* _tmp4_;
-	gchar* _tmp5_;
+	GtkTextBuffer* _tmp5_;
 	gchar* _tmp6_;
 	gchar* _tmp7_;
 	gchar* _tmp8_;
 	gchar* _tmp9_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp0_ = self->priv->_app_view;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp1_ = app_views_app_view_get_input_text (_tmp0_);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp2_ = _tmp1_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp3_ = gtk_text_view_get_buffer (_tmp2_);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp4_ = _tmp3_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_get (_tmp4_, "text", &_tmp5_, NULL);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp6_ = _tmp5_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gchar* _tmp10_;
+	AppControllersAppController* _tmp11_;
+	AppViewsAppView* _tmp12_;
+	GtkTextView* _tmp13_;
+	GtkTextView* _tmp14_;
+	GtkTextBuffer* _tmp15_;
+	GtkTextBuffer* _tmp16_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_app;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = _tmp0_->app_view;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp2_ = app_views_app_view_get_input_text (_tmp1_);
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp3_ = _tmp2_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp4_ = gtk_text_view_get_buffer (_tmp3_);
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp5_ = _tmp4_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_get (_tmp5_, "text", &_tmp6_, NULL);
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	_tmp7_ = _tmp6_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp8_ = _tmp7_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp9_ = app_widgets_header_bar_prettify (self, _tmp8_);
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp10_ = _tmp9_;
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_free0 (_tmp8_);
+#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	prettified_text = _tmp10_;
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp11_ = self->priv->_app;
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp12_ = _tmp11_->app_view;
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp13_ = app_views_app_view_get_output_text (_tmp12_);
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp14_ = _tmp13_;
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp15_ = gtk_text_view_get_buffer (_tmp14_);
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp16_ = _tmp15_;
+#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_set (_tmp16_, "text", prettified_text, NULL);
 #line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp8_ = app_widgets_header_bar_prettify (self, APP_CONFIGS_TYPE_OF_FILE_JSON, _tmp7_);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp9_ = _tmp8_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_free0 (_tmp9_);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_free0 (_tmp7_);
-#line 139 "HeaderBar.c"
+	_g_free0 (prettified_text);
+#line 258 "HeaderBar.c"
 }
 
 
 static void ___lambda5__gtk_button_clicked (GtkButton* _sender, gpointer self) {
-#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	__lambda5_ ((AppWidgetsHeaderBar*) self);
-#line 146 "HeaderBar.c"
-}
-
-
-static void __lambda6_ (AppWidgetsHeaderBar* self) {
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_signal_emit (self, app_widgets_header_bar_signals[APP_WIDGETS_HEADER_BAR_MENU_CLICKED_SIGNAL], 0);
-#line 153 "HeaderBar.c"
-}
-
-
-static void ___lambda6__gtk_button_clicked (GtkButton* _sender, gpointer self) {
-#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	__lambda6_ ((AppWidgetsHeaderBar*) self);
-#line 160 "HeaderBar.c"
-}
-
-
-AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppViewsAppView* app_view) {
-	AppWidgetsHeaderBar * self = NULL;
-	AppViewsAppView* _tmp0_;
-	GtkButton* _tmp1_;
-	GtkButton* _tmp2_;
-	GtkButton* _tmp3_;
-	GtkImage* _tmp4_;
-	GtkImage* _tmp5_;
-	GtkButton* _tmp6_;
-	GtkButton* _tmp7_;
-	GtkMenuButton* _tmp8_;
-	GtkMenuButton* _tmp9_;
-	GtkMenuButton* _tmp10_;
-	GtkImage* _tmp11_;
-	GtkImage* _tmp12_;
-	GtkMenuButton* _tmp13_;
-	GtkMenuButton* _tmp14_;
-	GtkButton* _tmp15_;
-	GtkMenuButton* _tmp16_;
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_return_val_if_fail (app_view != NULL, NULL);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	self = (AppWidgetsHeaderBar*) g_object_new (object_type, NULL);
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp0_ = app_view;
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	app_widgets_header_bar_set_app_view (self, _tmp0_);
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp1_ = (GtkButton*) gtk_button_new ();
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_ref_sink (_tmp1_);
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp2_ = _tmp1_;
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	app_widgets_header_bar_set_prettify_button (self, _tmp2_);
-#line 32 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (_tmp2_);
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp3_ = self->priv->_prettify_button;
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp4_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playback-start", GTK_ICON_SIZE_LARGE_TOOLBAR);
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_ref_sink (_tmp4_);
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp5_ = _tmp4_;
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_button_set_image (_tmp3_, (GtkWidget*) _tmp5_);
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (_tmp5_);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp6_ = self->priv->_prettify_button;
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_widget_set_tooltip_text ((GtkWidget*) _tmp6_, _ ("Prettify"));
-#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp7_ = self->priv->_prettify_button;
-#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_signal_connect_object (_tmp7_, "clicked", (GCallback) ___lambda5__gtk_button_clicked, self, 0);
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp8_ = (GtkMenuButton*) gtk_menu_button_new ();
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_ref_sink (_tmp8_);
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp9_ = _tmp8_;
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	app_widgets_header_bar_set_menu_button (self, _tmp9_);
-#line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (_tmp9_);
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp10_ = self->priv->_menu_button;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp11_ = (GtkImage*) gtk_image_new_from_icon_name ("open-menu-symbolic", GTK_ICON_SIZE_LARGE_TOOLBAR);
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_ref_sink (_tmp11_);
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp12_ = _tmp11_;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_button_set_image ((GtkButton*) _tmp10_, (GtkWidget*) _tmp12_);
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (_tmp12_);
-#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp13_ = self->priv->_menu_button;
-#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_widget_set_tooltip_text ((GtkWidget*) _tmp13_, _ ("Settings"));
-#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp14_ = self->priv->_menu_button;
-#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_signal_connect_object ((GtkButton*) _tmp14_, "clicked", (GCallback) ___lambda6__gtk_button_clicked, self, 0);
-#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_header_bar_set_title ((GtkHeaderBar*) self, "Prettifier");
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_header_bar_set_show_close_button ((GtkHeaderBar*) self, TRUE);
-#line 48 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp15_ = self->priv->_prettify_button;
-#line 48 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_header_bar_pack_start ((GtkHeaderBar*) self, (GtkWidget*) _tmp15_);
-#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp16_ = self->priv->_menu_button;
-#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	gtk_header_bar_pack_end ((GtkHeaderBar*) self, (GtkWidget*) _tmp16_);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	return self;
 #line 265 "HeaderBar.c"
 }
 
 
-AppWidgetsHeaderBar* app_widgets_header_bar_new (AppViewsAppView* app_view) {
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	return app_widgets_header_bar_construct (APP_WIDGETS_TYPE_HEADER_BAR, app_view);
+static gpointer _g_object_ref0 (gpointer self) {
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return self ? g_object_ref (self) : NULL;
 #line 272 "HeaderBar.c"
 }
 
 
-static gchar* app_widgets_header_bar_prettify (AppWidgetsHeaderBar* self, AppConfigsTypeOfFile filetype, const gchar* text) {
+static void __lambda6_ (Block1Data* _data1_) {
+	AppWidgetsHeaderBar* self;
+	GtkClipboard* clipboard = NULL;
+	AppControllersAppController* _tmp0_;
+	GtkApplicationWindow* _tmp1_;
+	GtkApplicationWindow* _tmp2_;
+	GdkDisplay* _tmp3_;
+	GtkClipboard* _tmp4_;
+	GtkClipboard* _tmp5_;
+	AppControllersAppController* _tmp6_;
+	AppViewsAppView* _tmp7_;
+	GtkTextView* _tmp8_;
+	GtkTextView* _tmp9_;
+	GtkTextBuffer* _tmp10_;
+	GtkTextBuffer* _tmp11_;
+	gchar* _tmp12_;
+	gchar* _tmp13_;
+	gchar* _tmp14_;
+#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	self = _data1_->self;
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = _data1_->app;
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = app_controllers_app_controller_get_window (_tmp0_);
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp2_ = _tmp1_;
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp3_ = gtk_widget_get_display ((GtkWidget*) _tmp2_);
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp4_ = gtk_clipboard_get_default (_tmp3_);
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp5_ = _g_object_ref0 (_tmp4_);
+#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	clipboard = _tmp5_;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp6_ = self->priv->_app;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp7_ = _tmp6_->app_view;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp8_ = app_views_app_view_get_output_text (_tmp7_);
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp9_ = _tmp8_;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp10_ = gtk_text_view_get_buffer (_tmp9_);
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp11_ = _tmp10_;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_get (_tmp11_, "text", &_tmp12_, NULL);
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp13_ = _tmp12_;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp14_ = _tmp13_;
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_clipboard_set_text (clipboard, _tmp14_, -1);
+#line 46 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_free0 (_tmp14_);
+#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (clipboard);
+#line 334 "HeaderBar.c"
+}
+
+
+static void ___lambda6__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	__lambda6_ (self);
+#line 341 "HeaderBar.c"
+}
+
+
+static void __lambda7_ (AppWidgetsHeaderBar* self) {
+	GtkSwitch* _tmp0_;
+	gboolean _tmp1_;
+	gboolean _tmp2_;
+	AppConfigsTypeOfFile _tmp3_;
+	GEnumValue* _tmp4_;
+	gchar* _tmp5_;
+	gchar* _tmp6_;
+#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_format_switch;
+#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = gtk_switch_get_active (_tmp0_);
+#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp2_ = _tmp1_;
+#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	if (_tmp2_) {
+#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		app_widgets_header_bar_set_type_of_file (self, APP_CONFIGS_TYPE_OF_FILE_XML);
+#line 363 "HeaderBar.c"
+	} else {
+#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		app_widgets_header_bar_set_type_of_file (self, APP_CONFIGS_TYPE_OF_FILE_JSON);
+#line 367 "HeaderBar.c"
+	}
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp3_ = self->priv->_type_of_file;
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp4_ = g_enum_get_value (g_type_class_ref (APP_CONFIGS_TYPE_TYPE_OF_FILE), _tmp3_);
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp5_ = g_strconcat ("\nFormat is set to :", (_tmp4_ != NULL) ? _tmp4_->value_name : NULL, NULL);
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp6_ = _tmp5_;
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_print ("%s", _tmp6_);
+#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_free0 (_tmp6_);
+#line 381 "HeaderBar.c"
+}
+
+
+static void ___lambda7__g_object_notify (GObject* _sender, GParamSpec* pspec, gpointer self) {
+#line 50 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	__lambda7_ ((AppWidgetsHeaderBar*) self);
+#line 388 "HeaderBar.c"
+}
+
+
+AppWidgetsHeaderBar* app_widgets_header_bar_construct (GType object_type, AppControllersAppController* app) {
+	AppWidgetsHeaderBar * self = NULL;
+	Block1Data* _data1_;
+	AppControllersAppController* _tmp0_;
+	AppControllersAppController* _tmp1_;
+	AppControllersAppController* _tmp2_;
+	GtkButton* _tmp3_;
+	GtkButton* _tmp4_;
+	GtkButton* _tmp5_;
+	GtkImage* _tmp6_;
+	GtkImage* _tmp7_;
+	GtkButton* _tmp8_;
+	GtkButton* _tmp9_;
+	GtkButton* _tmp10_;
+	GtkButton* _tmp11_;
+	GtkButton* _tmp12_;
+	GtkImage* _tmp13_;
+	GtkImage* _tmp14_;
+	GtkButton* _tmp15_;
+	GtkButton* _tmp16_;
+	GtkSwitch* _tmp17_;
+	GtkSwitch* _tmp18_;
+	GtkSwitch* _tmp19_;
+	GtkLabel* _tmp20_;
+	GtkLabel* _tmp21_;
+	GtkSwitch* _tmp22_;
+	GtkLabel* _tmp23_;
+	GtkLabel* _tmp24_;
+	GtkButton* _tmp25_;
+	GtkButton* _tmp26_;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (app != NULL, NULL);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_data1_ = g_slice_new0 (Block1Data);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_data1_->_ref_count_ = 1;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = app;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = _app_controllers_app_controller_ref0 (_tmp0_);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_app_controllers_app_controller_unref0 (_data1_->app);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_data1_->app = _tmp1_;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	self = (AppWidgetsHeaderBar*) g_object_new (object_type, NULL);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_data1_->self = g_object_ref (self);
+#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp2_ = _data1_->app;
+#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	app_widgets_header_bar_set_app (self, _tmp2_);
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp3_ = (GtkButton*) gtk_button_new ();
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp3_);
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp4_ = _tmp3_;
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	app_widgets_header_bar_set_prettify_button (self, _tmp4_);
+#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp4_);
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp5_ = self->priv->_prettify_button;
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp6_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playback-start", GTK_ICON_SIZE_LARGE_TOOLBAR);
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp6_);
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp7_ = _tmp6_;
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_button_set_image (_tmp5_, (GtkWidget*) _tmp7_);
+#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp7_);
+#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp8_ = self->priv->_prettify_button;
+#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_widget_set_tooltip_text ((GtkWidget*) _tmp8_, _ ("Prettify input text"));
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp9_ = self->priv->_prettify_button;
+#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_signal_connect_object (_tmp9_, "clicked", (GCallback) ___lambda5__gtk_button_clicked, self, 0);
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp10_ = (GtkButton*) gtk_button_new ();
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp10_);
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp11_ = _tmp10_;
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	app_widgets_header_bar_set_copy_to_clipboard (self, _tmp11_);
+#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp11_);
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp12_ = self->priv->_copy_to_clipboard;
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp13_ = (GtkImage*) gtk_image_new_from_icon_name ("edit-copy", GTK_ICON_SIZE_LARGE_TOOLBAR);
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp13_);
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp14_ = _tmp13_;
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_button_set_image (_tmp12_, (GtkWidget*) _tmp14_);
+#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp14_);
+#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp15_ = self->priv->_copy_to_clipboard;
+#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_widget_set_tooltip_text ((GtkWidget*) _tmp15_, _ ("Copy output to clipboard"));
+#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp16_ = self->priv->_copy_to_clipboard;
+#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_signal_connect_data (_tmp16_, "clicked", (GCallback) ___lambda6__gtk_button_clicked, block1_data_ref (_data1_), (GClosureNotify) block1_data_unref, 0);
+#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp17_ = (GtkSwitch*) gtk_switch_new ();
+#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp17_);
+#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp18_ = _tmp17_;
+#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	app_widgets_header_bar_set_format_switch (self, _tmp18_);
+#line 49 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp18_);
+#line 50 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp19_ = self->priv->_format_switch;
+#line 50 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_signal_connect_object ((GObject*) _tmp19_, "notify::active", (GCallback) ___lambda7__g_object_notify, self, 0);
+#line 59 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_set_title ((GtkHeaderBar*) self, "Prettifier");
+#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_set_show_close_button ((GtkHeaderBar*) self, TRUE);
+#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp20_ = (GtkLabel*) gtk_label_new ("XML");
+#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp20_);
+#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp21_ = _tmp20_;
+#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_pack_end ((GtkHeaderBar*) self, (GtkWidget*) _tmp21_);
+#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp21_);
+#line 62 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp22_ = self->priv->_format_switch;
+#line 62 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_pack_end ((GtkHeaderBar*) self, (GtkWidget*) _tmp22_);
+#line 63 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp23_ = (GtkLabel*) gtk_label_new ("JSON");
+#line 63 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_ref_sink (_tmp23_);
+#line 63 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp24_ = _tmp23_;
+#line 63 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_pack_end ((GtkHeaderBar*) self, (GtkWidget*) _tmp24_);
+#line 63 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (_tmp24_);
+#line 64 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp25_ = self->priv->_prettify_button;
+#line 64 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_pack_start ((GtkHeaderBar*) self, (GtkWidget*) _tmp25_);
+#line 65 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp26_ = self->priv->_copy_to_clipboard;
+#line 65 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	gtk_header_bar_pack_start ((GtkHeaderBar*) self, (GtkWidget*) _tmp26_);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	block1_data_unref (_data1_);
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_data1_ = NULL;
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return self;
+#line 560 "HeaderBar.c"
+}
+
+
+AppWidgetsHeaderBar* app_widgets_header_bar_new (AppControllersAppController* app) {
+#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return app_widgets_header_bar_construct (APP_WIDGETS_TYPE_HEADER_BAR, app);
+#line 567 "HeaderBar.c"
+}
+
+
+static gchar* app_widgets_header_bar_prettify (AppWidgetsHeaderBar* self, const gchar* text) {
 	gchar* result = NULL;
-	const gchar* _tmp0_;
-	AppConfigsTypeOfFile _tmp1_;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	AppConfigsTypeOfFile _tmp0_;
+#line 69 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 69 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_val_if_fail (text != NULL, NULL);
-#line 53 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp0_ = text;
-#line 53 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_print ("%s", _tmp0_);
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp1_ = filetype;
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	switch (_tmp1_) {
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 70 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_type_of_file;
+#line 70 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	switch (_tmp0_) {
+#line 70 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		case APP_CONFIGS_TYPE_OF_FILE_JSON:
-#line 294 "HeaderBar.c"
+#line 584 "HeaderBar.c"
 		{
+			const gchar* _tmp1_;
 			gchar* _tmp2_;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-			_tmp2_ = g_strdup ("JSON");
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			_tmp1_ = text;
+#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			_tmp2_ = app_widgets_header_bar_prettifyJSON (self, _tmp1_);
+#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 			result = _tmp2_;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 			return result;
-#line 303 "HeaderBar.c"
+#line 596 "HeaderBar.c"
 		}
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 70 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		case APP_CONFIGS_TYPE_OF_FILE_XML:
-#line 307 "HeaderBar.c"
+#line 600 "HeaderBar.c"
 		{
-			gchar* _tmp3_;
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-			_tmp3_ = g_strdup ("XML");
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-			result = _tmp3_;
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			const gchar* _tmp3_;
+			gchar* _tmp4_;
+#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			_tmp3_ = text;
+#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			_tmp4_ = app_widgets_header_bar_prettifyXML (self, _tmp3_);
+#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			result = _tmp4_;
+#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 			return result;
-#line 316 "HeaderBar.c"
+#line 612 "HeaderBar.c"
 		}
 		default:
 		{
-			gchar* _tmp4_;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-			_tmp4_ = g_strdup ("NONE");
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-			result = _tmp4_;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			gchar* _tmp5_;
+#line 76 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			_tmp5_ = g_strdup ("BAD FORMAT");
+#line 76 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+			result = _tmp5_;
+#line 76 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 			return result;
-#line 327 "HeaderBar.c"
+#line 623 "HeaderBar.c"
 		}
 	}
 }
 
 
-GtkMenuButton* app_widgets_header_bar_get_menu_button (AppWidgetsHeaderBar* self) {
-	GtkMenuButton* result;
-	GtkMenuButton* _tmp0_;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+static void _vala_JsonNode_free (JsonNode* self) {
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_boxed_free (json_node_get_type (), self);
+#line 632 "HeaderBar.c"
+}
+
+
+static gchar* app_widgets_header_bar_prettifyJSON (AppWidgetsHeaderBar* self, const gchar* text) {
+	gchar* result = NULL;
+	JsonNode* json = NULL;
+	JsonNode* _tmp11_;
+	gchar* _tmp12_;
+	GError * _inner_error_ = NULL;
+#line 80 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp0_ = self->priv->_menu_button;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	result = _tmp0_;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	return result;
-#line 344 "HeaderBar.c"
-}
-
-
-static gpointer _g_object_ref0 (gpointer self) {
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	return self ? g_object_ref (self) : NULL;
-#line 351 "HeaderBar.c"
-}
-
-
-static void app_widgets_header_bar_set_menu_button (AppWidgetsHeaderBar* self, GtkMenuButton* value) {
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_return_if_fail (self != NULL);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	if (app_widgets_header_bar_get_menu_button (self) != value) {
-#line 360 "HeaderBar.c"
-		GtkMenuButton* _tmp0_;
-		GtkMenuButton* _tmp1_;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		_tmp0_ = value;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		_g_object_unref0 (self->priv->_menu_button);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		self->priv->_menu_button = _tmp1_;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		g_object_notify ((GObject *) self, "menu-button");
-#line 373 "HeaderBar.c"
+#line 80 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (text != NULL, NULL);
+#line 646 "HeaderBar.c"
+	{
+		JsonNode* _tmp0_ = NULL;
+		const gchar* _tmp1_;
+		JsonNode* _tmp2_;
+		JsonNode* _tmp3_;
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp1_ = text;
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp2_ = json_from_string (_tmp1_, &_inner_error_);
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp0_ = _tmp2_;
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		if (G_UNLIKELY (_inner_error_ != NULL)) {
+#line 660 "HeaderBar.c"
+			goto __catch0_g_error;
+		}
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp3_ = _tmp0_;
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp0_ = NULL;
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		__vala_JsonNode_free0 (json);
+#line 83 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		json = _tmp3_;
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		__vala_JsonNode_free0 (_tmp0_);
+#line 673 "HeaderBar.c"
 	}
+	goto __finally0;
+	__catch0_g_error:
+	{
+		GError* e = NULL;
+		GError* _tmp4_;
+		const gchar* _tmp5_;
+		gchar* _tmp6_;
+		gchar* _tmp7_;
+		gchar* _tmp8_;
+		gchar* _tmp9_;
+		gchar* _tmp10_;
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		e = _inner_error_;
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_inner_error_ = NULL;
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp4_ = e;
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp5_ = _tmp4_->message;
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp6_ = g_strconcat ("Unable to parse the string:", _tmp5_, NULL);
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp7_ = _tmp6_;
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp8_ = g_strconcat (_tmp7_, "\n", NULL);
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp9_ = _tmp8_;
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_print ("%s", _tmp9_);
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_free0 (_tmp9_);
+#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_free0 (_tmp7_);
+#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp10_ = g_strdup ("");
+#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		result = _tmp10_;
+#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_error_free0 (e);
+#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		__vala_JsonNode_free0 (json);
+#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		return result;
+#line 718 "HeaderBar.c"
+	}
+	__finally0:
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	if (G_UNLIKELY (_inner_error_ != NULL)) {
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		__vala_JsonNode_free0 (json);
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_clear_error (&_inner_error_);
+#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		return NULL;
+#line 731 "HeaderBar.c"
+	}
+#line 88 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp11_ = json;
+#line 88 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp12_ = json_to_string (_tmp11_, TRUE);
+#line 88 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	result = _tmp12_;
+#line 88 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	__vala_JsonNode_free0 (json);
+#line 88 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return result;
+#line 743 "HeaderBar.c"
+}
+
+
+static gchar* app_widgets_header_bar_prettifyXML (AppWidgetsHeaderBar* self, const gchar* text) {
+	gchar* result = NULL;
+	xmlDoc* doc = NULL;
+	const gchar* _tmp0_;
+	xmlDoc* _tmp1_;
+	gchar* pretty_xml = NULL;
+	gint length = 0;
+	gchar* _tmp2_ = NULL;
+	gint _tmp3_ = 0;
+#line 91 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (self != NULL, NULL);
+#line 91 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (text != NULL, NULL);
+#line 92 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = text;
+#line 92 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = xmlParseDoc ((xmlChar*) _tmp0_);
+#line 92 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	doc = _tmp1_;
+#line 95 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	xmlDocDumpFormatMemory (doc, (xmlChar*) (&_tmp2_), &_tmp3_, TRUE);
+#line 95 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_free0 (pretty_xml);
+#line 95 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	pretty_xml = _tmp2_;
+#line 95 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	length = _tmp3_;
+#line 96 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	result = pretty_xml;
+#line 96 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return result;
+#line 778 "HeaderBar.c"
 }
 
 
 GtkButton* app_widgets_header_bar_get_prettify_button (AppWidgetsHeaderBar* self) {
 	GtkButton* result;
 	GtkButton* _tmp0_;
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	_tmp0_ = self->priv->_prettify_button;
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	result = _tmp0_;
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	return result;
-#line 389 "HeaderBar.c"
+#line 793 "HeaderBar.c"
 }
 
 
 static void app_widgets_header_bar_set_prettify_button (AppWidgetsHeaderBar* self, GtkButton* value) {
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_if_fail (self != NULL);
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	if (app_widgets_header_bar_get_prettify_button (self) != value) {
+#line 802 "HeaderBar.c"
+		GtkButton* _tmp0_;
+		GtkButton* _tmp1_;
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp0_ = value;
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp1_ = _g_object_ref0 (_tmp0_);
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_object_unref0 (self->priv->_prettify_button);
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		self->priv->_prettify_button = _tmp1_;
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_object_notify ((GObject *) self, "prettify-button");
+#line 815 "HeaderBar.c"
+	}
+}
+
+
+GtkSwitch* app_widgets_header_bar_get_format_switch (AppWidgetsHeaderBar* self) {
+	GtkSwitch* result;
+	GtkSwitch* _tmp0_;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (self != NULL, NULL);
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_format_switch;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	result = _tmp0_;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return result;
+#line 831 "HeaderBar.c"
+}
+
+
+static void app_widgets_header_bar_set_format_switch (AppWidgetsHeaderBar* self, GtkSwitch* value) {
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_if_fail (self != NULL);
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	if (app_widgets_header_bar_get_format_switch (self) != value) {
+#line 840 "HeaderBar.c"
+		GtkSwitch* _tmp0_;
+		GtkSwitch* _tmp1_;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp0_ = value;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_tmp1_ = _g_object_ref0 (_tmp0_);
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		_g_object_unref0 (self->priv->_format_switch);
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		self->priv->_format_switch = _tmp1_;
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_object_notify ((GObject *) self, "format-switch");
+#line 853 "HeaderBar.c"
+	}
+}
+
+
+GtkButton* app_widgets_header_bar_get_copy_to_clipboard (AppWidgetsHeaderBar* self) {
+	GtkButton* result;
+	GtkButton* _tmp0_;
+#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (self != NULL, NULL);
+#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_copy_to_clipboard;
+#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	result = _tmp0_;
+#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return result;
+#line 869 "HeaderBar.c"
+}
+
+
+static void app_widgets_header_bar_set_copy_to_clipboard (AppWidgetsHeaderBar* self, GtkButton* value) {
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_if_fail (self != NULL);
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	if (app_widgets_header_bar_get_prettify_button (self) != value) {
-#line 398 "HeaderBar.c"
+	if (app_widgets_header_bar_get_copy_to_clipboard (self) != value) {
+#line 878 "HeaderBar.c"
 		GtkButton* _tmp0_;
 		GtkButton* _tmp1_;
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
@@ -402,45 +882,72 @@ static void app_widgets_header_bar_set_prettify_button (AppWidgetsHeaderBar* sel
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		_tmp1_ = _g_object_ref0 (_tmp0_);
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		_g_object_unref0 (self->priv->_prettify_button);
+		_g_object_unref0 (self->priv->_copy_to_clipboard);
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		self->priv->_prettify_button = _tmp1_;
+		self->priv->_copy_to_clipboard = _tmp1_;
 #line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		g_object_notify ((GObject *) self, "prettify-button");
-#line 411 "HeaderBar.c"
+		g_object_notify ((GObject *) self, "copy-to-clipboard");
+#line 891 "HeaderBar.c"
 	}
 }
 
 
-static AppViewsAppView* app_widgets_header_bar_get_app_view (AppWidgetsHeaderBar* self) {
-	AppViewsAppView* result;
-	AppViewsAppView* _tmp0_;
+static AppConfigsTypeOfFile app_widgets_header_bar_get_type_of_file (AppWidgetsHeaderBar* self) {
+	AppConfigsTypeOfFile result;
+	AppConfigsTypeOfFile _tmp0_;
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_return_val_if_fail (self != NULL, NULL);
+	g_return_val_if_fail (self != NULL, 0);
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp0_ = self->priv->_app_view;
+	_tmp0_ = self->priv->_type_of_file;
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	result = _tmp0_;
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	return result;
-#line 427 "HeaderBar.c"
+#line 907 "HeaderBar.c"
 }
 
 
-static void app_widgets_header_bar_set_app_view (AppWidgetsHeaderBar* self, AppViewsAppView* value) {
-	AppViewsAppView* _tmp0_;
-	AppViewsAppView* _tmp1_;
+static void app_widgets_header_bar_set_type_of_file (AppWidgetsHeaderBar* self, AppConfigsTypeOfFile value) {
+	AppConfigsTypeOfFile _tmp0_;
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_return_if_fail (self != NULL);
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	_tmp0_ = value;
 #line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (self->priv->_app_view);
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	self->priv->_app_view = _tmp1_;
-#line 444 "HeaderBar.c"
+	self->priv->_type_of_file = _tmp0_;
+#line 919 "HeaderBar.c"
+}
+
+
+static AppControllersAppController* app_widgets_header_bar_get_app (AppWidgetsHeaderBar* self) {
+	AppControllersAppController* result;
+	AppControllersAppController* _tmp0_;
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_val_if_fail (self != NULL, NULL);
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = self->priv->_app;
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	result = _tmp0_;
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	return result;
+#line 934 "HeaderBar.c"
+}
+
+
+static void app_widgets_header_bar_set_app (AppWidgetsHeaderBar* self, AppControllersAppController* value) {
+	AppControllersAppController* _tmp0_;
+	AppControllersAppController* _tmp1_;
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_return_if_fail (self != NULL);
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp0_ = value;
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_tmp1_ = _app_controllers_app_controller_ref0 (_tmp0_);
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_app_controllers_app_controller_unref0 (self->priv->_app);
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	self->priv->_app = _tmp1_;
+#line 951 "HeaderBar.c"
 }
 
 
@@ -456,19 +963,19 @@ static void app_widgets_header_bar_class_init (AppWidgetsHeaderBarClass * klass)
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	G_OBJECT_CLASS (klass)->finalize = app_widgets_header_bar_finalize;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_WIDGETS_HEADER_BAR_MENU_BUTTON_PROPERTY, g_param_spec_object ("menu-button", "menu-button", "menu-button", gtk_menu_button_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE));
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_WIDGETS_HEADER_BAR_PRETTIFY_BUTTON_PROPERTY, g_param_spec_object ("prettify-button", "prettify-button", "prettify-button", gtk_button_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	app_widgets_header_bar_signals[APP_WIDGETS_HEADER_BAR_MENU_CLICKED_SIGNAL] = g_signal_new ("menu-clicked", APP_WIDGETS_TYPE_HEADER_BAR, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
-#line 465 "HeaderBar.c"
+	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_WIDGETS_HEADER_BAR_FORMAT_SWITCH_PROPERTY, g_param_spec_object ("format-switch", "format-switch", "format-switch", gtk_switch_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE));
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_WIDGETS_HEADER_BAR_COPY_TO_CLIPBOARD_PROPERTY, g_param_spec_object ("copy-to-clipboard", "copy-to-clipboard", "copy-to-clipboard", gtk_button_get_type (), G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE));
+#line 972 "HeaderBar.c"
 }
 
 
 static void app_widgets_header_bar_instance_init (AppWidgetsHeaderBar * self) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	self->priv = APP_WIDGETS_HEADER_BAR_GET_PRIVATE (self);
-#line 472 "HeaderBar.c"
+#line 979 "HeaderBar.c"
 }
 
 
@@ -476,15 +983,17 @@ static void app_widgets_header_bar_finalize (GObject * obj) {
 	AppWidgetsHeaderBar * self;
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_WIDGETS_TYPE_HEADER_BAR, AppWidgetsHeaderBar);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (self->priv->_menu_button);
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	_g_object_unref0 (self->priv->_prettify_button);
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-	_g_object_unref0 (self->priv->_app_view);
+#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (self->priv->_format_switch);
+#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_g_object_unref0 (self->priv->_copy_to_clipboard);
+#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+	_app_controllers_app_controller_unref0 (self->priv->_app);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	G_OBJECT_CLASS (app_widgets_header_bar_parent_class)->finalize (obj);
-#line 488 "HeaderBar.c"
+#line 997 "HeaderBar.c"
 }
 
 
@@ -512,24 +1021,30 @@ static void _vala_app_widgets_header_bar_get_property (GObject * object, guint p
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	switch (property_id) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		case APP_WIDGETS_HEADER_BAR_MENU_BUTTON_PROPERTY:
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		g_value_set_object (value, app_widgets_header_bar_get_menu_button (self));
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		break;
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		case APP_WIDGETS_HEADER_BAR_PRETTIFY_BUTTON_PROPERTY:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		g_value_set_object (value, app_widgets_header_bar_get_prettify_button (self));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		break;
-#line 527 "HeaderBar.c"
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		case APP_WIDGETS_HEADER_BAR_FORMAT_SWITCH_PROPERTY:
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_value_set_object (value, app_widgets_header_bar_get_format_switch (self));
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		break;
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		case APP_WIDGETS_HEADER_BAR_COPY_TO_CLIPBOARD_PROPERTY:
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		g_value_set_object (value, app_widgets_header_bar_get_copy_to_clipboard (self));
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		break;
+#line 1042 "HeaderBar.c"
 		default:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		break;
-#line 533 "HeaderBar.c"
+#line 1048 "HeaderBar.c"
 	}
 }
 
@@ -540,24 +1055,30 @@ static void _vala_app_widgets_header_bar_set_property (GObject * object, guint p
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 	switch (property_id) {
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		case APP_WIDGETS_HEADER_BAR_MENU_BUTTON_PROPERTY:
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		app_widgets_header_bar_set_menu_button (self, g_value_get_object (value));
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
-		break;
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		case APP_WIDGETS_HEADER_BAR_PRETTIFY_BUTTON_PROPERTY:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		app_widgets_header_bar_set_prettify_button (self, g_value_get_object (value));
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		break;
-#line 555 "HeaderBar.c"
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		case APP_WIDGETS_HEADER_BAR_FORMAT_SWITCH_PROPERTY:
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		app_widgets_header_bar_set_format_switch (self, g_value_get_object (value));
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		break;
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		case APP_WIDGETS_HEADER_BAR_COPY_TO_CLIPBOARD_PROPERTY:
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		app_widgets_header_bar_set_copy_to_clipboard (self, g_value_get_object (value));
+#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
+		break;
+#line 1076 "HeaderBar.c"
 		default:
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
 #line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/widgets/HeaderBar.vala"
 		break;
-#line 561 "HeaderBar.c"
+#line 1082 "HeaderBar.c"
 	}
 }
 

@@ -14,10 +14,10 @@ namespace App.Controllers {
      */
     public class AppController {
 
-        private Gtk.Application            application;
-        private AppView                    app_view;
-        private Gtk.HeaderBar              headerbar;
-        private Gtk.ApplicationWindow      window { get; private set; default = null; }
+        public Gtk.Application            application;
+        public AppView                    app_view;
+        public Gtk.HeaderBar              headerbar;
+        public Gtk.ApplicationWindow      window { get; private set; default = null; }
 
         /**
          * Constructs a new {@code AppController} object.
@@ -26,7 +26,7 @@ namespace App.Controllers {
             this.application = application;
             this.window = new Window (this.application);
             this.app_view = new AppView ();
-            this.headerbar = new HeaderBar (this.app_view);
+            this.headerbar = new HeaderBar (this);
 
             this.window.add (this.app_view);
             this.window.set_default_size (800, 640);

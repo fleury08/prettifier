@@ -21,13 +21,15 @@ namespace App.Views {
          */
         public AppView () {
 
+            this.set_spacing(10);
+
             // A ScrolledWindow:
             Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
             this.pack_start (input_scrolled, true, true, 0);
 
             this.input_text = new Gtk.TextView ();
             input_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            input_text.buffer.text = "Lorem Ipsum";
+            input_text.buffer.text = "UNFORMATTED INPUT JSON/XML";
             input_scrolled.add(input_text);
 
             // A ScrolledWindow:
@@ -36,7 +38,7 @@ namespace App.Views {
 
             this.output_text = new Gtk.TextView ();
             output_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            output_text.buffer.text = "Lorem Ipsum";
+            output_text.buffer.text = "Beautifully formatted JSON or XML";
             output_scrolled.add(output_text);
 
 

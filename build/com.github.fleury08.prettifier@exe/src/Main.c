@@ -37,7 +37,7 @@ typedef struct _MainPrivate MainPrivate;
 
 typedef struct _AppTestsTesting AppTestsTesting;
 typedef struct _AppTestsTestingClass AppTestsTestingClass;
-typedef struct _Block1Data Block1Data;
+typedef struct _Block2Data Block2Data;
 #define _app_tests_testing_unref0(var) ((var == NULL) ? NULL : (var = (app_tests_testing_unref (var), NULL)))
 
 #define APP_TYPE_APPLICATION (app_application_get_type ())
@@ -63,7 +63,7 @@ struct _MainClass {
 	void (*finalize) (Main *self);
 };
 
-struct _Block1Data {
+struct _Block2Data {
 	int _ref_count_;
 	AppTestsTesting* testing;
 };
@@ -99,13 +99,13 @@ void app_tests_value_set_testing (GValue* value, gpointer v_object);
 void app_tests_value_take_testing (GValue* value, gpointer v_object);
 gpointer app_tests_value_get_testing (const GValue* value);
 GType app_tests_testing_get_type (void) G_GNUC_CONST;
-static Block1Data* block1_data_ref (Block1Data* _data1_);
-static void block1_data_unref (void * _userdata_);
+static Block2Data* block2_data_ref (Block2Data* _data2_);
+static void block2_data_unref (void * _userdata_);
 AppTestsTesting* app_tests_testing_new (gchar** args, int args_length1);
 AppTestsTesting* app_tests_testing_construct (GType object_type, gchar** args, int args_length1);
-static gboolean ___lambda9_ (Block1Data* _data1_);
+static gboolean ___lambda10_ (Block2Data* _data2_);
 void app_tests_testing_run (AppTestsTesting* self);
-static gboolean ____lambda9__gsource_func (gpointer self);
+static gboolean ____lambda10__gsource_func (gpointer self);
 GType app_application_get_type (void) G_GNUC_CONST;
 AppApplication* app_application_new (void);
 AppApplication* app_application_construct (GType object_type);
@@ -122,34 +122,34 @@ static const GOptionEntry MAIN_options[3] = {{"version", (gchar) 0, 0, G_OPTION_
      * @return {@code int}
      * @since 1.0.0
      */
-static Block1Data* block1_data_ref (Block1Data* _data1_) {
+static Block2Data* block2_data_ref (Block2Data* _data2_) {
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-	g_atomic_int_inc (&_data1_->_ref_count_);
+	g_atomic_int_inc (&_data2_->_ref_count_);
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-	return _data1_;
+	return _data2_;
 #line 131 "Main.c"
 }
 
 
-static void block1_data_unref (void * _userdata_) {
-	Block1Data* _data1_;
-	_data1_ = (Block1Data*) _userdata_;
+static void block2_data_unref (void * _userdata_) {
+	Block2Data* _data2_;
+	_data2_ = (Block2Data*) _userdata_;
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-	if (g_atomic_int_dec_and_test (&_data1_->_ref_count_)) {
+	if (g_atomic_int_dec_and_test (&_data2_->_ref_count_)) {
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		_app_tests_testing_unref0 (_data1_->testing);
+		_app_tests_testing_unref0 (_data2_->testing);
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		g_slice_free (Block1Data, _data1_);
+		g_slice_free (Block2Data, _data2_);
 #line 144 "Main.c"
 	}
 }
 
 
-static gboolean ___lambda9_ (Block1Data* _data1_) {
+static gboolean ___lambda10_ (Block2Data* _data2_) {
 	gboolean result = FALSE;
 	AppTestsTesting* _tmp0_;
 #line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-	_tmp0_ = _data1_->testing;
+	_tmp0_ = _data2_->testing;
 #line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 	app_tests_testing_run (_tmp0_);
 #line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
@@ -162,9 +162,9 @@ static gboolean ___lambda9_ (Block1Data* _data1_) {
 }
 
 
-static gboolean ____lambda9__gsource_func (gpointer self) {
+static gboolean ____lambda10__gsource_func (gpointer self) {
 	gboolean result;
-	result = ___lambda9_ (self);
+	result = ___lambda10_ (self);
 #line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 	return result;
 #line 171 "Main.c"
@@ -204,11 +204,11 @@ gint main_main (gchar** args, int args_length1) {
 #line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		if (G_UNLIKELY (_inner_error_ != NULL)) {
 #line 207 "Main.c"
-			goto __catch0_g_error;
+			goto __catch1_g_error;
 		}
 	}
-	goto __finally0;
-	__catch0_g_error:
+	goto __finally1;
+	__catch1_g_error:
 	{
 		GError* _error_ = NULL;
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
@@ -219,7 +219,7 @@ gint main_main (gchar** args, int args_length1) {
 		_g_error_free0 (_error_);
 #line 221 "Main.c"
 	}
-	__finally0:
+	__finally1:
 #line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 	if (G_UNLIKELY (_inner_error_ != NULL)) {
 #line 226 "Main.c"
@@ -257,14 +257,14 @@ gint main_main (gchar** args, int args_length1) {
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 	if (_tmp7_) {
 #line 260 "Main.c"
-		Block1Data* _data1_;
+		Block2Data* _data2_;
 		gchar** _tmp8_;
 		gint _tmp8__length1;
 		AppTestsTesting* _tmp9_;
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		_data1_ = g_slice_new0 (Block1Data);
+		_data2_ = g_slice_new0 (Block2Data);
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		_data1_->_ref_count_ = 1;
+		_data2_->_ref_count_ = 1;
 #line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		gtk_init (&args_length1, &args);
 #line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
@@ -274,15 +274,15 @@ gint main_main (gchar** args, int args_length1) {
 #line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		_tmp9_ = app_tests_testing_new (_tmp8_, _tmp8__length1);
 #line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		_data1_->testing = _tmp9_;
+		_data2_->testing = _tmp9_;
 #line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, ____lambda9__gsource_func, block1_data_ref (_data1_), block1_data_unref);
+		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, ____lambda10__gsource_func, block2_data_ref (_data2_), block2_data_unref);
 #line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		gtk_main ();
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		block1_data_unref (_data1_);
+		block2_data_unref (_data2_);
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		_data1_ = NULL;
+		_data2_ = NULL;
 #line 287 "Main.c"
 	} else {
 		AppApplication* app = NULL;
