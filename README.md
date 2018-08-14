@@ -22,7 +22,8 @@
 </p>
 
 <p align="center">
-    <img  src="https://github.com/fleury08/prettifier/blob/master/data/images/screenshot.png" alt="Screenshot"> <br>
+    <img  src="https://github.com/fleury08/prettifier/blob/master/data/images/PrettifierXML.png" alt="Screenshot"> <br>
+    <img  src="https://github.com/fleury08/prettifier/blob/master/data/images/PrettifierJson.png" alt="Screenshot"> <br>
   <a href="https://github.com/fleury08/prettifier/issues/new"> Report a problem! </a>
 </p>
 

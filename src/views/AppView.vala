@@ -21,27 +21,28 @@ namespace App.Views {
          */
         public AppView () {
 
-            this.set_spacing(10);
 
-            // A ScrolledWindow:
-            Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
-            this.pack_start (input_scrolled, true, true, 0);
-
+            //INPUT TEXT
             this.input_text = new Gtk.TextView ();
-            input_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            input_text.buffer.text = "UNFORMATTED INPUT JSON/XML";
+            this.input_text.set_wrap_mode (Gtk.WrapMode.WORD);
+            this.input_text.buffer.text = "UNFORMATTED INPUT JSON/XML";
+
+            Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
             input_scrolled.add(input_text);
 
-            // A ScrolledWindow:
-            Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
-            this.pack_start (output_scrolled, true, true, 0);
+            //OUTPUT TEXT
 
             this.output_text = new Gtk.TextView ();
-            output_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            output_text.buffer.text = "Beautifully formatted JSON or XML";
+            this.output_text.set_wrap_mode (Gtk.WrapMode.WORD);
+            this.output_text.buffer.text = "Beautifully formatted JSON or XML";
+            this.output_text.editable = false;
+
+            Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
             output_scrolled.add(output_text);
 
-
+            //
+            this.pack_start (input_scrolled, true, true, 0);
+            this.pack_start (output_scrolled, true, true, 0);
             this.add(input_scrolled);
             this.add(output_scrolled);
         }
