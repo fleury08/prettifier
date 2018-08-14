@@ -78,3 +78,8 @@
 4	411	1534252395	com.github.fleury08.prettifier@exe/tests/test.c	eb7c2fe2e257b1f5
 412	653	1534252467	com.github.fleury08.prettifier@exe/meson-generated_src_views_AppView.c.o	875b2f8bc07c7afe
 653	912	1534252468	com.github.fleury08.prettifier	fb7c11655fd22fd5
+5	71	1534258939	as-resources.c	3405f36c8d15bff
+71	428	1534258940	com.github.fleury08.prettifier@exe/meson-generated_.._as-resources.c.o	41c185b8f9d1d4e6
+428	713	1534258940	com.github.fleury08.prettifier	fb7c11655fd22fd5
+3	843	0	meson-install	6a0d8b092002454
+3	747	0	meson-install	6a0d8b092002454
