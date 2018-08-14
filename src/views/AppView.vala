@@ -14,35 +14,34 @@ namespace App.Views {
      */
     public class AppView : Gtk.Box {
 
+        public Gtk.TextView input_text {get;set;}
+        public Gtk.TextView output_text {get;set;}
         /**
          * Constructs a new {@code AppView} object.
          */
         public AppView () {
-            var welcome_view = new Granite.Widgets.Welcome (_("Welcome"), _("Open up your editor to get started!"));
-            welcome_view.append ("text-x-vala", _("Visit Valadoc"), _("The canonical source for Vala API references."));
-            welcome_view.append ("distributor-logo", _("Visit elementary.io"), _("Read up on developing for elementary"));
-            welcome_view.activated.connect ((index) => {
-                switch (index) {
-                    case 0:
-                        try {
-                            AppInfo.launch_default_for_uri ("https://valadoc.org/", null);
-                        } catch (Error e) {
-                            warning (e.message);
-                        }
-    
-                        break;
-                    case 1:
-                        try {
-                            AppInfo.launch_default_for_uri ("https://developer.elementary.io", null);
-                        } catch (Error e) {
-                            warning (e.message);
-                        }
-    
-                        break;
-                }
-            });
 
-            this.add (welcome_view);
+            // A ScrolledWindow:
+            Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
+            this.pack_start (input_scrolled, true, true, 0);
+
+            this.input_text = new Gtk.TextView ();
+            input_text.set_wrap_mode (Gtk.WrapMode.WORD);
+            input_text.buffer.text = "Lorem Ipsum";
+            input_scrolled.add(input_text);
+
+            // A ScrolledWindow:
+            Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
+            this.pack_start (output_scrolled, true, true, 0);
+
+            this.output_text = new Gtk.TextView ();
+            output_text.set_wrap_mode (Gtk.WrapMode.WORD);
+            output_text.buffer.text = "Lorem Ipsum";
+            output_scrolled.add(output_text);
+
+
+            this.add(input_scrolled);
+            this.add(output_scrolled);
         }
     }
 }

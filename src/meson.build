@@ -1,6 +1,7 @@
 sources += files(
     'configs/Constants.vala',
     'configs/Settings.vala',
+    'configs/TypeOfFile.vala',
     
     'controllers/AppController.vala',
     

@@ -1,0 +1,56 @@
+Build started at 2018-08-14T10:09:11.440429
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.45.0
+Source dir: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier
+Build dir: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build
+Build type: native build
+Project name: com.github.fleury08.prettifier
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.c -o /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.exe
+Native C compiler: cc (gcc 5.4.0 "cc (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609")
+Running compile:
+Working directory:  /tmp/tmpteyehjlv
+Command line:  valac /tmp/tmpteyehjlv/testfile.vala -C -C -o /tmp/tmpteyehjlv/output.obj 
+
+Code:
+ class MesonSanityCheck : Object { }
+Compiler stdout:
+ Compilation succeeded - 1 warning(s)
+
+Compiler stderr:
+ warning: --output and -o have no effect when -C or --ccode is set
+
+Native Vala compiler: valac (valac 0.36.15)
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Found pkg-config: /usr/bin/pkg-config (0.29.1)
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency glib-2.0 found: YES 2.48.2
+WARNING: GLib compiled dependencies do not work reliably with 
+the current version of GLib. See the following upstream issue: https://bugzilla.gnome.org/show_bug.cgi?id=774368
+Configuring config.h using configuration
+Determining dependency 'gobject-2.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency gobject-2.0 found: YES 2.48.2
+Determining dependency 'glib-2.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency glib-2.0 found: YES 2.48.2
+Determining dependency 'granite' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency granite found: YES 0.5
+Determining dependency 'gtk+-3.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency gtk+-3.0 found: YES 3.18.9
+Determining dependency 'json-glib-1.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency json-glib-1.0 found: YES 1.1.2
+Determining dependency 'libxml-2.0' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency libxml-2.0 found: YES 2.9.3
+Program meson/post_install.py found: YES (/usr/bin/env python3 /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/meson/post_install.py)
+Build targets in project: 6
+Found ninja-1.8.2 at /usr/bin/ninja

@@ -25,8 +25,8 @@ namespace App.Controllers {
         public AppController (Gtk.Application application) {
             this.application = application;
             this.window = new Window (this.application);
-            this.headerbar = new HeaderBar ();
             this.app_view = new AppView ();
+            this.headerbar = new HeaderBar (this.app_view);
 
             this.window.add (this.app_view);
             this.window.set_default_size (800, 640);
@@ -34,7 +34,7 @@ namespace App.Controllers {
             this.window.set_titlebar (this.headerbar);
             this.application.add_window (window);
 
-            
+
         }
 
         public void activate () {
