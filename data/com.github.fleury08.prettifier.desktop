@@ -6,5 +6,5 @@ Exec=com.github.fleury08.prettifier
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GNOME;GTK;
-Keywords=app;vala;
+Categories=GNOME;GTK;TextTools;
+Keywords=app;vala;xml;json;pretty;
