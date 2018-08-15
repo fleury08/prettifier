@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0.0-orange.svg">
+    <img src="https://img.shields.io/badge/Release-v%201.0.1-orange.svg">
   </a>
 </p>
 
@@ -90,3 +90,7 @@ To help, access the links below:
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+### P.S.
+
+Big shout-out to [Archetype app](https://appcenter.elementary.io/com.github.kjlaw89.archetype.desktop), without it this app wouldn't happen.
