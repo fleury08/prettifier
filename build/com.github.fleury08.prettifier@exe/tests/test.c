@@ -56,7 +56,7 @@ enum  {
 };
 AppTestsTesting* app_tests_testing_new (gchar** args, int args_length1);
 AppTestsTesting* app_tests_testing_construct (GType object_type, gchar** args, int args_length1);
-static void __lambda9_ (AppTestsTesting* self);
+static void __lambda11_ (AppTestsTesting* self);
 void app_tests_assert_string_compare (const gchar* expected, const gchar* actual, const gchar* compare);
 void app_tests_assert_bool_compare (gboolean* expected, gboolean* actual, const gchar* compare);
 void app_tests_assert_true (gboolean* expected);
@@ -64,12 +64,12 @@ void app_tests_assert_false (gboolean* expected);
 void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* compare);
 void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gchar* compare);
 void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const gchar* compare);
-static void ___lambda9__gtest_data_func (gpointer self);
+static void ___lambda11__gtest_data_func (gpointer self);
 void app_tests_testing_run (AppTestsTesting* self);
 static void app_tests_testing_finalize (AppTestsTesting * obj);
 
 
-static void __lambda9_ (AppTestsTesting* self) {
+static void __lambda11_ (AppTestsTesting* self) {
 	gboolean _tmp0_;
 	gboolean _tmp1_;
 	gboolean _tmp2_;
@@ -118,9 +118,9 @@ static void __lambda9_ (AppTestsTesting* self) {
 }
 
 
-static void ___lambda9__gtest_data_func (gpointer self) {
+static void ___lambda11__gtest_data_func (gpointer self) {
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
-	__lambda9_ ((AppTestsTesting*) self);
+	__lambda11_ ((AppTestsTesting*) self);
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
 	app_tests_testing_unref (self);
 #line 127 "test.c"
@@ -134,7 +134,7 @@ AppTestsTesting* app_tests_testing_construct (GType object_type, gchar** args, i
 #line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
 	g_test_init (&args_length1, &args, NULL);
 #line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
-	g_test_add_data_func ("/init", app_tests_testing_ref (self), ___lambda9__gtest_data_func);
+	g_test_add_data_func ("/init", app_tests_testing_ref (self), ___lambda11__gtest_data_func);
 #line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
 	return self;
 #line 141 "test.c"

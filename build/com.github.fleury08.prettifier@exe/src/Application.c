@@ -64,9 +64,9 @@ enum  {
 AppApplication* app_application_new (void);
 AppApplication* app_application_construct (GType object_type);
 #define APP_CONFIGS_CONSTANTS_ID "com.github.fleury08.prettifier"
-static void __lambda8_ (AppApplication* self);
+static void __lambda10_ (AppApplication* self);
 void app_controllers_app_controller_quit (AppControllersAppController* self);
-static void ___lambda8__g_simple_action_activate (GSimpleAction* _sender, GVariant* parameter, gpointer self);
+static void ___lambda10__g_simple_action_activate (GSimpleAction* _sender, GVariant* parameter, gpointer self);
 static void app_application_real_activate (GApplication* base);
 AppControllersAppController* app_controllers_app_controller_new (GtkApplication* application);
 AppControllersAppController* app_controllers_app_controller_construct (GType object_type, GtkApplication* application);
@@ -77,7 +77,7 @@ static void app_application_finalize (GObject * obj);
 /**
          * Constructs a new {@code Application} object.
          */
-static void __lambda8_ (AppApplication* self) {
+static void __lambda10_ (AppApplication* self) {
 	AppControllersAppController* _tmp0_;
 #line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
 	_tmp0_ = self->controller;
@@ -87,9 +87,9 @@ static void __lambda8_ (AppApplication* self) {
 }
 
 
-static void ___lambda8__g_simple_action_activate (GSimpleAction* _sender, GVariant* parameter, gpointer self) {
+static void ___lambda10__g_simple_action_activate (GSimpleAction* _sender, GVariant* parameter, gpointer self) {
 #line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
-	__lambda8_ ((AppApplication*) self);
+	__lambda10_ ((AppApplication*) self);
 #line 94 "Application.c"
 }
 
@@ -105,7 +105,7 @@ AppApplication* app_application_construct (GType object_type) {
 #line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
 	quit_action = _tmp0_;
 #line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
-	g_signal_connect_object (quit_action, "activate", (GCallback) ___lambda8__g_simple_action_activate, self, 0);
+	g_signal_connect_object (quit_action, "activate", (GCallback) ___lambda10__g_simple_action_activate, self, 0);
 #line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
 	g_action_map_add_action ((GActionMap*) self, (GAction*) quit_action);
 #line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"

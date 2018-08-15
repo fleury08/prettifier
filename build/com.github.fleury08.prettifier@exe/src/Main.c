@@ -103,9 +103,9 @@ static Block2Data* block2_data_ref (Block2Data* _data2_);
 static void block2_data_unref (void * _userdata_);
 AppTestsTesting* app_tests_testing_new (gchar** args, int args_length1);
 AppTestsTesting* app_tests_testing_construct (GType object_type, gchar** args, int args_length1);
-static gboolean ___lambda10_ (Block2Data* _data2_);
+static gboolean ___lambda12_ (Block2Data* _data2_);
 void app_tests_testing_run (AppTestsTesting* self);
-static gboolean ____lambda10__gsource_func (gpointer self);
+static gboolean ____lambda12__gsource_func (gpointer self);
 GType app_application_get_type (void) G_GNUC_CONST;
 AppApplication* app_application_new (void);
 AppApplication* app_application_construct (GType object_type);
@@ -145,7 +145,7 @@ static void block2_data_unref (void * _userdata_) {
 }
 
 
-static gboolean ___lambda10_ (Block2Data* _data2_) {
+static gboolean ___lambda12_ (Block2Data* _data2_) {
 	gboolean result = FALSE;
 	AppTestsTesting* _tmp0_;
 #line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
@@ -162,9 +162,9 @@ static gboolean ___lambda10_ (Block2Data* _data2_) {
 }
 
 
-static gboolean ____lambda10__gsource_func (gpointer self) {
+static gboolean ____lambda12__gsource_func (gpointer self) {
 	gboolean result;
-	result = ___lambda10_ (self);
+	result = ___lambda12_ (self);
 #line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 	return result;
 #line 171 "Main.c"
@@ -276,7 +276,7 @@ gint main_main (gchar** args, int args_length1) {
 #line 39 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		_data2_->testing = _tmp9_;
 #line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
-		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, ____lambda10__gsource_func, block2_data_ref (_data2_), block2_data_unref);
+		g_idle_add_full (G_PRIORITY_DEFAULT_IDLE, ____lambda12__gsource_func, block2_data_ref (_data2_), block2_data_unref);
 #line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"
 		gtk_main ();
 #line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Main.vala"

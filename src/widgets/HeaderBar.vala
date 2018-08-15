@@ -18,6 +18,7 @@ namespace App.Widgets {
         public Gtk.Button prettify_button { get; private set;}
         public Gtk.Switch format_switch { get; private set;}
         public Gtk.Button copy_to_clipboard {get; private set;}
+        public Gtk.CheckButton auto_prettify {get; private set;}
         private TypeOfFile type_of_file { get; private set;}
         private App.Controllers.AppController app {get;set;}
 
@@ -34,8 +35,7 @@ namespace App.Widgets {
             this.prettify_button.set_image (new Gtk.Image .from_icon_name ("media-playback-start", Gtk.IconSize.LARGE_TOOLBAR));
             this.prettify_button.tooltip_text = _("Prettify input text");
             this.prettify_button.clicked.connect (() => {
-                string prettified_text = this.prettify(this.app.app_view.input_text.buffer.text);
-                this.app.app_view.output_text.buffer.text = prettified_text;
+                prettify_action();
             });
 
             this.copy_to_clipboard = new Gtk.Button();
@@ -56,6 +56,16 @@ namespace App.Widgets {
                 print("\nFormat is set to :"+type_of_file.to_string());
             });
 
+            this.auto_prettify = new Gtk.CheckButton.with_label("Auto Prettify");
+            this.auto_prettify.active = true;
+            this.auto_prettify.notify["active"].connect(()=>{
+                if(auto_prettify.active) prettify_action();
+            });
+
+            this.app.app_view.input_text.buffer.changed.connect(()=>{
+                if(auto_prettify.active) prettify_action();
+            });
+
             this.set_title ("Prettifier");
             this.show_close_button = true;
             this.pack_end (new Gtk.Label("XML"));
@@ -63,7 +73,13 @@ namespace App.Widgets {
             this.pack_end (new Gtk.Label("JSON"));
             this.pack_start (prettify_button);
             this.pack_start (copy_to_clipboard);
+            this.pack_start (auto_prettify);
             
+        }
+
+        private void prettify_action(){
+            string prettified_text = this.prettify(this.app.app_view.input_text.buffer.text);
+            this.app.app_view.output_text.buffer.text = prettified_text;
         }
 
         private string prettify(string text){
