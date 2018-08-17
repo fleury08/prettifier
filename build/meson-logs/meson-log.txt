@@ -1,26 +1,26 @@
-Build started at 2018-08-14T10:09:11.440429
+Build started at 2018-08-17T14:09:52.044772
 Main binary: /usr/bin/python3
 Python system: Linux
 The Meson build system
 Version: 0.45.0
-Source dir: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier
-Build dir: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build
+Source dir: /home/jaroslav/Projects/elementaryOS/prettifier
+Build dir: /home/jaroslav/Projects/elementaryOS/prettifier/build
 Build type: native build
 Project name: com.github.fleury08.prettifier
 Sanity testing C compiler: cc
 Is cross compiler: False.
-Sanity check compiler command line: cc /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.c -o /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.exe
+Sanity check compiler command line: cc /home/jaroslav/Projects/elementaryOS/prettifier/build/meson-private/sanitycheckc.c -o /home/jaroslav/Projects/elementaryOS/prettifier/build/meson-private/sanitycheckc.exe
 Sanity check compile stdout:
 
 -----
 Sanity check compile stderr:
 
 -----
-Running test binary command: /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/build/meson-private/sanitycheckc.exe
+Running test binary command: /home/jaroslav/Projects/elementaryOS/prettifier/build/meson-private/sanitycheckc.exe
 Native C compiler: cc (gcc 5.4.0 "cc (Ubuntu 5.4.0-6ubuntu1~16.04.10) 5.4.0 20160609")
 Running compile:
-Working directory:  /tmp/tmpteyehjlv
-Command line:  valac /tmp/tmpteyehjlv/testfile.vala -C -C -o /tmp/tmpteyehjlv/output.obj 
+Working directory:  /tmp/tmpfqugshky
+Command line:  valac /tmp/tmpfqugshky/testfile.vala -C -C -o /tmp/tmpfqugshky/output.obj 
 
 Code:
  class MesonSanityCheck : Object { }
@@ -51,6 +51,6 @@ Determining dependency 'json-glib-1.0' with pkg-config executable '/usr/bin/pkg-
 Native dependency json-glib-1.0 found: YES 1.1.2
 Determining dependency 'libxml-2.0' with pkg-config executable '/usr/bin/pkg-config'
 Native dependency libxml-2.0 found: YES 2.9.3
-Program meson/post_install.py found: YES (/usr/bin/env python3 /home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/meson/post_install.py)
+Program meson/post_install.py found: YES (/usr/bin/env python3 /home/jaroslav/Projects/elementaryOS/prettifier/meson/post_install.py)
 Build targets in project: 6
 Found ninja-1.8.2 at /usr/bin/ninja

@@ -83,9 +83,9 @@ static gboolean ___lambda4__gtk_widget_delete_event (GtkWidget* _sender, GdkEven
          * @see build
          */
 static Block3Data* block3_data_ref (Block3Data* _data3_) {
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	g_atomic_int_inc (&_data3_->_ref_count_);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return _data3_;
 #line 91 "Window.c"
 }
@@ -94,17 +94,17 @@ static Block3Data* block3_data_ref (Block3Data* _data3_) {
 static void block3_data_unref (void * _userdata_) {
 	Block3Data* _data3_;
 	_data3_ = (Block3Data*) _userdata_;
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	if (g_atomic_int_dec_and_test (&_data3_->_ref_count_)) {
 #line 100 "Window.c"
 		AppWindow* self;
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		self = _data3_->self;
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_g_object_unref0 (_data3_->settings);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_g_object_unref0 (self);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		g_slice_free (Block3Data, _data3_);
 #line 110 "Window.c"
 	}
@@ -112,7 +112,7 @@ static void block3_data_unref (void * _userdata_) {
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 118 "Window.c"
 }
@@ -127,25 +127,25 @@ static gboolean __lambda4_ (Block3Data* _data3_) {
 	gint _tmp1_ = 0;
 	AppConfigsSettings* _tmp2_;
 	AppConfigsSettings* _tmp3_;
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	self = _data3_->self;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	gtk_window_get_position ((GtkWindow*) self, &_tmp0_, &_tmp1_);
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	root_x = _tmp0_;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	root_y = _tmp1_;
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 58 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp2_ = _data3_->settings;
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 58 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	app_configs_settings_set_window_x (_tmp2_, root_x);
-#line 59 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 59 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp3_ = _data3_->settings;
-#line 59 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 59 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	app_configs_settings_set_window_y (_tmp3_, root_y);
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 60 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	result = FALSE;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 60 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return result;
 #line 151 "Window.c"
 }
@@ -154,7 +154,7 @@ static gboolean __lambda4_ (Block3Data* _data3_) {
 static gboolean ___lambda4__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda4_ (self);
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return result;
 #line 160 "Window.c"
 }
@@ -179,102 +179,102 @@ AppWindow* app_window_construct (GType object_type, GtkApplication* app) {
 	GtkCssProvider* css_provider = NULL;
 	GtkCssProvider* _tmp14_;
 	GdkScreen* _tmp15_;
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	g_return_val_if_fail (app != NULL, NULL);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_data3_ = g_slice_new0 (Block3Data);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_data3_->_ref_count_ = 1;
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp0_ = app;
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	self = (AppWindow*) g_object_new (object_type, "application", _tmp0_, "icon-name", APP_CONFIGS_CONSTANTS_APP_ICON, "resizable", TRUE, NULL);
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_data3_->self = g_object_ref (self);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp1_ = app_configs_settings_get_instance ();
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_data3_->settings = _tmp2_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp3_ = _data3_->settings;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp4_ = app_configs_settings_get_window_x (_tmp3_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp5_ = _tmp4_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	x = _tmp5_;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp6_ = _data3_->settings;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp7_ = app_configs_settings_get_window_y (_tmp6_);
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp8_ = _tmp7_;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	y = _tmp8_;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp10_ = x;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	if (_tmp10_ != -1) {
 #line 221 "Window.c"
 		gint _tmp11_;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_tmp11_ = y;
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_tmp9_ = _tmp11_ != -1;
 #line 227 "Window.c"
 	} else {
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_tmp9_ = FALSE;
 #line 231 "Window.c"
 	}
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	if (_tmp9_) {
 #line 235 "Window.c"
 		gint _tmp12_;
 		gint _tmp13_;
-#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_tmp12_ = x;
-#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		_tmp13_ = y;
-#line 41 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 41 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 		gtk_window_move ((GtkWindow*) self, _tmp12_, _tmp13_);
 #line 244 "Window.c"
 	}
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp14_ = gtk_css_provider_new ();
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	css_provider = _tmp14_;
-#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 45 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	gtk_css_provider_load_from_resource (css_provider, APP_CONFIGS_CONSTANTS_URL_CSS);
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_tmp15_ = gdk_screen_get_default ();
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	gtk_style_context_add_provider_for_screen (_tmp15_, (GtkStyleProvider*) css_provider, (guint) GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	g_signal_connect_data ((GtkWidget*) self, "delete-event", (GCallback) ___lambda4__gtk_widget_delete_event, block3_data_ref (_data3_), (GClosureNotify) block3_data_unref, 0);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_g_object_unref0 (css_provider);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	block3_data_unref (_data3_);
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	_data3_ = NULL;
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return self;
 #line 266 "Window.c"
 }
 
 
 AppWindow* app_window_new (GtkApplication* app) {
-#line 27 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 27 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	return app_window_construct (APP_TYPE_WINDOW, app);
 #line 273 "Window.c"
 }
 
 
 static void app_window_class_init (AppWindowClass * klass) {
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Window.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Window.vala"
 	app_window_parent_class = g_type_class_peek_parent (klass);
 #line 280 "Window.c"
 }

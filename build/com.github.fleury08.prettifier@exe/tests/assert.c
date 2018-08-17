@@ -79,30 +79,30 @@ void app_tests_assert_string_compare (const gchar* expected, const gchar* actual
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (compare != NULL);
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = compare;
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = _tmp0_;
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string ("!=")))) {
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 97 "assert.c"
 			default:
 			{
 				const gchar* _tmp4_;
 				const gchar* _tmp5_;
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp4_ = expected;
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp5_ = actual;
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (g_strcmp0 (_tmp4_, _tmp5_) == 0) {
 #line 108 "assert.c"
 					const gchar* _tmp6_;
@@ -117,62 +117,62 @@ void app_tests_assert_string_compare (const gchar* expected, const gchar* actual
 					gchar* _tmp15_;
 					const gchar* _tmp16_;
 					const gchar* _tmp17_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp6_ = expected;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp7_ = g_strconcat ("Expected '", _tmp6_, NULL);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp8_ = _tmp7_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp9_ = g_strconcat (_tmp8_, "', got '", NULL);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp10_ = _tmp9_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp11_ = actual;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp12_ = g_strconcat (_tmp10_, _tmp11_, NULL);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp13_ = _tmp12_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp14_ = g_strconcat (_tmp13_, "'", NULL);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp15_ = _tmp14_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:18: %s", _tmp15_);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp15_);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp13_);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp10_);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp8_);
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp16_ = expected;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp17_ = actual;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (g_strcmp0 (_tmp16_, _tmp17_) != 0, "expected != actual");
 #line 157 "assert.c"
 				}
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 21 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 161 "assert.c"
 			}
 		}
 	} else {
-#line 15 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 15 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 167 "assert.c"
 			default:
 			{
 				const gchar* _tmp18_;
 				const gchar* _tmp19_;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp18_ = expected;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp19_ = actual;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (g_strcmp0 (_tmp18_, _tmp19_) != 0) {
 #line 178 "assert.c"
 					const gchar* _tmp20_;
@@ -187,45 +187,45 @@ void app_tests_assert_string_compare (const gchar* expected, const gchar* actual
 					gchar* _tmp29_;
 					const gchar* _tmp30_;
 					const gchar* _tmp31_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp20_ = expected;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp21_ = g_strconcat ("Expected '", _tmp20_, NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp22_ = _tmp21_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp23_ = g_strconcat (_tmp22_, "' to not equal '", NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp24_ = _tmp23_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp25_ = actual;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp26_ = g_strconcat (_tmp24_, _tmp25_, NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp27_ = _tmp26_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp28_ = g_strconcat (_tmp27_, "'", NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp29_ = _tmp28_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:25: %s", _tmp29_);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp29_);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp27_);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp24_);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp22_);
-#line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 26 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp30_ = expected;
-#line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 26 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp31_ = actual;
-#line 26 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 26 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (g_strcmp0 (_tmp30_, _tmp31_) == 0, "expected == actual");
 #line 227 "assert.c"
 				}
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 231 "assert.c"
 			}
@@ -235,25 +235,25 @@ void app_tests_assert_string_compare (const gchar* expected, const gchar* actual
 
 
 static gboolean _bool_equal (const gboolean * s1, const gboolean * s2) {
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == s2) {
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return TRUE;
 #line 243 "assert.c"
 	}
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == NULL) {
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 249 "assert.c"
 	}
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s2 == NULL) {
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 255 "assert.c"
 	}
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return (*s1) == (*s2);
 #line 259 "assert.c"
 }
@@ -289,30 +289,30 @@ void app_tests_assert_bool_compare (gboolean* expected, gboolean* actual, const 
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 33 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 33 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (compare != NULL);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = compare;
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = _tmp0_;
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string ("!=")))) {
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 307 "assert.c"
 			default:
 			{
 				gboolean* _tmp4_;
 				gboolean* _tmp5_;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp4_ = expected;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp5_ = actual;
-#line 36 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 36 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_bool_equal (_tmp4_, _tmp5_) == TRUE) {
 #line 318 "assert.c"
 					gboolean* _tmp6_;
@@ -331,74 +331,74 @@ void app_tests_assert_bool_compare (gboolean* expected, gboolean* actual, const 
 					gchar* _tmp19_;
 					gboolean* _tmp20_;
 					gboolean* _tmp21_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp6_ = expected;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp7_ = bool_to_string (*_tmp6_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp8_ = _tmp7_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp9_ = g_strconcat ("Expected '", _tmp8_, NULL);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp10_ = _tmp9_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp11_ = g_strconcat (_tmp10_, "', got '", NULL);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp12_ = _tmp11_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp13_ = actual;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp14_ = bool_to_string (*_tmp13_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp15_ = _tmp14_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp16_ = g_strconcat (_tmp12_, _tmp15_, NULL);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp17_ = _tmp16_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp18_ = g_strconcat (_tmp17_, "'", NULL);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp19_ = _tmp18_;
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:37: %s", _tmp19_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp19_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp17_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp15_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp12_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp10_);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp8_);
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp20_ = expected;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp21_ = actual;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_bool_equal (_tmp20_, _tmp21_) != TRUE, "expected != actual");
 #line 383 "assert.c"
 				}
-#line 40 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 40 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 387 "assert.c"
 			}
 		}
 	} else {
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 393 "assert.c"
 			default:
 			{
 				gboolean* _tmp22_;
 				gboolean* _tmp23_;
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 43 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp22_ = expected;
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 43 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp23_ = actual;
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 43 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_bool_equal (_tmp22_, _tmp23_) != TRUE) {
 #line 404 "assert.c"
 					gboolean* _tmp24_;
@@ -417,57 +417,57 @@ void app_tests_assert_bool_compare (gboolean* expected, gboolean* actual, const 
 					gchar* _tmp37_;
 					gboolean* _tmp38_;
 					gboolean* _tmp39_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp24_ = expected;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp25_ = bool_to_string (*_tmp24_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp26_ = _tmp25_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp27_ = g_strconcat ("Expected '", _tmp26_, NULL);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp28_ = _tmp27_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp29_ = g_strconcat (_tmp28_, "' to not equal '", NULL);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp30_ = _tmp29_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp31_ = actual;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp32_ = bool_to_string (*_tmp31_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp33_ = _tmp32_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp34_ = g_strconcat (_tmp30_, _tmp33_, NULL);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp35_ = _tmp34_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp36_ = g_strconcat (_tmp35_, "'", NULL);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp37_ = _tmp36_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:44: %s", _tmp37_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp37_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp35_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp33_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp30_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp28_);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp26_);
-#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 45 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp38_ = expected;
-#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 45 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp39_ = actual;
-#line 45 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 45 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_bool_equal (_tmp38_, _tmp39_) == TRUE, "expected == actual");
 #line 469 "assert.c"
 				}
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 473 "assert.c"
 			}
@@ -477,25 +477,25 @@ void app_tests_assert_bool_compare (gboolean* expected, gboolean* actual, const 
 
 
 static gboolean _int_equal (const gint * s1, const gint * s2) {
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == s2) {
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return TRUE;
 #line 485 "assert.c"
 	}
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == NULL) {
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 491 "assert.c"
 	}
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s2 == NULL) {
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 497 "assert.c"
 	}
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return (*s1) == (*s2);
 #line 501 "assert.c"
 }
@@ -505,38 +505,38 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label1 = 0;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label2 = 0;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label3 = 0;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label4 = 0;
-#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 51 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (compare != NULL);
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = compare;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = _tmp0_;
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string (">")))) {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 531 "assert.c"
 			default:
 			{
 				gint* _tmp4_;
 				gint* _tmp5_;
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp4_ = expected;
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp5_ = actual;
-#line 54 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 54 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp4_) <= (*_tmp5_)) {
 #line 542 "assert.c"
 					gint* _tmp6_;
@@ -551,62 +551,62 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp15_;
 					gint* _tmp16_;
 					gint* _tmp17_;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp6_ = expected;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp7_ = g_strdup_printf ("%i", *_tmp6_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp8_ = _tmp7_;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp9_ = g_strconcat (_tmp8_, " is less than or equal to ", NULL);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp10_ = _tmp9_;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp11_ = actual;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp12_ = g_strdup_printf ("%i", *_tmp11_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp13_ = _tmp12_;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp14_ = g_strconcat (_tmp10_, _tmp13_, NULL);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp15_ = _tmp14_;
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:55: %s", _tmp15_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp15_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp13_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp10_);
-#line 55 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 55 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp8_);
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp16_ = expected;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp17_ = actual;
-#line 56 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 56 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp16_) <= (*_tmp17_), "expected <= actual");
 #line 591 "assert.c"
 				}
-#line 58 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 58 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 595 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label1) ? _tmp2_label1 : (_tmp2_label1 = g_quark_from_static_string (">=")))) {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 601 "assert.c"
 			default:
 			{
 				gint* _tmp18_;
 				gint* _tmp19_;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 60 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp18_ = expected;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 60 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp19_ = actual;
-#line 60 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 60 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp18_) < (*_tmp19_)) {
 #line 612 "assert.c"
 					gint* _tmp20_;
@@ -621,62 +621,62 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp29_;
 					gint* _tmp30_;
 					gint* _tmp31_;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp20_ = expected;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp21_ = g_strdup_printf ("%i", *_tmp20_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp22_ = _tmp21_;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp23_ = g_strconcat (_tmp22_, " is less than ", NULL);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp24_ = _tmp23_;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp25_ = actual;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp26_ = g_strdup_printf ("%i", *_tmp25_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp27_ = _tmp26_;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp28_ = g_strconcat (_tmp24_, _tmp27_, NULL);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp29_ = _tmp28_;
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:61: %s", _tmp29_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp29_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp27_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp24_);
-#line 61 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 61 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp22_);
-#line 62 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 62 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp30_ = expected;
-#line 62 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 62 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp31_ = actual;
-#line 62 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 62 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp30_) < (*_tmp31_), "expected < actual");
 #line 661 "assert.c"
 				}
-#line 64 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 64 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 665 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label2) ? _tmp2_label2 : (_tmp2_label2 = g_quark_from_static_string ("<")))) {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 671 "assert.c"
 			default:
 			{
 				gint* _tmp32_;
 				gint* _tmp33_;
-#line 66 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 66 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp32_ = expected;
-#line 66 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 66 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp33_ = actual;
-#line 66 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 66 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp32_) >= (*_tmp33_)) {
 #line 682 "assert.c"
 					gint* _tmp34_;
@@ -691,62 +691,62 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp43_;
 					gint* _tmp44_;
 					gint* _tmp45_;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp34_ = expected;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp35_ = g_strdup_printf ("%i", *_tmp34_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp36_ = _tmp35_;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp37_ = g_strconcat (_tmp36_, " is greater than or equal to ", NULL);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp38_ = _tmp37_;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp39_ = actual;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp40_ = g_strdup_printf ("%i", *_tmp39_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp41_ = _tmp40_;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp42_ = g_strconcat (_tmp38_, _tmp41_, NULL);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp43_ = _tmp42_;
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:67: %s", _tmp43_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp43_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp41_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp38_);
-#line 67 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 67 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp36_);
-#line 68 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 68 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp44_ = expected;
-#line 68 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 68 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp45_ = actual;
-#line 68 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 68 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp44_) >= (*_tmp45_), "expected >= actual");
 #line 731 "assert.c"
 				}
-#line 70 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 70 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 735 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label3) ? _tmp2_label3 : (_tmp2_label3 = g_quark_from_static_string ("<=")))) {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 741 "assert.c"
 			default:
 			{
 				gint* _tmp46_;
 				gint* _tmp47_;
-#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 72 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp46_ = expected;
-#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 72 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp47_ = actual;
-#line 72 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 72 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp46_) > (*_tmp47_)) {
 #line 752 "assert.c"
 					gint* _tmp48_;
@@ -761,62 +761,62 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp57_;
 					gint* _tmp58_;
 					gint* _tmp59_;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp48_ = expected;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp49_ = g_strdup_printf ("%i", *_tmp48_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp50_ = _tmp49_;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp51_ = g_strconcat (_tmp50_, " is greater than ", NULL);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp52_ = _tmp51_;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp53_ = actual;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp54_ = g_strdup_printf ("%i", *_tmp53_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp55_ = _tmp54_;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp56_ = g_strconcat (_tmp52_, _tmp55_, NULL);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp57_ = _tmp56_;
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:73: %s", _tmp57_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp57_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp55_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp52_);
-#line 73 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 73 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp50_);
-#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 74 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp58_ = expected;
-#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 74 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp59_ = actual;
-#line 74 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 74 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp58_) > (*_tmp59_), "expected > actual");
 #line 801 "assert.c"
 				}
-#line 76 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 76 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 805 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label4) ? _tmp2_label4 : (_tmp2_label4 = g_quark_from_static_string ("!=")))) {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 811 "assert.c"
 			default:
 			{
 				gint* _tmp60_;
 				gint* _tmp61_;
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp60_ = expected;
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp61_ = actual;
-#line 78 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 78 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_int_equal (_tmp60_, _tmp61_) == TRUE) {
 #line 822 "assert.c"
 					gint* _tmp62_;
@@ -831,62 +831,62 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp71_;
 					gint* _tmp72_;
 					gint* _tmp73_;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp62_ = expected;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp63_ = g_strdup_printf ("%i", *_tmp62_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp64_ = _tmp63_;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp65_ = g_strconcat (_tmp64_, " is equal to ", NULL);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp66_ = _tmp65_;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp67_ = actual;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp68_ = g_strdup_printf ("%i", *_tmp67_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp69_ = _tmp68_;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp70_ = g_strconcat (_tmp66_, _tmp69_, NULL);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp71_ = _tmp70_;
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:79: %s", _tmp71_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp71_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp69_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp66_);
-#line 79 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 79 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp64_);
-#line 80 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 80 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp72_ = expected;
-#line 80 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 80 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp73_ = actual;
-#line 80 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 80 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_int_equal (_tmp72_, _tmp73_) != TRUE, "expected != actual");
 #line 871 "assert.c"
 				}
-#line 82 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 82 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 875 "assert.c"
 			}
 		}
 	} else {
-#line 52 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 52 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 881 "assert.c"
 			default:
 			{
 				gint* _tmp74_;
 				gint* _tmp75_;
-#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 85 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp74_ = expected;
-#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 85 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp75_ = actual;
-#line 85 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 85 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_int_equal (_tmp74_, _tmp75_) != TRUE) {
 #line 892 "assert.c"
 					gint* _tmp76_;
@@ -901,45 +901,45 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 					gchar* _tmp85_;
 					gint* _tmp86_;
 					gint* _tmp87_;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp76_ = expected;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp77_ = g_strdup_printf ("%i", *_tmp76_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp78_ = _tmp77_;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp79_ = g_strconcat (_tmp78_, " is not equal to ", NULL);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp80_ = _tmp79_;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp81_ = actual;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp82_ = g_strdup_printf ("%i", *_tmp81_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp83_ = _tmp82_;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp84_ = g_strconcat (_tmp80_, _tmp83_, NULL);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp85_ = _tmp84_;
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:86: %s", _tmp85_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp85_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp83_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp80_);
-#line 86 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 86 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp78_);
-#line 87 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 87 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp86_ = expected;
-#line 87 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 87 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp87_ = actual;
-#line 87 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 87 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_int_equal (_tmp86_, _tmp87_) == TRUE, "expected == actual");
 #line 941 "assert.c"
 				}
-#line 89 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 89 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 945 "assert.c"
 			}
@@ -949,25 +949,25 @@ void app_tests_assert_int_compare (gint* expected, gint* actual, const gchar* co
 
 
 static gboolean _float_equal (const gfloat * s1, const gfloat * s2) {
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == s2) {
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return TRUE;
 #line 957 "assert.c"
 	}
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == NULL) {
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 963 "assert.c"
 	}
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s2 == NULL) {
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 969 "assert.c"
 	}
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return (*s1) == (*s2);
 #line 973 "assert.c"
 }
@@ -977,38 +977,38 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label1 = 0;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label2 = 0;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label3 = 0;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label4 = 0;
-#line 93 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 93 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (compare != NULL);
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = compare;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = _tmp0_;
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string (">")))) {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1003 "assert.c"
 			default:
 			{
 				gfloat* _tmp4_;
 				gfloat* _tmp5_;
-#line 96 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 96 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp4_ = expected;
-#line 96 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 96 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp5_ = actual;
-#line 96 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 96 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp4_) <= (*_tmp5_)) {
 #line 1014 "assert.c"
 					gfloat* _tmp6_;
@@ -1023,62 +1023,62 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp15_;
 					gfloat* _tmp16_;
 					gfloat* _tmp17_;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp6_ = expected;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp7_ = g_strdup_printf ("%g", *_tmp6_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp8_ = _tmp7_;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp9_ = g_strconcat (_tmp8_, " is less than or equal to ", NULL);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp10_ = _tmp9_;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp11_ = actual;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp12_ = g_strdup_printf ("%g", *_tmp11_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp13_ = _tmp12_;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp14_ = g_strconcat (_tmp10_, _tmp13_, NULL);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp15_ = _tmp14_;
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:97: %s", _tmp15_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp15_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp13_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp10_);
-#line 97 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 97 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp8_);
-#line 98 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 98 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp16_ = expected;
-#line 98 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 98 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp17_ = actual;
-#line 98 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 98 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp16_) <= (*_tmp17_), "expected <= actual");
 #line 1063 "assert.c"
 				}
-#line 100 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 100 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1067 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label1) ? _tmp2_label1 : (_tmp2_label1 = g_quark_from_static_string (">=")))) {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1073 "assert.c"
 			default:
 			{
 				gfloat* _tmp18_;
 				gfloat* _tmp19_;
-#line 102 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 102 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp18_ = expected;
-#line 102 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 102 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp19_ = actual;
-#line 102 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 102 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp18_) < (*_tmp19_)) {
 #line 1084 "assert.c"
 					gfloat* _tmp20_;
@@ -1093,62 +1093,62 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp29_;
 					gfloat* _tmp30_;
 					gfloat* _tmp31_;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp20_ = expected;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp21_ = g_strdup_printf ("%g", *_tmp20_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp22_ = _tmp21_;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp23_ = g_strconcat (_tmp22_, " is less than ", NULL);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp24_ = _tmp23_;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp25_ = actual;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp26_ = g_strdup_printf ("%g", *_tmp25_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp27_ = _tmp26_;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp28_ = g_strconcat (_tmp24_, _tmp27_, NULL);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp29_ = _tmp28_;
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:103: %s", _tmp29_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp29_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp27_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp24_);
-#line 103 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 103 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp22_);
-#line 104 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 104 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp30_ = expected;
-#line 104 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 104 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp31_ = actual;
-#line 104 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 104 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp30_) < (*_tmp31_), "expected < actual");
 #line 1133 "assert.c"
 				}
-#line 106 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 106 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1137 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label2) ? _tmp2_label2 : (_tmp2_label2 = g_quark_from_static_string ("<")))) {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1143 "assert.c"
 			default:
 			{
 				gfloat* _tmp32_;
 				gfloat* _tmp33_;
-#line 108 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 108 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp32_ = expected;
-#line 108 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 108 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp33_ = actual;
-#line 108 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 108 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp32_) >= (*_tmp33_)) {
 #line 1154 "assert.c"
 					gfloat* _tmp34_;
@@ -1163,62 +1163,62 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp43_;
 					gfloat* _tmp44_;
 					gfloat* _tmp45_;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp34_ = expected;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp35_ = g_strdup_printf ("%g", *_tmp34_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp36_ = _tmp35_;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp37_ = g_strconcat (_tmp36_, " is greater than or equal to ", NULL);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp38_ = _tmp37_;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp39_ = actual;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp40_ = g_strdup_printf ("%g", *_tmp39_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp41_ = _tmp40_;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp42_ = g_strconcat (_tmp38_, _tmp41_, NULL);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp43_ = _tmp42_;
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:109: %s", _tmp43_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp43_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp41_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp38_);
-#line 109 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 109 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp36_);
-#line 110 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 110 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp44_ = expected;
-#line 110 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 110 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp45_ = actual;
-#line 110 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 110 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp44_) >= (*_tmp45_), "expected >= actual");
 #line 1203 "assert.c"
 				}
-#line 112 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 112 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1207 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label3) ? _tmp2_label3 : (_tmp2_label3 = g_quark_from_static_string ("<=")))) {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1213 "assert.c"
 			default:
 			{
 				gfloat* _tmp46_;
 				gfloat* _tmp47_;
-#line 114 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 114 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp46_ = expected;
-#line 114 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 114 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp47_ = actual;
-#line 114 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 114 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp46_) > (*_tmp47_)) {
 #line 1224 "assert.c"
 					gfloat* _tmp48_;
@@ -1233,62 +1233,62 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp57_;
 					gfloat* _tmp58_;
 					gfloat* _tmp59_;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp48_ = expected;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp49_ = g_strdup_printf ("%g", *_tmp48_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp50_ = _tmp49_;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp51_ = g_strconcat (_tmp50_, " is greater than ", NULL);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp52_ = _tmp51_;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp53_ = actual;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp54_ = g_strdup_printf ("%g", *_tmp53_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp55_ = _tmp54_;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp56_ = g_strconcat (_tmp52_, _tmp55_, NULL);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp57_ = _tmp56_;
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:115: %s", _tmp57_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp57_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp55_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp52_);
-#line 115 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 115 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp50_);
-#line 116 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 116 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp58_ = expected;
-#line 116 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 116 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp59_ = actual;
-#line 116 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 116 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp58_) > (*_tmp59_), "expected > actual");
 #line 1273 "assert.c"
 				}
-#line 118 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 118 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1277 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label4) ? _tmp2_label4 : (_tmp2_label4 = g_quark_from_static_string ("!=")))) {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1283 "assert.c"
 			default:
 			{
 				gfloat* _tmp60_;
 				gfloat* _tmp61_;
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp60_ = expected;
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp61_ = actual;
-#line 120 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 120 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_float_equal (_tmp60_, _tmp61_) == TRUE) {
 #line 1294 "assert.c"
 					gfloat* _tmp62_;
@@ -1303,62 +1303,62 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp71_;
 					gfloat* _tmp72_;
 					gfloat* _tmp73_;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp62_ = expected;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp63_ = g_strdup_printf ("%g", *_tmp62_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp64_ = _tmp63_;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp65_ = g_strconcat (_tmp64_, " is equal to ", NULL);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp66_ = _tmp65_;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp67_ = actual;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp68_ = g_strdup_printf ("%g", *_tmp67_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp69_ = _tmp68_;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp70_ = g_strconcat (_tmp66_, _tmp69_, NULL);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp71_ = _tmp70_;
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:121: %s", _tmp71_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp71_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp69_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp66_);
-#line 121 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 121 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp64_);
-#line 122 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 122 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp72_ = expected;
-#line 122 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 122 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp73_ = actual;
-#line 122 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 122 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_float_equal (_tmp72_, _tmp73_) != TRUE, "expected != actual");
 #line 1343 "assert.c"
 				}
-#line 124 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 124 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1347 "assert.c"
 			}
 		}
 	} else {
-#line 94 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 94 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1353 "assert.c"
 			default:
 			{
 				gfloat* _tmp74_;
 				gfloat* _tmp75_;
-#line 127 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 127 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp74_ = expected;
-#line 127 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 127 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp75_ = actual;
-#line 127 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 127 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_float_equal (_tmp74_, _tmp75_) != TRUE) {
 #line 1364 "assert.c"
 					gfloat* _tmp76_;
@@ -1373,45 +1373,45 @@ void app_tests_assert_float_compare (gfloat* expected, gfloat* actual, const gch
 					gchar* _tmp85_;
 					gfloat* _tmp86_;
 					gfloat* _tmp87_;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp76_ = expected;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp77_ = g_strdup_printf ("%g", *_tmp76_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp78_ = _tmp77_;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp79_ = g_strconcat (_tmp78_, " is not equal to ", NULL);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp80_ = _tmp79_;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp81_ = actual;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp82_ = g_strdup_printf ("%g", *_tmp81_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp83_ = _tmp82_;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp84_ = g_strconcat (_tmp80_, _tmp83_, NULL);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp85_ = _tmp84_;
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:128: %s", _tmp85_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp85_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp83_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp80_);
-#line 128 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 128 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp78_);
-#line 129 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 129 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp86_ = expected;
-#line 129 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 129 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp87_ = actual;
-#line 129 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 129 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_float_equal (_tmp86_, _tmp87_) == TRUE, "expected == actual");
 #line 1413 "assert.c"
 				}
-#line 131 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 131 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1417 "assert.c"
 			}
@@ -1451,25 +1451,25 @@ static gchar* double_to_string (gdouble self) {
 
 
 static gboolean _double_equal (const gdouble * s1, const gdouble * s2) {
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == s2) {
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return TRUE;
 #line 1459 "assert.c"
 	}
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s1 == NULL) {
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 1465 "assert.c"
 	}
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (s2 == NULL) {
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return FALSE;
 #line 1471 "assert.c"
 	}
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return (*s1) == (*s2);
 #line 1475 "assert.c"
 }
@@ -1479,38 +1479,38 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label1 = 0;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label2 = 0;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label3 = 0;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	static GQuark _tmp2_label4 = 0;
-#line 135 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 135 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (compare != NULL);
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = compare;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = _tmp0_;
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string (">")))) {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1505 "assert.c"
 			default:
 			{
 				gdouble* _tmp4_;
 				gdouble* _tmp5_;
-#line 138 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 138 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp4_ = expected;
-#line 138 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 138 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp5_ = actual;
-#line 138 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 138 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp4_) <= (*_tmp5_)) {
 #line 1516 "assert.c"
 					gdouble* _tmp6_;
@@ -1525,62 +1525,62 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp15_;
 					gdouble* _tmp16_;
 					gdouble* _tmp17_;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp6_ = expected;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp7_ = double_to_string (*_tmp6_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp8_ = _tmp7_;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp9_ = g_strconcat (_tmp8_, " is less than or equal to ", NULL);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp10_ = _tmp9_;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp11_ = actual;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp12_ = double_to_string (*_tmp11_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp13_ = _tmp12_;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp14_ = g_strconcat (_tmp10_, _tmp13_, NULL);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp15_ = _tmp14_;
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:139: %s", _tmp15_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp15_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp13_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp10_);
-#line 139 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 139 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp8_);
-#line 140 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 140 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp16_ = expected;
-#line 140 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 140 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp17_ = actual;
-#line 140 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 140 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp16_) <= (*_tmp17_), "expected <= actual");
 #line 1565 "assert.c"
 				}
-#line 142 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 142 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1569 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label1) ? _tmp2_label1 : (_tmp2_label1 = g_quark_from_static_string (">=")))) {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1575 "assert.c"
 			default:
 			{
 				gdouble* _tmp18_;
 				gdouble* _tmp19_;
-#line 144 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 144 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp18_ = expected;
-#line 144 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 144 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp19_ = actual;
-#line 144 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 144 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp18_) < (*_tmp19_)) {
 #line 1586 "assert.c"
 					gdouble* _tmp20_;
@@ -1595,62 +1595,62 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp29_;
 					gdouble* _tmp30_;
 					gdouble* _tmp31_;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp20_ = expected;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp21_ = double_to_string (*_tmp20_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp22_ = _tmp21_;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp23_ = g_strconcat (_tmp22_, " is less than ", NULL);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp24_ = _tmp23_;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp25_ = actual;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp26_ = double_to_string (*_tmp25_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp27_ = _tmp26_;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp28_ = g_strconcat (_tmp24_, _tmp27_, NULL);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp29_ = _tmp28_;
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:145: %s", _tmp29_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp29_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp27_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp24_);
-#line 145 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 145 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp22_);
-#line 146 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 146 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp30_ = expected;
-#line 146 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 146 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp31_ = actual;
-#line 146 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 146 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp30_) < (*_tmp31_), "expected < actual");
 #line 1635 "assert.c"
 				}
-#line 148 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 148 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1639 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label2) ? _tmp2_label2 : (_tmp2_label2 = g_quark_from_static_string ("<")))) {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1645 "assert.c"
 			default:
 			{
 				gdouble* _tmp32_;
 				gdouble* _tmp33_;
-#line 150 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 150 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp32_ = expected;
-#line 150 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 150 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp33_ = actual;
-#line 150 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 150 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp32_) >= (*_tmp33_)) {
 #line 1656 "assert.c"
 					gdouble* _tmp34_;
@@ -1665,62 +1665,62 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp43_;
 					gdouble* _tmp44_;
 					gdouble* _tmp45_;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp34_ = expected;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp35_ = double_to_string (*_tmp34_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp36_ = _tmp35_;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp37_ = g_strconcat (_tmp36_, " is greater than or equal to ", NULL);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp38_ = _tmp37_;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp39_ = actual;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp40_ = double_to_string (*_tmp39_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp41_ = _tmp40_;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp42_ = g_strconcat (_tmp38_, _tmp41_, NULL);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp43_ = _tmp42_;
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:151: %s", _tmp43_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp43_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp41_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp38_);
-#line 151 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 151 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp36_);
-#line 152 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 152 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp44_ = expected;
-#line 152 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 152 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp45_ = actual;
-#line 152 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 152 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp44_) >= (*_tmp45_), "expected >= actual");
 #line 1705 "assert.c"
 				}
-#line 154 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 154 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1709 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label3) ? _tmp2_label3 : (_tmp2_label3 = g_quark_from_static_string ("<=")))) {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1715 "assert.c"
 			default:
 			{
 				gdouble* _tmp46_;
 				gdouble* _tmp47_;
-#line 156 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 156 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp46_ = expected;
-#line 156 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 156 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp47_ = actual;
-#line 156 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 156 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if ((*_tmp46_) > (*_tmp47_)) {
 #line 1726 "assert.c"
 					gdouble* _tmp48_;
@@ -1735,62 +1735,62 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp57_;
 					gdouble* _tmp58_;
 					gdouble* _tmp59_;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp48_ = expected;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp49_ = double_to_string (*_tmp48_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp50_ = _tmp49_;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp51_ = g_strconcat (_tmp50_, " is greater than ", NULL);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp52_ = _tmp51_;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp53_ = actual;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp54_ = double_to_string (*_tmp53_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp55_ = _tmp54_;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp56_ = g_strconcat (_tmp52_, _tmp55_, NULL);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp57_ = _tmp56_;
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:157: %s", _tmp57_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp57_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp55_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp52_);
-#line 157 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 157 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp50_);
-#line 158 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 158 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp58_ = expected;
-#line 158 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 158 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp59_ = actual;
-#line 158 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 158 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert ((*_tmp58_) > (*_tmp59_), "expected > actual");
 #line 1775 "assert.c"
 				}
-#line 160 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 160 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1779 "assert.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label4) ? _tmp2_label4 : (_tmp2_label4 = g_quark_from_static_string ("!=")))) {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1785 "assert.c"
 			default:
 			{
 				gdouble* _tmp60_;
 				gdouble* _tmp61_;
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp60_ = expected;
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp61_ = actual;
-#line 162 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 162 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_double_equal (_tmp60_, _tmp61_) == TRUE) {
 #line 1796 "assert.c"
 					gdouble* _tmp62_;
@@ -1805,62 +1805,62 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp71_;
 					gdouble* _tmp72_;
 					gdouble* _tmp73_;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp62_ = expected;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp63_ = double_to_string (*_tmp62_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp64_ = _tmp63_;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp65_ = g_strconcat (_tmp64_, " is equal to ", NULL);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp66_ = _tmp65_;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp67_ = actual;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp68_ = double_to_string (*_tmp67_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp69_ = _tmp68_;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp70_ = g_strconcat (_tmp66_, _tmp69_, NULL);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp71_ = _tmp70_;
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:163: %s", _tmp71_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp71_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp69_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp66_);
-#line 163 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 163 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp64_);
-#line 164 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 164 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp72_ = expected;
-#line 164 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 164 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp73_ = actual;
-#line 164 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 164 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_double_equal (_tmp72_, _tmp73_) != TRUE, "expected != actual");
 #line 1845 "assert.c"
 				}
-#line 166 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 166 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1849 "assert.c"
 			}
 		}
 	} else {
-#line 136 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 136 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		switch (0) {
 #line 1855 "assert.c"
 			default:
 			{
 				gdouble* _tmp74_;
 				gdouble* _tmp75_;
-#line 169 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 169 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp74_ = expected;
-#line 169 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 169 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				_tmp75_ = actual;
-#line 169 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 169 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				if (_double_equal (_tmp74_, _tmp75_) != TRUE) {
 #line 1866 "assert.c"
 					gdouble* _tmp76_;
@@ -1875,45 +1875,45 @@ void app_tests_assert_double_compare (gdouble* expected, gdouble* actual, const 
 					gchar* _tmp85_;
 					gdouble* _tmp86_;
 					gdouble* _tmp87_;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp76_ = expected;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp77_ = double_to_string (*_tmp76_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp78_ = _tmp77_;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp79_ = g_strconcat (_tmp78_, " is not equal to ", NULL);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp80_ = _tmp79_;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp81_ = actual;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp82_ = double_to_string (*_tmp81_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp83_ = _tmp82_;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp84_ = g_strconcat (_tmp80_, _tmp83_, NULL);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp85_ = _tmp84_;
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					g_warning ("assert.vala:170: %s", _tmp85_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp85_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp83_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp80_);
-#line 170 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 170 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_g_free0 (_tmp78_);
-#line 171 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 171 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp86_ = expected;
-#line 171 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 171 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_tmp87_ = actual;
-#line 171 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 171 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 					_vala_assert (_double_equal (_tmp86_, _tmp87_) == TRUE, "expected == actual");
 #line 1915 "assert.c"
 				}
-#line 173 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 173 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 				break;
 #line 1919 "assert.c"
 			}
@@ -1927,11 +1927,11 @@ void app_tests_assert_true (gboolean* expected) {
 	gboolean _tmp1_;
 	gboolean* _tmp9_;
 	gboolean _tmp10_;
-#line 178 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 178 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = expected;
-#line 178 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 178 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = TRUE;
-#line 178 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 178 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_bool_equal (_tmp0_, &_tmp1_) != TRUE) {
 #line 1937 "assert.c"
 		gboolean* _tmp2_;
@@ -1941,35 +1941,35 @@ void app_tests_assert_true (gboolean* expected) {
 		gchar* _tmp6_;
 		gchar* _tmp7_;
 		gchar* _tmp8_;
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp2_ = expected;
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp3_ = bool_to_string (*_tmp2_);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp4_ = _tmp3_;
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp5_ = g_strconcat ("Expected '", _tmp4_, NULL);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp6_ = _tmp5_;
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp7_ = g_strconcat (_tmp6_, "' to be true", NULL);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp8_ = _tmp7_;
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_warning ("assert.vala:179: %s", _tmp8_);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp8_);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp6_);
-#line 179 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 179 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp4_);
 #line 1967 "assert.c"
 	}
-#line 182 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 182 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp9_ = expected;
-#line 182 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 182 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp10_ = TRUE;
-#line 182 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 182 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_vala_assert (_bool_equal (_tmp9_, &_tmp10_) == TRUE, "expected == true");
 #line 1975 "assert.c"
 }
@@ -1980,11 +1980,11 @@ void app_tests_assert_false (gboolean* expected) {
 	gboolean _tmp1_;
 	gboolean* _tmp9_;
 	gboolean _tmp10_;
-#line 186 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 186 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp0_ = expected;
-#line 186 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 186 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp1_ = FALSE;
-#line 186 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 186 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (_bool_equal (_tmp0_, &_tmp1_) != TRUE) {
 #line 1990 "assert.c"
 		gboolean* _tmp2_;
@@ -1994,35 +1994,35 @@ void app_tests_assert_false (gboolean* expected) {
 		gchar* _tmp6_;
 		gchar* _tmp7_;
 		gchar* _tmp8_;
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp2_ = expected;
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp3_ = bool_to_string (*_tmp2_);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp4_ = _tmp3_;
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp5_ = g_strconcat ("Expected '", _tmp4_, NULL);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp6_ = _tmp5_;
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp7_ = g_strconcat (_tmp6_, "' to be false", NULL);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_tmp8_ = _tmp7_;
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_warning ("assert.vala:187: %s", _tmp8_);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp8_);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp6_);
-#line 187 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 187 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		_g_free0 (_tmp4_);
 #line 2020 "assert.c"
 	}
-#line 190 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 190 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp9_ = expected;
-#line 190 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 190 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_tmp10_ = FALSE;
-#line 190 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 190 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	_vala_assert (_bool_equal (_tmp9_, &_tmp10_) == TRUE, "expected == false");
 #line 2028 "assert.c"
 }
@@ -2030,32 +2030,32 @@ void app_tests_assert_false (gboolean* expected) {
 
 AppTestsAssert* app_tests_assert_construct (GType object_type) {
 	AppTestsAssert* self = NULL;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	self = (AppTestsAssert*) g_type_create_instance (object_type);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return self;
 #line 2038 "assert.c"
 }
 
 
 AppTestsAssert* app_tests_assert_new (void) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return app_tests_assert_construct (APP_TESTS_TYPE_ASSERT);
 #line 2045 "assert.c"
 }
 
 
 static void app_tests_value_assert_init (GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	value->data[0].v_pointer = NULL;
 #line 2052 "assert.c"
 }
 
 
 static void app_tests_value_assert_free_value (GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		app_tests_assert_unref (value->data[0].v_pointer);
 #line 2061 "assert.c"
 	}
@@ -2063,13 +2063,13 @@ static void app_tests_value_assert_free_value (GValue* value) {
 
 
 static void app_tests_value_assert_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (src_value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		dest_value->data[0].v_pointer = app_tests_assert_ref (src_value->data[0].v_pointer);
 #line 2071 "assert.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2075 "assert.c"
 	}
@@ -2077,37 +2077,37 @@ static void app_tests_value_assert_copy_value (const GValue* src_value, GValue* 
 
 
 static gpointer app_tests_value_assert_peek_pointer (const GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return value->data[0].v_pointer;
 #line 2083 "assert.c"
 }
 
 
 static gchar* app_tests_value_assert_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (collect_values[0].v_pointer) {
 #line 2090 "assert.c"
 		AppTestsAssert * object;
 		object = collect_values[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2097 "assert.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2101 "assert.c"
 		}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = app_tests_assert_ref (object);
 #line 2105 "assert.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = NULL;
 #line 2109 "assert.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return NULL;
 #line 2113 "assert.c"
 }
@@ -2116,27 +2116,27 @@ static gchar* app_tests_value_assert_collect_value (GValue* value, guint n_colle
 static gchar* app_tests_value_assert_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	AppTestsAssert ** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (!object_p) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2124 "assert.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (!value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		*object_p = NULL;
 #line 2130 "assert.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2134 "assert.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		*object_p = app_tests_assert_ref (value->data[0].v_pointer);
 #line 2138 "assert.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return NULL;
 #line 2142 "assert.c"
 }
@@ -2144,22 +2144,22 @@ static gchar* app_tests_value_assert_lcopy_value (const GValue* value, guint n_c
 
 GParamSpec* app_tests_param_spec_assert (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	AppTestsParamSpecAssert* spec;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, APP_TESTS_TYPE_ASSERT), NULL);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return G_PARAM_SPEC (spec);
 #line 2156 "assert.c"
 }
 
 
 gpointer app_tests_value_get_assert (const GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_ASSERT), NULL);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return value->data[0].v_pointer;
 #line 2165 "assert.c"
 }
@@ -2167,29 +2167,29 @@ gpointer app_tests_value_get_assert (const GValue* value) {
 
 void app_tests_value_set_assert (GValue* value, gpointer v_object) {
 	AppTestsAssert * old;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_ASSERT));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	old = value->data[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (v_object) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_TESTS_TYPE_ASSERT));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = v_object;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		app_tests_assert_ref (value->data[0].v_pointer);
 #line 2185 "assert.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = NULL;
 #line 2189 "assert.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (old) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		app_tests_assert_unref (old);
 #line 2195 "assert.c"
 	}
@@ -2198,27 +2198,27 @@ void app_tests_value_set_assert (GValue* value, gpointer v_object) {
 
 void app_tests_value_take_assert (GValue* value, gpointer v_object) {
 	AppTestsAssert * old;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_ASSERT));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	old = value->data[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (v_object) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_TESTS_TYPE_ASSERT));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = v_object;
 #line 2214 "assert.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		value->data[0].v_pointer = NULL;
 #line 2218 "assert.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (old) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		app_tests_assert_unref (old);
 #line 2224 "assert.c"
 	}
@@ -2226,16 +2226,16 @@ void app_tests_value_take_assert (GValue* value, gpointer v_object) {
 
 
 static void app_tests_assert_class_init (AppTestsAssertClass * klass) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	app_tests_assert_parent_class = g_type_class_peek_parent (klass);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	((AppTestsAssertClass *) klass)->finalize = app_tests_assert_finalize;
 #line 2234 "assert.c"
 }
 
 
 static void app_tests_assert_instance_init (AppTestsAssert * self) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	self->ref_count = 1;
 #line 2241 "assert.c"
 }
@@ -2243,9 +2243,9 @@ static void app_tests_assert_instance_init (AppTestsAssert * self) {
 
 static void app_tests_assert_finalize (AppTestsAssert * obj) {
 	AppTestsAssert * self;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_TESTS_TYPE_ASSERT, AppTestsAssert);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_signal_handlers_destroy (self);
 #line 2251 "assert.c"
 }
@@ -2273,9 +2273,9 @@ GType app_tests_assert_get_type (void) {
 gpointer app_tests_assert_ref (gpointer instance) {
 	AppTestsAssert * self;
 	self = instance;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	return instance;
 #line 2281 "assert.c"
 }
@@ -2284,11 +2284,11 @@ gpointer app_tests_assert_ref (gpointer instance) {
 void app_tests_assert_unref (gpointer instance) {
 	AppTestsAssert * self;
 	self = instance;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		APP_TESTS_ASSERT_GET_CLASS (self)->finalize (self);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/assert.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/assert.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2294 "assert.c"
 	}

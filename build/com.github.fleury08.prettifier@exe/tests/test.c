@@ -80,48 +80,48 @@ static void __lambda11_ (AppTestsTesting* self) {
 	gfloat _tmp7_;
 	gdouble _tmp8_;
 	gdouble _tmp9_;
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_string_compare ("Test", "Test", "==");
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp0_ = TRUE;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp1_ = TRUE;
-#line 19 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 19 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_bool_compare (&_tmp0_, &_tmp1_, "==");
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 20 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp2_ = TRUE;
-#line 20 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 20 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_true (&_tmp2_);
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 21 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp3_ = FALSE;
-#line 21 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 21 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_false (&_tmp3_);
-#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 22 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp4_ = 5;
-#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 22 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp5_ = 5;
-#line 22 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 22 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_int_compare (&_tmp4_, &_tmp5_, "==");
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp6_ = 5.2f;
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp7_ = 6.4f;
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_float_compare (&_tmp6_, &_tmp7_, "!=");
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp8_ = 8.8;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	_tmp9_ = 8.8;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_assert_double_compare (&_tmp8_, &_tmp9_, "<=");
 #line 118 "test.c"
 }
 
 
 static void ___lambda11__gtest_data_func (gpointer self) {
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	__lambda11_ ((AppTestsTesting*) self);
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_testing_unref (self);
 #line 127 "test.c"
 }
@@ -129,45 +129,45 @@ static void ___lambda11__gtest_data_func (gpointer self) {
 
 AppTestsTesting* app_tests_testing_construct (GType object_type, gchar** args, int args_length1) {
 	AppTestsTesting* self = NULL;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	self = (AppTestsTesting*) g_type_create_instance (object_type);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_test_init (&args_length1, &args, NULL);
-#line 17 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 17 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_test_add_data_func ("/init", app_tests_testing_ref (self), ___lambda11__gtest_data_func);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return self;
 #line 141 "test.c"
 }
 
 
 AppTestsTesting* app_tests_testing_new (gchar** args, int args_length1) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return app_tests_testing_construct (APP_TESTS_TYPE_TESTING, args, args_length1);
 #line 148 "test.c"
 }
 
 
 void app_tests_testing_run (AppTestsTesting* self) {
-#line 28 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 28 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_return_if_fail (self != NULL);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 29 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_test_run ();
 #line 157 "test.c"
 }
 
 
 static void app_tests_value_testing_init (GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	value->data[0].v_pointer = NULL;
 #line 164 "test.c"
 }
 
 
 static void app_tests_value_testing_free_value (GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		app_tests_testing_unref (value->data[0].v_pointer);
 #line 173 "test.c"
 	}
@@ -175,13 +175,13 @@ static void app_tests_value_testing_free_value (GValue* value) {
 
 
 static void app_tests_value_testing_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (src_value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		dest_value->data[0].v_pointer = app_tests_testing_ref (src_value->data[0].v_pointer);
 #line 183 "test.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 187 "test.c"
 	}
@@ -189,37 +189,37 @@ static void app_tests_value_testing_copy_value (const GValue* src_value, GValue*
 
 
 static gpointer app_tests_value_testing_peek_pointer (const GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return value->data[0].v_pointer;
 #line 195 "test.c"
 }
 
 
 static gchar* app_tests_value_testing_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (collect_values[0].v_pointer) {
 #line 202 "test.c"
 		AppTestsTesting * object;
 		object = collect_values[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 209 "test.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 213 "test.c"
 		}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = app_tests_testing_ref (object);
 #line 217 "test.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = NULL;
 #line 221 "test.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return NULL;
 #line 225 "test.c"
 }
@@ -228,27 +228,27 @@ static gchar* app_tests_value_testing_collect_value (GValue* value, guint n_coll
 static gchar* app_tests_value_testing_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	AppTestsTesting ** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (!object_p) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 236 "test.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (!value->data[0].v_pointer) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		*object_p = NULL;
 #line 242 "test.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		*object_p = value->data[0].v_pointer;
 #line 246 "test.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		*object_p = app_tests_testing_ref (value->data[0].v_pointer);
 #line 250 "test.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return NULL;
 #line 254 "test.c"
 }
@@ -256,22 +256,22 @@ static gchar* app_tests_value_testing_lcopy_value (const GValue* value, guint n_
 
 GParamSpec* app_tests_param_spec_testing (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	AppTestsParamSpecTesting* spec;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, APP_TESTS_TYPE_TESTING), NULL);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return G_PARAM_SPEC (spec);
 #line 268 "test.c"
 }
 
 
 gpointer app_tests_value_get_testing (const GValue* value) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_TESTING), NULL);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return value->data[0].v_pointer;
 #line 277 "test.c"
 }
@@ -279,29 +279,29 @@ gpointer app_tests_value_get_testing (const GValue* value) {
 
 void app_tests_value_set_testing (GValue* value, gpointer v_object) {
 	AppTestsTesting * old;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_TESTING));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	old = value->data[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (v_object) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_TESTS_TYPE_TESTING));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = v_object;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		app_tests_testing_ref (value->data[0].v_pointer);
 #line 297 "test.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = NULL;
 #line 301 "test.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (old) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		app_tests_testing_unref (old);
 #line 307 "test.c"
 	}
@@ -310,27 +310,27 @@ void app_tests_value_set_testing (GValue* value, gpointer v_object) {
 
 void app_tests_value_take_testing (GValue* value, gpointer v_object) {
 	AppTestsTesting * old;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_TESTS_TYPE_TESTING));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	old = value->data[0].v_pointer;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (v_object) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_TESTS_TYPE_TESTING));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = v_object;
 #line 326 "test.c"
 	} else {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		value->data[0].v_pointer = NULL;
 #line 330 "test.c"
 	}
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (old) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		app_tests_testing_unref (old);
 #line 336 "test.c"
 	}
@@ -338,16 +338,16 @@ void app_tests_value_take_testing (GValue* value, gpointer v_object) {
 
 
 static void app_tests_testing_class_init (AppTestsTestingClass * klass) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	app_tests_testing_parent_class = g_type_class_peek_parent (klass);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	((AppTestsTestingClass *) klass)->finalize = app_tests_testing_finalize;
 #line 346 "test.c"
 }
 
 
 static void app_tests_testing_instance_init (AppTestsTesting * self) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	self->ref_count = 1;
 #line 353 "test.c"
 }
@@ -355,9 +355,9 @@ static void app_tests_testing_instance_init (AppTestsTesting * self) {
 
 static void app_tests_testing_finalize (AppTestsTesting * obj) {
 	AppTestsTesting * self;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_TESTS_TYPE_TESTING, AppTestsTesting);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_signal_handlers_destroy (self);
 #line 363 "test.c"
 }
@@ -385,9 +385,9 @@ GType app_tests_testing_get_type (void) {
 gpointer app_tests_testing_ref (gpointer instance) {
 	AppTestsTesting * self;
 	self = instance;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	return instance;
 #line 393 "test.c"
 }
@@ -396,11 +396,11 @@ gpointer app_tests_testing_ref (gpointer instance) {
 void app_tests_testing_unref (gpointer instance) {
 	AppTestsTesting * self;
 	self = instance;
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		APP_TESTS_TESTING_GET_CLASS (self)->finalize (self);
-#line 12 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/tests/test.vala"
+#line 12 "/home/jaroslav/Projects/elementaryOS/prettifier/tests/test.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 406 "test.c"
 	}

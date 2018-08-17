@@ -79,16 +79,16 @@ static void app_application_finalize (GObject * obj);
          */
 static void __lambda10_ (AppApplication* self) {
 	AppControllersAppController* _tmp0_;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_tmp0_ = self->controller;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	app_controllers_app_controller_quit (_tmp0_);
 #line 87 "Application.c"
 }
 
 
 static void ___lambda10__g_simple_action_activate (GSimpleAction* _sender, GVariant* parameter, gpointer self) {
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	__lambda10_ ((AppApplication*) self);
 #line 94 "Application.c"
 }
@@ -98,28 +98,28 @@ AppApplication* app_application_construct (GType object_type) {
 	AppApplication * self = NULL;
 	GSimpleAction* quit_action = NULL;
 	GSimpleAction* _tmp0_;
-#line 24 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 24 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	self = (AppApplication*) g_object_new (object_type, "application-id", APP_CONFIGS_CONSTANTS_ID, "flags", G_APPLICATION_FLAGS_NONE, NULL);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 29 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_tmp0_ = g_simple_action_new ("quit", NULL);
-#line 29 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 29 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	quit_action = _tmp0_;
-#line 30 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 30 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	g_signal_connect_object (quit_action, "activate", (GCallback) ___lambda10__g_simple_action_activate, self, 0);
-#line 34 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 34 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	g_action_map_add_action ((GActionMap*) self, (GAction*) quit_action);
-#line 35 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 35 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	gtk_application_add_accelerator ((GtkApplication*) self, "<Control>q", "app.quit", NULL);
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_g_object_unref0 (quit_action);
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	return self;
 #line 118 "Application.c"
 }
 
 
 AppApplication* app_application_new (void) {
-#line 23 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 23 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	return app_application_construct (APP_TYPE_APPLICATION);
 #line 125 "Application.c"
 }
@@ -133,36 +133,36 @@ static void app_application_real_activate (GApplication* base) {
 	AppApplication * self;
 	AppControllersAppController* _tmp0_;
 	AppControllersAppController* _tmp2_;
-#line 42 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 42 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	self = (AppApplication*) base;
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 43 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_tmp0_ = self->controller;
-#line 43 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 43 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	if (_tmp0_ == NULL) {
 #line 143 "Application.c"
 		AppControllersAppController* _tmp1_;
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 		_tmp1_ = app_controllers_app_controller_new ((GtkApplication*) self);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 		_app_controllers_app_controller_unref0 (self->controller);
-#line 44 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 44 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 		self->controller = _tmp1_;
 #line 151 "Application.c"
 	}
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_tmp2_ = self->controller;
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	app_controllers_app_controller_activate (_tmp2_);
 #line 157 "Application.c"
 }
 
 
 static void app_application_class_init (AppApplicationClass * klass) {
-#line 16 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 16 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	app_application_parent_class = g_type_class_peek_parent (klass);
-#line 16 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 16 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	((GApplicationClass *) klass)->activate = (void (*) (GApplication *)) app_application_real_activate;
-#line 16 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 16 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	G_OBJECT_CLASS (klass)->finalize = app_application_finalize;
 #line 168 "Application.c"
 }
@@ -174,11 +174,11 @@ static void app_application_instance_init (AppApplication * self) {
 
 static void app_application_finalize (GObject * obj) {
 	AppApplication * self;
-#line 16 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 16 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_TYPE_APPLICATION, AppApplication);
-#line 18 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 18 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	_app_controllers_app_controller_unref0 (self->controller);
-#line 16 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/Application.vala"
+#line 16 "/home/jaroslav/Projects/elementaryOS/prettifier/src/Application.vala"
 	G_OBJECT_CLASS (app_application_parent_class)->finalize (obj);
 #line 184 "Application.c"
 }

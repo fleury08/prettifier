@@ -12,3 +12,5 @@
 /usr/share/applications/com.github.fleury08.prettifier.desktop
 /usr/share/metainfo/com.github.fleury08.prettifier.appdata.xml
 /usr/share/glib-2.0/schemas/com.github.fleury08.prettifier.gschema.xml
+/usr/share/Prettifier/images
+/usr/share/Prettifier

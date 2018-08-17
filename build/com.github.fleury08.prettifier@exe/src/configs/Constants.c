@@ -76,32 +76,32 @@ const gchar* APP_CONFIGS_CONSTANTS_ABOUT_AUTHORS[1] = {"Jaroslav Staněk <jarosl
 
 AppConfigsConstants* app_configs_constants_construct (GType object_type) {
 	AppConfigsConstants* self = NULL;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	self = (AppConfigsConstants*) g_type_create_instance (object_type);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return self;
 #line 84 "Constants.c"
 }
 
 
 AppConfigsConstants* app_configs_constants_new (void) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return app_configs_constants_construct (APP_CONFIGS_TYPE_CONSTANTS);
 #line 91 "Constants.c"
 }
 
 
 static void app_configs_value_constants_init (GValue* value) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	value->data[0].v_pointer = NULL;
 #line 98 "Constants.c"
 }
 
 
 static void app_configs_value_constants_free_value (GValue* value) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (value->data[0].v_pointer) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		app_configs_constants_unref (value->data[0].v_pointer);
 #line 107 "Constants.c"
 	}
@@ -109,13 +109,13 @@ static void app_configs_value_constants_free_value (GValue* value) {
 
 
 static void app_configs_value_constants_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (src_value->data[0].v_pointer) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		dest_value->data[0].v_pointer = app_configs_constants_ref (src_value->data[0].v_pointer);
 #line 117 "Constants.c"
 	} else {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 121 "Constants.c"
 	}
@@ -123,37 +123,37 @@ static void app_configs_value_constants_copy_value (const GValue* src_value, GVa
 
 
 static gpointer app_configs_value_constants_peek_pointer (const GValue* value) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return value->data[0].v_pointer;
 #line 129 "Constants.c"
 }
 
 
 static gchar* app_configs_value_constants_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (collect_values[0].v_pointer) {
 #line 136 "Constants.c"
 		AppConfigsConstants * object;
 		object = collect_values[0].v_pointer;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 143 "Constants.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 147 "Constants.c"
 		}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = app_configs_constants_ref (object);
 #line 151 "Constants.c"
 	} else {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = NULL;
 #line 155 "Constants.c"
 	}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return NULL;
 #line 159 "Constants.c"
 }
@@ -162,27 +162,27 @@ static gchar* app_configs_value_constants_collect_value (GValue* value, guint n_
 static gchar* app_configs_value_constants_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	AppConfigsConstants ** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (!object_p) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 170 "Constants.c"
 	}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (!value->data[0].v_pointer) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		*object_p = NULL;
 #line 176 "Constants.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		*object_p = value->data[0].v_pointer;
 #line 180 "Constants.c"
 	} else {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		*object_p = app_configs_constants_ref (value->data[0].v_pointer);
 #line 184 "Constants.c"
 	}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return NULL;
 #line 188 "Constants.c"
 }
@@ -190,22 +190,22 @@ static gchar* app_configs_value_constants_lcopy_value (const GValue* value, guin
 
 GParamSpec* app_configs_param_spec_constants (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	AppConfigsParamSpecConstants* spec;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, APP_CONFIGS_TYPE_CONSTANTS), NULL);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return G_PARAM_SPEC (spec);
 #line 202 "Constants.c"
 }
 
 
 gpointer app_configs_value_get_constants (const GValue* value) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_CONFIGS_TYPE_CONSTANTS), NULL);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return value->data[0].v_pointer;
 #line 211 "Constants.c"
 }
@@ -213,29 +213,29 @@ gpointer app_configs_value_get_constants (const GValue* value) {
 
 void app_configs_value_set_constants (GValue* value, gpointer v_object) {
 	AppConfigsConstants * old;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_CONFIGS_TYPE_CONSTANTS));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	old = value->data[0].v_pointer;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (v_object) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_CONFIGS_TYPE_CONSTANTS));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = v_object;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		app_configs_constants_ref (value->data[0].v_pointer);
 #line 231 "Constants.c"
 	} else {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = NULL;
 #line 235 "Constants.c"
 	}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (old) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		app_configs_constants_unref (old);
 #line 241 "Constants.c"
 	}
@@ -244,27 +244,27 @@ void app_configs_value_set_constants (GValue* value, gpointer v_object) {
 
 void app_configs_value_take_constants (GValue* value, gpointer v_object) {
 	AppConfigsConstants * old;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, APP_CONFIGS_TYPE_CONSTANTS));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	old = value->data[0].v_pointer;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (v_object) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, APP_CONFIGS_TYPE_CONSTANTS));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = v_object;
 #line 260 "Constants.c"
 	} else {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		value->data[0].v_pointer = NULL;
 #line 264 "Constants.c"
 	}
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (old) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		app_configs_constants_unref (old);
 #line 270 "Constants.c"
 	}
@@ -272,16 +272,16 @@ void app_configs_value_take_constants (GValue* value, gpointer v_object) {
 
 
 static void app_configs_constants_class_init (AppConfigsConstantsClass * klass) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	app_configs_constants_parent_class = g_type_class_peek_parent (klass);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	((AppConfigsConstantsClass *) klass)->finalize = app_configs_constants_finalize;
 #line 280 "Constants.c"
 }
 
 
 static void app_configs_constants_instance_init (AppConfigsConstants * self) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	self->ref_count = 1;
 #line 287 "Constants.c"
 }
@@ -289,9 +289,9 @@ static void app_configs_constants_instance_init (AppConfigsConstants * self) {
 
 static void app_configs_constants_finalize (AppConfigsConstants * obj) {
 	AppConfigsConstants * self;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_CONFIGS_TYPE_CONSTANTS, AppConfigsConstants);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_signal_handlers_destroy (self);
 #line 297 "Constants.c"
 }
@@ -320,9 +320,9 @@ GType app_configs_constants_get_type (void) {
 gpointer app_configs_constants_ref (gpointer instance) {
 	AppConfigsConstants * self;
 	self = instance;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	return instance;
 #line 328 "Constants.c"
 }
@@ -331,11 +331,11 @@ gpointer app_configs_constants_ref (gpointer instance) {
 void app_configs_constants_unref (gpointer instance) {
 	AppConfigsConstants * self;
 	self = instance;
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		APP_CONFIGS_CONSTANTS_GET_CLASS (self)->finalize (self);
-#line 13 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Constants.vala"
+#line 13 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Constants.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 341 "Constants.c"
 	}

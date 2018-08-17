@@ -69,16 +69,16 @@ static void _vala_app_configs_settings_set_property (GObject * object, guint pro
          */
 static AppConfigsSettings* app_configs_settings_construct (GType object_type) {
 	AppConfigsSettings * self = NULL;
-#line 38 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 38 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	self = (AppConfigsSettings*) granite_services_settings_construct (object_type, APP_CONFIGS_CONSTANTS_ID);
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	return self;
 #line 77 "Settings.c"
 }
 
 
 static AppConfigsSettings* app_configs_settings_new (void) {
-#line 37 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 37 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	return app_configs_settings_construct (APP_CONFIGS_TYPE_SETTINGS);
 #line 84 "Settings.c"
 }
@@ -93,25 +93,25 @@ AppConfigsSettings* app_configs_settings_get_instance (void) {
 	AppConfigsSettings* result = NULL;
 	AppConfigsSettings* _tmp0_;
 	AppConfigsSettings* _tmp2_;
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	_tmp0_ = app_configs_settings_instance;
-#line 47 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 47 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	if (_tmp0_ == NULL) {
 #line 101 "Settings.c"
 		AppConfigsSettings* _tmp1_;
-#line 48 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 48 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		_tmp1_ = app_configs_settings_new ();
-#line 48 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 48 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		_g_object_unref0 (app_configs_settings_instance);
-#line 48 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 48 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		app_configs_settings_instance = _tmp1_;
 #line 109 "Settings.c"
 	}
-#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 51 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	_tmp2_ = app_configs_settings_instance;
-#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 51 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	result = _tmp2_;
-#line 51 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 51 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	return result;
 #line 117 "Settings.c"
 }
@@ -120,30 +120,30 @@ AppConfigsSettings* app_configs_settings_get_instance (void) {
 gint app_configs_settings_get_window_x (AppConfigsSettings* self) {
 	gint result;
 	gint _tmp0_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_return_val_if_fail (self != NULL, 0);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	_tmp0_ = self->priv->_window_x;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	result = _tmp0_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	return result;
 #line 132 "Settings.c"
 }
 
 
 void app_configs_settings_set_window_x (AppConfigsSettings* self, gint value) {
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_return_if_fail (self != NULL);
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	if (app_configs_settings_get_window_x (self) != value) {
 #line 141 "Settings.c"
 		gint _tmp0_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		_tmp0_ = value;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		self->priv->_window_x = _tmp0_;
-#line 25 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 25 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		g_object_notify ((GObject *) self, "window-x");
 #line 149 "Settings.c"
 	}
@@ -153,30 +153,30 @@ void app_configs_settings_set_window_x (AppConfigsSettings* self, gint value) {
 gint app_configs_settings_get_window_y (AppConfigsSettings* self) {
 	gint result;
 	gint _tmp0_;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_return_val_if_fail (self != NULL, 0);
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	_tmp0_ = self->priv->_window_y;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	result = _tmp0_;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	return result;
 #line 165 "Settings.c"
 }
 
 
 void app_configs_settings_set_window_y (AppConfigsSettings* self, gint value) {
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_return_if_fail (self != NULL);
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	if (app_configs_settings_get_window_y (self) != value) {
 #line 174 "Settings.c"
 		gint _tmp0_;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		_tmp0_ = value;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		self->priv->_window_y = _tmp0_;
-#line 31 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 31 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		g_object_notify ((GObject *) self, "window-y");
 #line 182 "Settings.c"
 	}
@@ -184,36 +184,36 @@ void app_configs_settings_set_window_y (AppConfigsSettings* self, gint value) {
 
 
 static void app_configs_settings_class_init (AppConfigsSettingsClass * klass) {
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	app_configs_settings_parent_class = g_type_class_peek_parent (klass);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_type_class_add_private (klass, sizeof (AppConfigsSettingsPrivate));
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	G_OBJECT_CLASS (klass)->get_property = _vala_app_configs_settings_get_property;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	G_OBJECT_CLASS (klass)->set_property = _vala_app_configs_settings_set_property;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	G_OBJECT_CLASS (klass)->finalize = app_configs_settings_finalize;
 #line 198 "Settings.c"
 	/**
 	         * This property will represent the location x of the screen.
 	         * Variable of type {@code int} as declared.
 	         */
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_CONFIGS_SETTINGS_WINDOW_X_PROPERTY, g_param_spec_int ("window-x", "window-x", "window-x", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE));
 #line 205 "Settings.c"
 	/**
 	         * This property will represent the location y of the screen.
 	         * Variable of type {@code int} as declared.
 	         */
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	g_object_class_install_property (G_OBJECT_CLASS (klass), APP_CONFIGS_SETTINGS_WINDOW_Y_PROPERTY, g_param_spec_int ("window-y", "window-y", "window-y", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE));
 #line 212 "Settings.c"
 }
 
 
 static void app_configs_settings_instance_init (AppConfigsSettings * self) {
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	self->priv = APP_CONFIGS_SETTINGS_GET_PRIVATE (self);
 #line 219 "Settings.c"
 }
@@ -221,9 +221,9 @@ static void app_configs_settings_instance_init (AppConfigsSettings * self) {
 
 static void app_configs_settings_finalize (GObject * obj) {
 	AppConfigsSettings * self;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, APP_CONFIGS_TYPE_SETTINGS, AppConfigsSettings);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	G_OBJECT_CLASS (app_configs_settings_parent_class)->finalize (obj);
 #line 229 "Settings.c"
 }
@@ -251,25 +251,25 @@ GType app_configs_settings_get_type (void) {
 static void _vala_app_configs_settings_get_property (GObject * object, guint property_id, GValue * value, GParamSpec * pspec) {
 	AppConfigsSettings * self;
 	self = G_TYPE_CHECK_INSTANCE_CAST (object, APP_CONFIGS_TYPE_SETTINGS, AppConfigsSettings);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	switch (property_id) {
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		case APP_CONFIGS_SETTINGS_WINDOW_X_PROPERTY:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		g_value_set_int (value, app_configs_settings_get_window_x (self));
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		case APP_CONFIGS_SETTINGS_WINDOW_Y_PROPERTY:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		g_value_set_int (value, app_configs_settings_get_window_y (self));
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
 #line 269 "Settings.c"
 		default:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
 #line 275 "Settings.c"
 	}
@@ -279,25 +279,25 @@ static void _vala_app_configs_settings_get_property (GObject * object, guint pro
 static void _vala_app_configs_settings_set_property (GObject * object, guint property_id, const GValue * value, GParamSpec * pspec) {
 	AppConfigsSettings * self;
 	self = G_TYPE_CHECK_INSTANCE_CAST (object, APP_CONFIGS_TYPE_SETTINGS, AppConfigsSettings);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 	switch (property_id) {
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		case APP_CONFIGS_SETTINGS_WINDOW_X_PROPERTY:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		app_configs_settings_set_window_x (self, g_value_get_int (value));
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		case APP_CONFIGS_SETTINGS_WINDOW_Y_PROPERTY:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		app_configs_settings_set_window_y (self, g_value_get_int (value));
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
 #line 297 "Settings.c"
 		default:
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
-#line 14 "/home/jaroslav/Projects/elementaryOS/com.github.fleury08.prettifier/src/configs/Settings.vala"
+#line 14 "/home/jaroslav/Projects/elementaryOS/prettifier/src/configs/Settings.vala"
 		break;
 #line 303 "Settings.c"
 	}
