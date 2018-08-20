@@ -75,11 +75,13 @@ namespace App.Widgets {
             this.pack_start (copy_to_clipboard);
             this.pack_start (auto_prettify);
             
+
         }
 
         private void prettify_action(){
             string prettified_text = this.prettify(this.app.app_view.input_text.buffer.text);
             this.app.app_view.output_text.buffer.text = prettified_text;
+            this.app.config_file.set_string("TEST","test","ok");
         }
 
         private string prettify(string text){

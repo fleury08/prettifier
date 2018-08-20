@@ -28,5 +28,8 @@ namespace App.Configs {
         public abstract const string URL_CSS = "/com/github/fleury08/prettifier/css/style.css";
         public abstract const string [] ABOUT_AUTHORS = { "Jaroslav Staněk <jaroslav-stanek@email.cz>" };
         public abstract const Gtk.License ABOUT_LICENSE_TYPE = Gtk.License.MIT_X11;
+        public abstract const string CONFIG_PATH = "~/";
+        public abstract const string CONFIG_FILE = ".prettifier.conf";
+
     }
 }

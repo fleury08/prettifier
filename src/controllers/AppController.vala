@@ -18,6 +18,8 @@ namespace App.Controllers {
         public AppView                    app_view;
         public Gtk.HeaderBar              headerbar;
         public Gtk.ApplicationWindow      window { get; private set; default = null; }
+        public KeyFile                    config_file;
+
 
         /**
          * Constructs a new {@code AppController} object.
@@ -35,6 +37,16 @@ namespace App.Controllers {
             this.application.add_window (window);
 
 
+            this.config_file = new KeyFile();
+            print(App.Configs.Constants.CONFIG_PATH+App.Configs.Constants.CONFIG_FILE);
+            var file = File.new_for_path(App.Configs.Constants.CONFIG_PATH+App.Configs.Constants.CONFIG_FILE);
+            try {
+                if(!file.query_exists()) file.create(FileCreateFlags.PRIVATE);
+                this.config_file.load_from_file(App.Configs.Constants.CONFIG_PATH+App.Configs.Constants.CONFIG_FILE,KeyFileFlags.NONE);
+            } catch (Error e) {
+                print ("Error: %s\n", e.message);
+            }
+            
         }
 
         public void activate () {
