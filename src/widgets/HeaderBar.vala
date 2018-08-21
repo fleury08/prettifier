@@ -47,6 +47,7 @@ namespace App.Widgets {
             });
 
             this.format_switch = new Gtk.Switch();
+            this.format_switch.valign = Gtk.Align.CENTER;
             this.format_switch.notify["active"].connect (() => {
                 if (format_switch.active) {
                     this.type_of_file = TypeOfFile.XML;
@@ -81,7 +82,7 @@ namespace App.Widgets {
         private void prettify_action(){
             string prettified_text = this.prettify(this.app.app_view.input_text.buffer.text);
             this.app.app_view.output_text.buffer.text = prettified_text;
-            this.app.config_file.set_string("TEST","test","ok");
+           // this.app.config_file.set_string("TEST","test","ok");
         }
 
         private string prettify(string text){
