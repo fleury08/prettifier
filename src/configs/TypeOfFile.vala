@@ -5,6 +5,6 @@
 namespace App.Configs {
 
     public enum TypeOfFile { 
-        JSON,XML
+        JSON,XML;
     }
 }

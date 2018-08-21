@@ -31,6 +31,26 @@ namespace App.Configs {
         public int window_y { get; set; }
        
         /**
+         * 
+         */
+        public string input_text {get;set;}
+
+        /**
+         * 
+         */
+        public string output_text {get;set;}
+
+        /**
+         * 
+         */
+        public bool auto_prettify {get;set;}
+
+        /**
+         * 
+         */
+        public TypeOfFile selected_format {get;set;}
+
+        /**
          * Constructs a new {@code Settings} object 
          * and sets the default exit folder.
          */
