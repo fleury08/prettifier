@@ -1,5 +1,5 @@
 <div align="center">
-  <span align="center"> <img width="80" height="70" class="center" src="https://github.com/fleury08/prettifier/blob/master/data/images/com.github.fleury08.prettifier.png" alt="Icon"></span>
+  <span align="center"> <img width="128" height="128" class="center" src="https://github.com/fleury08/prettifier/blob/master/data/images/com.github.fleury08.prettifier.png" alt="Icon"></span>
   <h1 align="center">Prettifier</h1>
   <h3 align="center">Prettify your JSON/XML outputs</h3>
 </div>
@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0.2-orange.svg">
+    <img src="https://img.shields.io/badge/Release-v%201.0.3-orange.svg">
   </a>
 </p>
 

@@ -19,9 +19,10 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.0.0" date="2018-06-04">
+      <release version="1.0.3" date="2018-06-04">
         <description>
-          <p>Initial 1.0.0 release!</p>
+          <p>App now remembers last settings</p>
+		  <p>Added elementaryOS style icon</p>
         </description>
       </release>
     </releases>
