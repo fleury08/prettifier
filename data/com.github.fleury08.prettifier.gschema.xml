@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
 
+    <enum id="App.Configs.TypeOfFile">
+        <value nick="JSON" value="0" />
+        <value nick="XML" value="1" />
+    </enum>
+
     <schema id="com.github.fleury08.prettifier" path="/com/github/fleury08/prettifier/">
         <key name="window-x" type="i">
             <default>-1</default>
@@ -12,6 +17,33 @@
             <default>-1</default>
             <summary>Most recent y position of Prettifier</summary>
             <description>Most recent y position of Prettifier</description>
+        </key>
+
+        <key name="input-text" type="s">
+            <default>'{"kenobi":"Hello There","greivous":"General Kenobi"}'</default>
+            <summary></summary>
+            <description></description>
+        </key>
+
+        <key name="output-text" type="s">
+            <default>'{
+  "kenobi" : "Hello There",
+  "greivous" : "General Kenobi"
+}'</default>
+            <summary></summary>
+            <description></description>
+        </key>
+
+        <key name='selected-format' enum='App.Configs.TypeOfFile'>
+            <default>'JSON'</default>
+            <summary></summary>
+            <description></description>
+        </key>
+
+        <key name="auto-prettify" type="b">
+            <default>true</default>
+            <summary></summary>
+            <description></description>
         </key>
     </schema>
 

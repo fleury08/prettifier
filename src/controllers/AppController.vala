@@ -19,6 +19,7 @@ namespace App.Controllers {
         public Gtk.HeaderBar              headerbar;
         public Gtk.ApplicationWindow      window { get; private set; default = null; }
 
+
         /**
          * Constructs a new {@code AppController} object.
          */
@@ -34,7 +35,7 @@ namespace App.Controllers {
             this.window.set_titlebar (this.headerbar);
             this.application.add_window (window);
 
-
+            
         }
 
         public void activate () {
@@ -45,5 +46,7 @@ namespace App.Controllers {
         public void quit () {
             window.destroy ();
         }
+
+
     }
 }
