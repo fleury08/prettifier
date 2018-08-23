@@ -13,13 +13,13 @@ namespace App.Configs {
     public class Constants {
     
         public abstract const string ID = "com.github.fleury08.prettifier";
-        public abstract const string VERSION = "1.0.4";
+        public abstract const string VERSION = "1.0.5";
         public abstract const string PROGRAME_NAME = "Prettifier";
         public abstract const string APP_YEARS = "2018";
         public abstract const string APP_ICON = "com.github.fleury08.prettifier";
         public abstract const string ABOUT_COMMENTS = "Prettify your JSON/XML outputs";
         public abstract const string TRANSLATOR_CREDITS = "Translators";
-        public abstract const string MAIN_URL = "{{ website-url }}";
+        public abstract const string MAIN_URL = "https://jstanek.eu/";
         public abstract const string BUG_URL = "https://github.com/fleury08/prettifier/issues";
         public abstract const string HELP_URL = "https://github.com/fleury08/prettifier/wiki";
         public abstract const string TRANSLATE_URL = "https://github.com/fleury08/prettifier";

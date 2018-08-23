@@ -14,14 +14,17 @@
         <screenshot type="default">
             <image>https://github.com/fleury08/prettifier/raw/master/data/images/PrettifierXML.png</image>
         </screenshot>
+        <screenshot type="default">
+            <image>https://github.com/fleury08/prettifier/raw/master/data/images/PrettifierJSON.png</image>
+        </screenshot>
     </screenshots>
     <description>
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.0.4" date="2018-08-22">
+      <release version="1.0.5" date="2018-08-23">
         <description>
-          <p>Added reset button</p>
+          <p>Minor metadata and application bugfixes</p>
         </description>
       </release>
     </releases>
@@ -54,7 +57,7 @@
       <content_attribute id="money-purchasing">none</content_attribute>
       <content_attribute id="money-gambling">none</content_attribute>
     </content_rating> 
-    <url type="homepage">{{ website-url }}</url>
+    <url type="homepage">https://jstanek.eu/</url>
     <url type="bugtracker">https://github.com/fleury08/prettifier/issues</url>
     <url type="help">https://github.com/fleury08/prettifier/issues</url>
     <update_contact>jaroslav-stanek@email.cz</update_contact>
