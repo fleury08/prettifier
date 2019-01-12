@@ -1,5 +1,5 @@
 project('com.github.fleury08.prettifier', ['vala', 'c'],
-    version : '1.0.6',
+    version : '1.0.7',
     license: 'GPL-3.0'
 )
 

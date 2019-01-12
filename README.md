@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.0.6-orange.svg">
+    <img src="https://img.shields.io/badge/Release-v%201.0.7-orange.svg">
   </a>
 </p>
 
