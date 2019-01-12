@@ -1,5 +1,5 @@
 project('com.github.fleury08.prettifier', ['vala', 'c'],
-    version : '1.0.6',
+    version : '1.0.2',
     license: 'GPL-3.0'
 )
 
@@ -41,7 +41,7 @@ dependencies = [
     dependency('gtk+-3.0'),
     dependency('json-glib-1.0'),
     dependency('libxml-2.0'),
-    dependency('gtksourceview-3.0')
+    dependency('libgtksourceview-3.0')
 ]
 
 e = executable('com.github.fleury08.prettifier',

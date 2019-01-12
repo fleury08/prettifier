@@ -13,9 +13,9 @@ namespace App.Configs {
     public class Constants {
     
         public abstract const string ID = "com.github.fleury08.prettifier";
-        public abstract const string VERSION = "1.0.5";
+        public abstract const string VERSION = "1.0.6";
         public abstract const string PROGRAME_NAME = "Prettifier";
-        public abstract const string APP_YEARS = "2018";
+        public abstract const string APP_YEARS = "2019";
         public abstract const string APP_ICON = "com.github.fleury08.prettifier";
         public abstract const string ABOUT_COMMENTS = "Prettify your JSON/XML outputs";
         public abstract const string TRANSLATOR_CREDITS = "Translators";
