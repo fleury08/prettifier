@@ -22,9 +22,9 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.0.5" date="2018-08-23">
+      <release version="1.0.7" date="2019-01-14">
         <description>
-          <p>Minor metadata and application bugfixes</p>
+          <p>Minor updates</p>
         </description>
       </release>
     </releases>
