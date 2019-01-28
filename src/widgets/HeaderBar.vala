@@ -20,9 +20,9 @@ namespace App.Widgets {
         public Gtk.Button copy_to_clipboard {get; private set;}
         public Gtk.Button reset_button {get; private set;}
         public Gtk.CheckButton auto_prettify {get; private set;}
-        private TypeOfFile type_of_file { get; private set;}
         private App.Controllers.AppController app {get; private set;}
         private App.Configs.Settings settings {get; private set;}
+        private App.Prettify prettify {get; private set;}
 
         /**
          * Constructs a new {@code HeaderBar} object.
@@ -32,8 +32,8 @@ namespace App.Widgets {
          */
         public HeaderBar (App.Controllers.AppController app) {
             //Initialization of properties of "this"
-            init_headerbar(app);
-            
+            init_headerbar(app);         
+
             //Prettify Button setup
             this.prettify_button.set_image (new Gtk.Image .from_icon_name ("media-playback-start", Gtk.IconSize.LARGE_TOOLBAR));
             this.prettify_button.tooltip_text = _("Prettify input text");
@@ -52,19 +52,19 @@ namespace App.Widgets {
 
             //Format switch setup
             this.format_switch.valign = Gtk.Align.CENTER;
-            if(select_switch_state(this.settings.selected_format)){
+            if(this.prettify.select_switch_state(this.settings.selected_format)){
                 this.format_switch.activate();
                 this.format_switch.active=true;
             }
             this.format_switch.notify["active"].connect (() => {
                 if (format_switch.active) {
-                    this.type_of_file = TypeOfFile.XML;
+                    prettify.type_of_file = TypeOfFile.XML;
                 } else {
-                    this.type_of_file = TypeOfFile.JSON;
+                    prettify.type_of_file = TypeOfFile.JSON;
                 }
-                this.settings.selected_format=this.type_of_file;
+                this.settings.selected_format=prettify.type_of_file;
                 print("\nFormat is saved as:"+settings.selected_format.to_string());
-                print("\nFormat is set to :"+type_of_file.to_string());
+                print("\nFormat is set to :"+prettify.type_of_file.to_string());
             });
             
             //Auto prettify button setup
@@ -100,6 +100,7 @@ namespace App.Widgets {
             this.format_switch = new Gtk.Switch();
             this.auto_prettify = new Gtk.CheckButton.with_label(_("Auto Prettify"));
             this.reset_button = new Gtk.Button();
+            this.prettify = new Prettify();
         }
 
         private void assembly_headbar(){
@@ -115,7 +116,7 @@ namespace App.Widgets {
         }
 
         private void prettify_action(){
-            string prettified_text = this.prettify(this.app.app_view.input_text.buffer.text);
+            string prettified_text = this.prettify.prettify(this.app.app_view.input_text.buffer.text);
             this.app.app_view.output_text.buffer.text = prettified_text;
 
             this.settings.input_text = this.app.app_view.input_text.buffer.text;

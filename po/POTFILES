@@ -1,8 +1,4 @@
-src/controllers/AppController.vala
 src/Application.vala
-src/Application.vala
-src/Prettify.vala
-src/Window.vala
 src/views/AppView.vala
 src/widgets/HeaderBar.vala
 data/com.github.fleury08.prettifier.desktop.in

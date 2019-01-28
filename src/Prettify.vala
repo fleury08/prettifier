@@ -1,20 +1,26 @@
 using App;
+using App.Configs;
 
 namespace App{
     public class Prettify : GLib.Object{
-        private string prettify(string text){
-            var pretty_text;
+        
+        public TypeOfFile type_of_file { get; set;}
+
+        public Prettify(){
+        }           
+    
+        public string prettify(string text){
             switch (this.type_of_file) {
             case TypeOfFile.JSON:
-                return prettify_json(text);
+                return this.prettify_json(text);
             case TypeOfFile.XML:
-                return prettify_xml(text);
+                return this.prettify_xml(text);
             default:
                 return "BAD FORMAT";
             }
         }
 
-        private string prettify_json(string text){
+        public string prettify_json(string text){
             Json.Node json;
             try {
                 json = Json.from_string(text);
@@ -25,7 +31,7 @@ namespace App{
             return Json.to_string(json,true);
         }
 
-        private string prettify_xml(string text){
+        public string prettify_xml(string text){
             var doc = Xml.Parser.parse_doc(text);
             string pretty_xml;
             int length;
@@ -33,8 +39,9 @@ namespace App{
             return pretty_xml;
         }
 
-        private bool select_switch_state(TypeOfFile type){
+        public bool select_switch_state(TypeOfFile type){
             return type==TypeOfFile.XML;
         }
+
     }
 }

@@ -34,8 +34,6 @@ namespace App.Controllers {
             this.window.set_size_request (800, 640);
             this.window.set_titlebar (this.headerbar);
             this.application.add_window (window);
-
-            
         }
 
         public void activate () {

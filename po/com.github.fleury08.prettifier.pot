@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-28 13:36+0100\n"
+"POT-Creation-Date: 2019-01-28 14:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Auto Prettify"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:106
+#: src/widgets/HeaderBar.vala:107
 #: data/com.github.fleury08.prettifier.desktop.in:3
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
