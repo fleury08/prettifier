@@ -98,12 +98,12 @@ namespace App.Widgets {
             this.prettify_button = new Gtk.Button();
             this.copy_to_clipboard = new Gtk.Button();
             this.format_switch = new Gtk.Switch();
-            this.auto_prettify = new Gtk.CheckButton.with_label("Auto Prettify");
+            this.auto_prettify = new Gtk.CheckButton.with_label(_("Auto Prettify"));
             this.reset_button = new Gtk.Button();
         }
 
         private void assembly_headbar(){
-            this.set_title ("Prettifier");
+            this.set_title (_("Prettifier"));
             this.show_close_button = true;
             this.pack_end (new Gtk.Label("XML"));
             this.pack_end (format_switch);
@@ -122,39 +122,7 @@ namespace App.Widgets {
             this.settings.output_text = this.app.app_view.output_text.buffer.text;
         }
 
-        private string prettify(string text){
-            switch (this.type_of_file) {
-            case TypeOfFile.JSON:
-                return prettify_json(text);
-            case TypeOfFile.XML:
-                return prettify_xml(text);
-            default:
-                return "BAD FORMAT";
-            }
-        }
-
-        private string prettify_json(string text){
-            Json.Node json;
-            try {
-                json = Json.from_string(text);
-            } catch (Error e) {
-                print ("Unable to parse the string:"+e.message+"\n");
-                return "";
-            }
-            return Json.to_string(json,true);
-        }
-
-        private string prettify_xml(string text){
-            var doc = Xml.Parser.parse_doc(text);
-            string pretty_xml;
-            int length;
-            doc->dump_memory_format(out pretty_xml,out length, true);
-            return pretty_xml;
-        }
-
-        private bool select_switch_state(TypeOfFile type){
-            return type==TypeOfFile.XML;
-        }
+        
 
     }
 }

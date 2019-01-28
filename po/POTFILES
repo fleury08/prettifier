@@ -1,5 +1,9 @@
 src/controllers/AppController.vala
+src/Application.vala
+src/Application.vala
+src/Prettify.vala
+src/Window.vala
 src/views/AppView.vala
-src/widgets/ColorWidget.vala
 src/widgets/HeaderBar.vala
-src/widgets/LibraryRow.vala
+data/com.github.fleury08.prettifier.desktop.in
+data/com.github.fleury08.prettifier.appdata.xml.in

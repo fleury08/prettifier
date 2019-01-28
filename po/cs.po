@@ -1,71 +1,74 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Czech translations for com.github.fleury08.prettifier package.
+# Copyright (C) 2019 THE com.github.fleury08.prettifier'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.fleury08.prettifier package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2019.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-28 13:36+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2019-01-28 13:27+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: src/views/AppView.vala:28
 msgid "UNFORMATTED INPUT JSON/XML"
-msgstr ""
+msgstr "Nezformátovaný vstupní JSON/XML"
 
 #: src/views/AppView.vala:37
 msgid "Beautifully formatted JSON or XML"
-msgstr ""
+msgstr "Krásný JSON/XML výstup"
 
 #: src/widgets/HeaderBar.vala:39
 msgid "Prettify input text"
-msgstr ""
+msgstr "Zkrášli vstupní text"
 
 #: src/widgets/HeaderBar.vala:46
 msgid "Copy output to clipboard"
-msgstr ""
+msgstr "Zkopíruj výstup do schránky"
 
 #: src/widgets/HeaderBar.vala:80
 msgid "Clears out input and output window"
-msgstr ""
+msgstr "Vyčistí vstupní a výstupní okno"
 
 #: src/widgets/HeaderBar.vala:101
+#, fuzzy
 msgid "Auto Prettify"
-msgstr ""
+msgstr "Prettifier"
 
 #: src/widgets/HeaderBar.vala:106
 #: data/com.github.fleury08.prettifier.desktop.in:3
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
-msgstr ""
+msgstr "Prettifier"
 
 #: data/com.github.fleury08.prettifier.desktop.in:4
 #: data/com.github.fleury08.prettifier.appdata.xml.in:8
 msgid "Prettify your JSON/XML outputs"
-msgstr ""
+msgstr "Zkrášli své JSON/XML výstupy"
 
 #: data/com.github.fleury08.prettifier.desktop.in:5
 msgid "com.github.fleury08.prettifier"
-msgstr ""
+msgstr "com.github.fleury08.prettifier"
 
 #: data/com.github.fleury08.prettifier.desktop.in:11
 msgid "app;vala;xml;json;pretty;"
-msgstr ""
+msgstr "app;vala;xml;json;pretty;"
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:9
 msgid "Jaroslav Staněk"
-msgstr ""
+msgstr "Jaroslav Staněk"
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:22
 msgid ""
 "Makes your outputs prettier, so you can read It like a human not like a "
 "machine."
 msgstr ""
+"Dělá Vaše výstupy krásnějšími, aby jste je nemuseli číst jako robot, ale "
+"jako člověk."

@@ -1,5 +1,5 @@
 project('com.github.fleury08.prettifier', ['vala', 'c'],
-    version : '1.0.8',
+    version : '1.0.9',
     license: 'GPL-3.0'
 )
 
@@ -10,7 +10,26 @@ add_project_arguments([
 )
 
 gnome = import('gnome')
+
 i18n = import('i18n')
+#Translate and install our .desktop file
+i18n.merge_file(
+    input: join_paths('data', meson.project_name() + '.desktop.in'),
+    output: meson.project_name() + '.desktop',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    type: 'desktop',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications')
+)
+
+#Translate and install our .appdata file
+i18n.merge_file(
+    input: join_paths('data', meson.project_name() + '.appdata.xml.in'),
+    output: meson.project_name() + '.appdata.xml',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
+)
 
 gresource = gnome.compile_resources(
     'as-resources', 'data/com.github.fleury08.prettifier.gresource.xml',

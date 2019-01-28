@@ -25,7 +25,8 @@ namespace App.Views {
             //INPUT TEXT
             this.input_text = new Gtk.SourceView ();
             this.input_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            this.input_text.buffer.text = settings.input_text ?? "UNFORMATTED INPUT JSON/XML";
+            this.input_text.buffer.text = settings.input_text ?? _("UNFORMATTED INPUT JSON/XML");
+            this.input_text.monospace = true;
 
             Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
             input_scrolled.add(input_text);
@@ -33,8 +34,9 @@ namespace App.Views {
             //OUTPUT TEXT
             this.output_text = new Gtk.SourceView ();
             this.output_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            this.output_text.buffer.text = settings.output_text ?? "Beautifully formatted JSON or XML";
+            this.output_text.buffer.text = settings.output_text ?? _("Beautifully formatted JSON or XML");
             this.output_text.editable = false;
+            this.output_text.monospace = true;            
 
             Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
             output_scrolled.add(output_text);
