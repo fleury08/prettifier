@@ -1,16 +1,16 @@
 # French translations for com.github.fleury08.prettifier package.
 # Copyright (C) 2019 THE com.github.fleury08.prettifier'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.fleury08.prettifier package.
-# Automatically generated, 2019.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-28 14:11+0100\n"
-"PO-Revision-Date: 2019-01-28 13:36+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-01-28 21:53+0100\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,53 +19,55 @@ msgstr ""
 
 #: src/views/AppView.vala:28
 msgid "UNFORMATTED INPUT JSON/XML"
-msgstr ""
+msgstr "ENTRÉE JSON/XML NON FORMATÉE"
 
 #: src/views/AppView.vala:37
 msgid "Beautifully formatted JSON or XML"
-msgstr ""
+msgstr "JSON ou XML joliment formaté"
 
 #: src/widgets/HeaderBar.vala:39
 msgid "Prettify input text"
-msgstr ""
+msgstr "Embellir le texte saisi"
 
 #: src/widgets/HeaderBar.vala:46
 msgid "Copy output to clipboard"
-msgstr ""
+msgstr "Copier la sortie dans le presse-papiers"
 
 #: src/widgets/HeaderBar.vala:80
 msgid "Clears out input and output window"
-msgstr ""
+msgstr "Effacer la fenêtre d'entrée et de sortie"
 
 #: src/widgets/HeaderBar.vala:101
 msgid "Auto Prettify"
-msgstr ""
+msgstr "Autoformater"
 
 #: src/widgets/HeaderBar.vala:107
 #: data/com.github.fleury08.prettifier.desktop.in:3
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
-msgstr ""
+msgstr "Prettifier"
 
 #: data/com.github.fleury08.prettifier.desktop.in:4
 #: data/com.github.fleury08.prettifier.appdata.xml.in:8
 msgid "Prettify your JSON/XML outputs"
-msgstr ""
+msgstr "Embellissez vos donées JSON/XML de sortie"
 
 #: data/com.github.fleury08.prettifier.desktop.in:5
 msgid "com.github.fleury08.prettifier"
-msgstr ""
+msgstr "com.github.fleury08.prettifier"
 
 #: data/com.github.fleury08.prettifier.desktop.in:11
 msgid "app;vala;xml;json;pretty;"
-msgstr ""
+msgstr "application;vala;xml;json;beau;"
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:9
 msgid "Jaroslav Staněk"
-msgstr ""
+msgstr "Jaroslav Staněk"
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:22
 msgid ""
 "Makes your outputs prettier, so you can read It like a human not like a "
 "machine."
 msgstr ""
+"Rend vos données de sortie plus jolies, pour que vous puissiez les lire comme un humain et non comme une "
+"machine."
