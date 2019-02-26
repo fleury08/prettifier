@@ -22,7 +22,7 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.1.0.1" date="2019-02-25">
+      <release version="1.1.1" date="2019-02-25">
         <description>
           <p>Added translations English and Czech</p>
         </description>
