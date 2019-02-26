@@ -33,6 +33,7 @@ namespace App {
 
             add_action (quit_action);
             add_accelerator ("<Control>q", "app.quit", null);
+
         }
 
         /**
