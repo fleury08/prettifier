@@ -37,7 +37,7 @@ i18n = import('i18n')
 
 #Translate and install our .desktop file
 desktop_file = i18n.merge_file(
-    input: join_paths('data', meson.project_name() + '.desktop.in'),
+    input: meson.project_name() + '.desktop.in',
     output: meson.project_name() + '.desktop',
     po_dir: join_paths(meson.source_root(), 'po'),
     type: 'desktop',
@@ -47,7 +47,7 @@ desktop_file = i18n.merge_file(
 
 #Translate and install our .appdata file
 appdata_file = i18n.merge_file(
-    input: join_paths('data', meson.project_name() + '.appdata.xml.in'),
+    input: meson.project_name() + '.appdata.xml.in',
     output: meson.project_name() + '.appdata.xml',
     po_dir: join_paths(meson.source_root(), 'po'),
     install: true,
