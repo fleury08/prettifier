@@ -22,9 +22,9 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.1.1" date="2019-02-25">
+      <release version="1.1.2" date="2019-03-21">
         <description>
-          <p>Added translations English and Czech</p>
+          <p>Added translations French and Czech</p>
         </description>
       </release>
     </releases>

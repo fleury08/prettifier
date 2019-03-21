@@ -1,5 +1,5 @@
 project('com.github.fleury08.prettifier', ['vala', 'c'],
-    version : '1.1.1',
+    version : '1.1.2',
     license: 'GPL-3.0'
 )
 
@@ -10,7 +10,7 @@ add_project_arguments([
 )
 
 gnome = import('gnome')
-
+i18n = import('i18n')
 
 gresource = gnome.compile_resources(
     'as-resources', 'data/com.github.fleury08.prettifier.gresource.xml',
@@ -29,7 +29,6 @@ c_args = [
 
 sources = files()
 
-subdir('data')
 subdir('po')
 subdir('src')
 subdir('tests')
@@ -43,6 +42,51 @@ dependencies = [
     dependency('libxml-2.0'),
     dependency('gtksourceview-3.0')
 ]
+
+icon_sizes = ['16','24','32', '48', '64', '128']
+
+foreach i : icon_sizes
+    install_data(
+        join_paths(meson.source_root(),'data','images', 'icons', i, meson.project_name() + '.svg'),
+        install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', i + 'x' + i, 'apps')
+    )
+endforeach
+
+
+install_data(
+    join_paths(meson.source_root(),'data','images', meson.project_name() + '.svg'),
+    install_dir: join_paths(get_option('datadir'), 'Prettifier', 'images')
+)
+
+install_data(
+    join_paths(meson.source_root(),'data','images', meson.project_name() + '.png'),
+    install_dir: join_paths(get_option('datadir'), 'pixmaps')
+)
+
+install_data(
+    join_paths(meson.source_root(),'data',meson.project_name() + '.gschema.xml'),
+    install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
+)
+
+
+#Translate and install our .desktop file
+desktop_file = i18n.merge_file(
+    input: join_paths(meson.source_root(),'data',meson.project_name() + '.desktop.in'),
+    output: meson.project_name() + '.desktop',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    type: 'desktop',
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'applications')
+)
+
+#Translate and install our .appdata file
+appdata_file = i18n.merge_file(
+    input: join_paths(meson.source_root(),'data',meson.project_name() + '.appdata.xml.in'),
+    output: '@BASENAME@',
+    po_dir: join_paths(meson.source_root(), 'po'),
+    install: true,
+    install_dir: join_paths(get_option('datadir'), 'metainfo')
+)
 
 e = executable('com.github.fleury08.prettifier',
     sources,
