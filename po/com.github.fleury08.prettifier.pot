@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-21 13:04+0100\n"
+"POT-Creation-Date: 2019-09-12 15:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,15 +33,15 @@ msgstr ""
 msgid "Copy output to clipboard"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:80
+#: src/widgets/HeaderBar.vala:82
 msgid "Clears out input and output window"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:101
+#: src/widgets/HeaderBar.vala:103
 msgid "Auto Prettify"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:107
+#: src/widgets/HeaderBar.vala:109
 #: data/com.github.fleury08.prettifier.desktop.in:4
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
@@ -71,5 +71,5 @@ msgid ""
 msgstr ""
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:27
-msgid "Added translations English and Czech"
+msgid "Added translations French and Czech"
 msgstr ""
