@@ -25,17 +25,19 @@ namespace App{
             try {
                 json = Json.from_string(text);
             } catch (Error e) {
-                print ("Unable to parse the string:"+e.message+"\n");
-                return "";
+                //print ("Unable to parse the string:"+e.message+"\n");
+                return e.message;
             }
             return Json.to_string(json,true);
         }
 
         public string prettify_xml(string text){
             var doc = Xml.Parser.parse_doc(text);
+            var error = Xml.get_last_error().message;
             string pretty_xml;
             int length;
             doc->dump_memory_format(out pretty_xml,out length, true);
+            if(length == 0) return error;
             return pretty_xml;
         }
 

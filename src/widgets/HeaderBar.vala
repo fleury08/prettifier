@@ -51,11 +51,8 @@ namespace App.Widgets {
 
 
             //Format switch setup
+            
             this.format_switch.valign = Gtk.Align.CENTER;
-            if(this.prettify.select_switch_state(this.settings.selected_format)){
-                this.format_switch.activate();
-                this.format_switch.active=true;
-            }
             this.format_switch.notify["active"].connect (() => {
                 if (format_switch.active) {
                     prettify.type_of_file = TypeOfFile.XML;
@@ -66,6 +63,11 @@ namespace App.Widgets {
                 print("\nFormat is saved as:"+settings.selected_format.to_string());
                 print("\nFormat is set to :"+prettify.type_of_file.to_string());
             });
+
+            if(this.prettify.select_switch_state(this.settings.selected_format)){
+                this.format_switch.activate();
+                this.format_switch.active=true;
+            }
             
             //Auto prettify button setup
             this.auto_prettify.active = this.settings.auto_prettify;
@@ -123,6 +125,7 @@ namespace App.Widgets {
             this.settings.output_text = this.app.app_view.output_text.buffer.text;
         }
 
+    
         
 
     }
