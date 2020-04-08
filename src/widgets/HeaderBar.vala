@@ -21,7 +21,6 @@ namespace App.Widgets {
         public Gtk.Button reset_button {get; private set;}
         public Gtk.CheckButton auto_prettify {get; private set;}
         private App.Controllers.AppController app {get; private set;}
-        private App.Configs.Settings settings {get; private set;}
         private App.Prettify prettify {get; private set;}
 
         /**
@@ -59,20 +58,20 @@ namespace App.Widgets {
                 } else {
                     prettify.type_of_file = TypeOfFile.JSON;
                 }
-                this.settings.selected_format=prettify.type_of_file;
-                print("\nFormat is saved as:"+settings.selected_format.to_string());
+                Application.settings.set_enum ("selected-format", prettify.type_of_file);
+                print("\nFormat is saved as:"+((App.Configs.TypeOfFile)Application.settings.get_enum ("selected-format")).to_string());
                 print("\nFormat is set to :"+prettify.type_of_file.to_string());
             });
 
-            if(this.prettify.select_switch_state(this.settings.selected_format)){
+            if(this.prettify.select_switch_state((App.Configs.TypeOfFile)Application.settings.get_enum ("selected-format"))){
                 this.format_switch.activate();
                 this.format_switch.active=true;
             }
             
             //Auto prettify button setup
-            this.auto_prettify.active = this.settings.auto_prettify;
+            this.auto_prettify.active = Application.settings.get_boolean ("auto-prettify");
             this.auto_prettify.notify["active"].connect(()=>{
-                this.settings.auto_prettify = this.auto_prettify.active;
+                Application.settings.set_boolean ("auto-prettify", this.auto_prettify.active);
                 if(auto_prettify.active) prettify_action();
             });
 
@@ -96,7 +95,6 @@ namespace App.Widgets {
 
         private void init_headerbar(App.Controllers.AppController app){
             this.app = app;
-            this.settings = App.Configs.Settings.get_instance ();
             this.prettify_button = new Gtk.Button();
             this.copy_to_clipboard = new Gtk.Button();
             this.format_switch = new Gtk.Switch();
@@ -121,8 +119,8 @@ namespace App.Widgets {
             string prettified_text = this.prettify.prettify(this.app.app_view.input_text.buffer.text);
             this.app.app_view.output_text.buffer.text = prettified_text;
 
-            this.settings.input_text = this.app.app_view.input_text.buffer.text;
-            this.settings.output_text = this.app.app_view.output_text.buffer.text;
+            Application.settings.set_string ("input-text", this.app.app_view.input_text.buffer.text);
+            Application.settings.set_string ("output-text", this.app.app_view.output_text.buffer.text);
         }
 
     
