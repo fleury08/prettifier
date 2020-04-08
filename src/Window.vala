@@ -32,10 +32,8 @@ namespace App {
             );
 
             
-
-            var settings = App.Configs.Settings.get_instance ();
-            int x = settings.window_x;
-            int y = settings.window_y;
+            int x = Application.settings.get_int ("window-x");
+            int y = Application.settings.get_int ("window-y");
 
             if (x != -1 && y != -1) {
                 move (x, y);
@@ -55,8 +53,8 @@ namespace App {
                 int root_x, root_y;
                 get_position (out root_x, out root_y);
 
-                settings.window_x = root_x;
-                settings.window_y = root_y;
+                Application.settings.set_int ("window-x", root_x);
+                Application.settings.set_int ("window-y", root_y);
                 return false;
             });
         }

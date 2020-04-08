@@ -20,12 +20,10 @@ namespace App.Views {
          * Constructs a new {@code AppView} object.
          */
         public AppView () {
-            var settings = App.Configs.Settings.get_instance ();
-
             //INPUT TEXT
             this.input_text = new Gtk.SourceView ();
             this.input_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            this.input_text.buffer.text = settings.input_text ?? _("UNFORMATTED INPUT JSON/XML");
+            this.input_text.buffer.text = Application.settings.get_string ("input-text") ?? _("UNFORMATTED INPUT JSON/XML");
             this.input_text.monospace = true;
 
             Gtk.ScrolledWindow input_scrolled = new Gtk.ScrolledWindow (null, null);
@@ -34,7 +32,7 @@ namespace App.Views {
             //OUTPUT TEXT
             this.output_text = new Gtk.SourceView ();
             this.output_text.set_wrap_mode (Gtk.WrapMode.WORD);
-            this.output_text.buffer.text = settings.output_text ?? _("Beautifully formatted JSON or XML");
+            this.output_text.buffer.text = Application.settings.get_string ("output-text") ?? _("Beautifully formatted JSON or XML");
             this.output_text.editable = false;
             this.output_text.monospace = true;            
 
