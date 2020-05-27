@@ -13,11 +13,17 @@
 </p>
 
 <p align="center">
+   <a href="https://paypal.me/jaroush">
+     <img src="https://img.shields.io/badge/PayPal-donate-red.svg?logo=paypal&style=for-the-badge">
+  </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/fleury08/prettifier/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.1.4-orange.svg">
+    <img src="https://img.shields.io/badge/Release-v%201.1.4-orange.svg?style=for-the-badge">
   </a>
 </p>
 
