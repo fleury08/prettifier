@@ -19,6 +19,7 @@ namespace App.Widgets {
         public Gtk.Switch format_switch { get; private set;}
         public Gtk.Button copy_to_clipboard {get; private set;}
         public Gtk.Button reset_button {get; private set;}
+        public Gtk.SpinButton indent_num {get; private set;}
         public Gtk.CheckButton auto_prettify {get; private set;}
         private App.Controllers.AppController app {get; private set;}
         private App.Prettify prettify {get; private set;}
@@ -75,6 +76,11 @@ namespace App.Widgets {
                 if(auto_prettify.active) prettify_action();
             });
 
+            //indentation value
+            
+            this.indent_num.notify["active"].connect(()=>{
+                if(auto_prettify.active) prettify_action();
+            });
 
             //Reset button setup
             this.reset_button.set_image (new Gtk.Image .from_icon_name ("edit-clear", Gtk.IconSize.LARGE_TOOLBAR));
@@ -97,6 +103,7 @@ namespace App.Widgets {
             this.app = app;
             this.prettify_button = new Gtk.Button();
             this.copy_to_clipboard = new Gtk.Button();
+            this.indent_num = new Gtk.SpinButton.with_range(0, 10.0, 1.0);
             this.format_switch = new Gtk.Switch();
             this.auto_prettify = new Gtk.CheckButton.with_label(_("Auto Prettify"));
             this.reset_button = new Gtk.Button();
@@ -109,6 +116,7 @@ namespace App.Widgets {
             this.pack_end (new Gtk.Label("XML"));
             this.pack_end (format_switch);
             this.pack_end (new Gtk.Label("JSON"));
+            this.pack_end (indent_num);
             this.pack_start (prettify_button);
             this.pack_start (copy_to_clipboard);
             this.pack_start (reset_button);
@@ -116,7 +124,7 @@ namespace App.Widgets {
         }
 
         private void prettify_action(){
-            string prettified_text = this.prettify.prettify(this.app.app_view.input_text.buffer.text);
+            string prettified_text = this.prettify.prettify(this.app.app_view.input_text.buffer.text, this.indent_num.get_value_as_int());
             this.app.app_view.output_text.buffer.text = prettified_text;
 
             Application.settings.set_string ("input-text", this.app.app_view.input_text.buffer.text);

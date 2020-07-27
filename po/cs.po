@@ -74,4 +74,4 @@ msgstr ""
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:27
 msgid "Added translations French and Czech"
-msgstr ""
+msgstr "Přidán překlad do francouštiny a češtiny"

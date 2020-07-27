@@ -45,6 +45,11 @@
             <summary></summary>
             <description></description>
         </key>
+        <key name="indent-num" type="i">
+            <default>4</default>
+            <summary>Indentation value for output</summary>
+            <description>Indentation value for output</description>
+        </key>
     </schema>
 
 </schemalist>

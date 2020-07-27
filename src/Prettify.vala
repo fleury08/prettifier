@@ -9,29 +9,34 @@ namespace App{
         public Prettify(){
         }           
     
-        public string prettify(string text){
+        public string prettify(string text, int indent){
             switch (this.type_of_file) {
             case TypeOfFile.JSON:
-                return this.prettify_json(text);
+                return this.prettify_json(text, indent);
             case TypeOfFile.XML:
-                return this.prettify_xml(text);
+                return this.prettify_xml(text, indent);
             default:
                 return "BAD FORMAT";
             }
         }
 
-        public string prettify_json(string text){
+        public string prettify_json(string text, int indent){
+            Json.Generator generator = new Json.Generator ();
             Json.Node json;
             try {
                 json = Json.from_string(text);
+                generator.set_root (json);
+                generator.set_pretty (true);
+                generator.set_indent (indent);
             } catch (Error e) {
                 //print ("Unable to parse the string:"+e.message+"\n");
                 return e.message;
             }
-            return Json.to_string(json,true);
+            string str = generator.to_data (null);
+            return str;
         }
 
-        public string prettify_xml(string text){
+        public string prettify_xml(string text, int indent){
             var doc = Xml.Parser.parse_doc(text);
             var error = Xml.get_last_error().message;
             string pretty_xml;
