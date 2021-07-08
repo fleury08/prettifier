@@ -39,8 +39,7 @@ dependencies = [
     dependency('granite'),
     dependency('gtk+-3.0'),
     dependency('json-glib-1.0'),
-    dependency('libxml-2.0'),
-    dependency('gtksourceview-3.0')
+    dependency('libxml-2.0')
 ]
 
 icon_sizes = ['16','24','32', '48', '64', '128']

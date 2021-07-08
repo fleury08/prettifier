@@ -1,0 +1,17 @@
+app-id: com.github.fleury08.prettifier
+runtime: io.elementary.Platform
+runtime-version: 'daily'
+sdk: io.elementary.Sdk
+command: com.github.fleury08.prettifier
+
+finish-args:
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+
+modules:
+  - name: prettifier
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .

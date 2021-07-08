@@ -1,3 +1,4 @@
 .anjuta/
 build/
+.flatpak-builder/
 *~
