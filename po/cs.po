@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-12 15:07+0200\n"
+"POT-Creation-Date: 2021-07-08 17:41+0200\n"
 "PO-Revision-Date: 2019-01-28 13:27+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: src/views/AppView.vala:28
+#: src/views/AppView.vala:26
 msgid "UNFORMATTED INPUT JSON/XML"
 msgstr "Nezformátovaný vstupní JSON/XML"
 
-#: src/views/AppView.vala:37
+#: src/views/AppView.vala:35
 msgid "Beautifully formatted JSON or XML"
 msgstr "Krásný JSON/XML výstup"
 
@@ -33,15 +33,15 @@ msgstr "Zkrášli vstupní text"
 msgid "Copy output to clipboard"
 msgstr "Zkopíruj výstup do schránky"
 
-#: src/widgets/HeaderBar.vala:82
+#: src/widgets/HeaderBar.vala:87
 msgid "Clears out input and output window"
 msgstr "Vyčistí vstupní a výstupní okno"
 
-#: src/widgets/HeaderBar.vala:103
+#: src/widgets/HeaderBar.vala:108
 msgid "Auto Prettify"
 msgstr "Automaticky zkrášlit"
 
-#: src/widgets/HeaderBar.vala:109
+#: src/widgets/HeaderBar.vala:114
 #: data/com.github.fleury08.prettifier.desktop.in:4
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"

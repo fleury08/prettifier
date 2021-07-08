@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-12 15:07+0200\n"
+"POT-Creation-Date: 2021-07-08 17:41+0200\n"
 "PO-Revision-Date: 2019-01-28 21:53+0100\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/views/AppView.vala:28
+#: src/views/AppView.vala:26
 msgid "UNFORMATTED INPUT JSON/XML"
 msgstr "ENTRÉE JSON/XML NON FORMATÉE"
 
-#: src/views/AppView.vala:37
+#: src/views/AppView.vala:35
 msgid "Beautifully formatted JSON or XML"
 msgstr "JSON ou XML joliment formaté"
 
@@ -33,15 +33,15 @@ msgstr "Embellir le texte saisi"
 msgid "Copy output to clipboard"
 msgstr "Copier la sortie dans le presse-papiers"
 
-#: src/widgets/HeaderBar.vala:82
+#: src/widgets/HeaderBar.vala:87
 msgid "Clears out input and output window"
 msgstr "Effacer la fenêtre d'entrée et de sortie"
 
-#: src/widgets/HeaderBar.vala:103
+#: src/widgets/HeaderBar.vala:108
 msgid "Auto Prettify"
 msgstr "Autoformater"
 
-#: src/widgets/HeaderBar.vala:109
+#: src/widgets/HeaderBar.vala:114
 #: data/com.github.fleury08.prettifier.desktop.in:4
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"

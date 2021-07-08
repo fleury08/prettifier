@@ -20,7 +20,6 @@ public class Main {
      * @since 1.0.0
      */
     public static int main (string [] args) {
-        stdout.printf(Granite.Settings.get_default().prefers_color_scheme.to_string());
         var options_context = new OptionContext 
 			(App.Configs.Constants.PROGRAME_NAME +" "+ _("Options"));
         options_context.set_help_enabled (true);

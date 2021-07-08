@@ -1,5 +1,5 @@
-project('com.github.fleury08.prettifier', ['vala', 'c'],
-    version : '1.1.4',
+project('com.github.fleury08.prettifier', 'vala', 'c',
+    version : '1.2.0',
     license: 'GPL-3.0'
 )
 
@@ -87,7 +87,8 @@ appdata_file = i18n.merge_file(
     install_dir: join_paths(get_option('datadir'), 'metainfo')
 )
 
-e = executable('com.github.fleury08.prettifier',
+e = executable(
+    meson.project_name(),
     sources,
     gresource,
     c_args: c_args,

@@ -7,7 +7,7 @@ using App.Controllers;
 
 namespace App {
     public class Application : Gtk.Application {
-        public static GLib.Settings settings;
+        public static GLib.Settings settings = new GLib.Settings (Constants.ID);
 
         public AppController controller;
 
@@ -21,20 +21,6 @@ namespace App {
             );
         }
 
-        static construct {
-            settings = new GLib.Settings (Constants.ID);
-        }
-
-        construct {
-            var quit_action = new SimpleAction ("quit", null);
-            quit_action.activate.connect (() => {
-                controller.quit ();
-            });
-
-            add_action (quit_action);
-            set_accels_for_action ("app.quit", { "<Control>q" });
-        }
-
         /**
          * Handle attempts to start up the application
          * @return {@code void}
@@ -43,7 +29,7 @@ namespace App {
             if (controller == null) {
                 controller = new AppController (this);
             }
-            
+
             controller.activate ();
         }
     }
