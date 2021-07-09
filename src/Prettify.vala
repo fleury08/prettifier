@@ -29,7 +29,6 @@ namespace App{
                 generator.set_pretty (true);
                 generator.set_indent (indent);
             } catch (Error e) {
-                //print ("Unable to parse the string:"+e.message+"\n");
                 return e.message;
             }
             string str = generator.to_data (null);
@@ -44,10 +43,6 @@ namespace App{
             doc->dump_memory_format(out pretty_xml,out length, true);
             if(length == 0) return error;
             return pretty_xml;
-        }
-
-        public bool select_switch_state(TypeOfFile type){
-            return type==TypeOfFile.XML;
         }
 
     }

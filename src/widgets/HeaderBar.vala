@@ -16,7 +16,10 @@ namespace App.Widgets {
 
         
         public Gtk.Button prettify_button { get; private set;}
-        public Gtk.Switch format_switch { get; private set;}
+        //public Gtk.Switch format_switch { get; private set;}
+        public Gtk.ComboBoxText format_combobox { get; private set;}
+        public Gtk.Button format_json {get; private set;}
+        public Gtk.Button format_xml {get; private set;}
         public Gtk.Button copy_to_clipboard {get; private set;}
         public Gtk.Button reset_button {get; private set;}
         public Gtk.SpinButton indent_num {get; private set;}
@@ -31,6 +34,7 @@ namespace App.Widgets {
          * @see icon_settings
          */
         public HeaderBar (App.Controllers.AppController app) {
+            
             //Initialization of properties of "this"
             init_headerbar(app);         
 
@@ -49,25 +53,17 @@ namespace App.Widgets {
                 clipboard.set_text(this.app.app_view.output_text.buffer.text,-1);
             });
 
-
-            //Format switch setup
-            
-            this.format_switch.valign = Gtk.Align.CENTER;
-            this.format_switch.notify["active"].connect (() => {
-                if (format_switch.active) {
-                    prettify.type_of_file = TypeOfFile.XML;
-                } else {
-                    prettify.type_of_file = TypeOfFile.JSON;
-                }
+            //Combobox switch format
+            this.format_combobox.valign = Gtk.Align.CENTER;
+            this.format_combobox.append_text (_("JSON"));
+            this.format_combobox.append_text (_("XML"));
+            this.format_combobox.active = Application.settings.get_enum ("selected-format");
+            this.format_combobox.changed.connect (() => {
+                prettify.type_of_file = (TypeOfFile)this.format_combobox.active;
                 Application.settings.set_enum ("selected-format", prettify.type_of_file);
-                print("\nFormat is saved as:"+((App.Configs.TypeOfFile)Application.settings.get_enum ("selected-format")).to_string());
-                print("\nFormat is set to :"+prettify.type_of_file.to_string());
+                if(auto_prettify.active) prettify_action();
             });
-
-            if(this.prettify.select_switch_state((App.Configs.TypeOfFile)Application.settings.get_enum ("selected-format"))){
-                this.format_switch.activate();
-                this.format_switch.active=true;
-            }
+            this.format_combobox.active = Application.settings.get_enum ("selected-format");
             
             //Auto prettify button setup
             this.auto_prettify.active = Application.settings.get_boolean ("auto-prettify");
@@ -78,7 +74,7 @@ namespace App.Widgets {
 
             //indentation value
             
-            this.indent_num.notify["active"].connect(()=>{
+            this.indent_num.changed.connect(()=>{
                 if(auto_prettify.active) prettify_action();
             });
 
@@ -103,8 +99,8 @@ namespace App.Widgets {
             this.app = app;
             this.prettify_button = new Gtk.Button();
             this.copy_to_clipboard = new Gtk.Button();
-            this.indent_num = new Gtk.SpinButton.with_range(0, 10.0, 1.0);
-            this.format_switch = new Gtk.Switch();
+            this.indent_num = new Gtk.SpinButton.with_range(0, 12.0, 1.0);
+            this.format_combobox = new Gtk.ComboBoxText();
             this.auto_prettify = new Gtk.CheckButton.with_label(_("Auto Prettify"));
             this.reset_button = new Gtk.Button();
             this.prettify = new Prettify();
@@ -113,9 +109,8 @@ namespace App.Widgets {
         private void assembly_headbar(){
             this.set_title (_("Prettifier"));
             this.show_close_button = true;
-            this.pack_end (new Gtk.Label("XML"));
-            this.pack_end (format_switch);
-            this.pack_end (new Gtk.Label("JSON"));
+            this.pack_end (format_combobox);
+            this.pack_end (new Gtk.Label(_("Indent")));
             this.pack_end (indent_num);
             this.pack_start (prettify_button);
             this.pack_start (copy_to_clipboard);
