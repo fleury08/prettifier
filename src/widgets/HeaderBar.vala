@@ -73,8 +73,9 @@ namespace App.Widgets {
             });
 
             //indentation value
-            
+            this.indent_num.set_value(Application.settings.get_int("indent-num"));
             this.indent_num.changed.connect(()=>{
+                Application.settings.set_int ("indent-num", this.indent_num.get_value_as_int());
                 if(auto_prettify.active) prettify_action();
             });
 
