@@ -109,9 +109,13 @@ namespace App.Widgets {
         private void assembly_headbar(){
             this.set_title (_("Prettifier"));
             this.show_close_button = true;
+            
+            //Adding from end/right
             this.pack_end (format_combobox);
-            this.pack_end (new Gtk.Label(_("Indent")));
             this.pack_end (indent_num);
+            this.pack_end (new Gtk.Label(_("Indent")));
+
+            //Adding from start/left
             this.pack_start (prettify_button);
             this.pack_start (copy_to_clipboard);
             this.pack_start (reset_button);
