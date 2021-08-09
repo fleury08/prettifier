@@ -1,10 +1,11 @@
 [Desktop Entry]
 Type=Application
 Name=Prettifier
+GenericName=Prettifier
 Comment=Prettify your JSON/XML outputs
 Icon=com.github.fleury08.prettifier
 Exec=com.github.fleury08.prettifier
 Terminal=false
 StartupNotify=true
-Categories=GTK;TextTools;Development;
-Keywords=app;vala;xml;json;pretty;
+Categories=Utility;Development;
+Keywords=xml;json;pretty;print;prettify;
