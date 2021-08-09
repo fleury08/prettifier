@@ -45,20 +45,6 @@ These dependencies must be present before building:
 flatpak-builder build com.github.fleury08.prettifier.yml --user --install --force-clean && flatpak run com.github.fleury08.prettifier
 ```
 
-
-### Contributing
-
-To help, access the links below:
-
-- [Guide on Code Style](https://github.com/fleury08/prettifier/wiki/Guide-on-code-style)
-
-- [Proposing Design Changes](https://github.com/fleury08/prettifier/wiki/Proposing-Design-Changes)
-
-- [Reporting Bugs](https://github.com/fleury08/prettifier/wiki/Reporting-Bugs)
-
-- [Translate](https://github.com/fleury08/prettifier/wiki/Translate)
-
-
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
