@@ -23,7 +23,7 @@
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.2.0-orange.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v%201.2.2-orange.svg?style=for-the-badge">
   </a>
 </p>
 
@@ -37,48 +37,14 @@
 
 ### Dependencies
 These dependencies must be present before building:
- - `meson`
- - `valac`
- - `debhelper`
- - `libgranite-dev`
- - `libgtk-3-dev`
- - `libjson-glib-dev`
- - `libxml2-dev`
- - `libgtksourceview-4.0-dev`
-
-Use the App script to simplify installation by running `./app install-deps`
+ - flatpak-builder
+ - elementary flatpak sdk
  
- ### Building
-
+### Building and running
 ```
-git clone https://github.com/fleury08/prettifier.git com.github.fleury08.prettifier && cd com.github.fleury08.prettifier
-./app install-deps && ./app install
+flatpak-builder build com.github.fleury08.prettifier.yml --user --install --force-clean && flatpak run com.github.fleury08.prettifier
 ```
 
-### Deconstruct
-
-```
-./app uninstall
-```
-
-### Development & Testing
-
-Prettifier includes a script to simplify the development process. This script can be accessed in the main project directory through `./app`.
-
-```
-Usage:
-  ./app [OPTION]
-
-Options:
-  clean             Removes build directories (can require sudo)
-  generate-i18n     Generates .pot and .po files for i18n (multi-language support)
-  install           Builds and installs application to the system (requires sudo)
-  install-deps      Installs missing build dependencies
-  run               Builds and runs the application
-  test              Builds and runs testing for the application
-  test-run          Builds application, runs testing and if successful application is started
-  uninstall         Removes the application from the system (requires sudo)
-```
 
 ### Contributing
 
