@@ -2,7 +2,7 @@
 <!-- Copyright 2018 Jaroslav Staněk <jaroslav-stanek@email.cz> -->
 <component type="desktop-application">
     <id>com.github.fleury08.prettifier</id>
-    <metadata_license>CC0-1.0</metadata_license>
+    <metadata_license>CC0</metadata_license>
     <project_license>MIT</project_license>
     <name>Prettifier</name>
     <summary>Prettify your JSON/XML outputs</summary>
@@ -22,41 +22,13 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.2.0" date="2021-06-30">
+      <release version="1.2.2" date="2021-08-09">
         <description>
-          <p>New version for with little tweaks and reworks</p>
+          <p>New version for elementaryOS 6 with little tweaks and reworks</p>
         </description>
       </release>
     </releases>
-    <content_rating type="oars-1.1">
-      <content_attribute id="violence-cartoon">none</content_attribute>
-      <content_attribute id="violence-fantasy">none</content_attribute>
-      <content_attribute id="violence-realistic">none</content_attribute>
-      <content_attribute id="violence-bloodshed">none</content_attribute>
-      <content_attribute id="violence-sexual">none</content_attribute>
-      <content_attribute id="violence-desecration">none</content_attribute>
-      <content_attribute id="violence-slavery">none</content_attribute>
-      <content_attribute id="violence-worship">none</content_attribute>
-      <content_attribute id="drugs-alcohol">none</content_attribute>
-      <content_attribute id="drugs-narcotics">none</content_attribute>
-      <content_attribute id="drugs-tobacco">none</content_attribute>
-      <content_attribute id="sex-nudity">none</content_attribute>
-      <content_attribute id="sex-themes">none</content_attribute>
-      <content_attribute id="sex-homosexuality">none</content_attribute>
-      <content_attribute id="sex-prostitution">none</content_attribute>
-      <content_attribute id="sex-adultery">none</content_attribute>
-      <content_attribute id="sex-appearance">none</content_attribute>
-      <content_attribute id="language-profanity">none</content_attribute>
-      <content_attribute id="language-humor">none</content_attribute>
-      <content_attribute id="language-discrimination">none</content_attribute>
-      <content_attribute id="social-chat">none</content_attribute>
-      <content_attribute id="social-info">none</content_attribute>
-      <content_attribute id="social-audio">none</content_attribute>
-      <content_attribute id="social-location">none</content_attribute>
-      <content_attribute id="social-contacts">none</content_attribute>
-      <content_attribute id="money-purchasing">none</content_attribute>
-      <content_attribute id="money-gambling">none</content_attribute>
-    </content_rating> 
+    <content_rating type="oars-1.1" />
     <url type="homepage">https://jstanek.eu/</url>
     <url type="bugtracker">https://github.com/fleury08/prettifier/issues</url>
     <url type="help">https://github.com/fleury08/prettifier/issues</url>
