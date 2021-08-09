@@ -31,7 +31,6 @@ sources = files()
 
 subdir('po')
 subdir('src')
-subdir('tests')
 
 dependencies = [
 	dependency('gobject-2.0'),
@@ -97,6 +96,5 @@ e = executable(
     install : true
 )
 
-#test('tests', e, args : ['--run-tests'])
 
 meson.add_install_script('meson/post_install.py')

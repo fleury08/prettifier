@@ -3,12 +3,10 @@
 */
 
 public class Main {
-    private static bool testing = false;
     private static bool version = false;
 
     private const OptionEntry[] options = {
         { "version", 0, 0, OptionArg.NONE, ref version, "Display Version Number", null },
-        { "run-tests", 0, 0, OptionArg.NONE, ref testing, "Run testing", null},
         { null }
     };
 
@@ -37,22 +35,8 @@ public class Main {
             return 0;
         }
 
-        if (testing) {
-            Gtk.init (ref args);
-            var testing = new App.Tests.Testing (args);
-            Idle.add (() => {
-                testing.run ();
-                Gtk.main_quit ();
-
-                return false;
-            });
-            
-            Gtk.main ();
-        }
-        else {
-            var app = new App.Application ();
-            app.run (args);
-        }
+        var app = new App.Application ();
+        app.run (args);
 
         return 0;
     }

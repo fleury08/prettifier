@@ -1,6 +1,0 @@
-com.github.fleury08.prettifier (1.1.4) xenial; urgency=low
-
-  * Added error message to output window
-  * Fixed wrong behaviour of format switch button
-
- -- Jaroslav Staněk <jaroslav-stanek@email.cz>  Tue, 12 Sep 2019 13:10:00 +0200
