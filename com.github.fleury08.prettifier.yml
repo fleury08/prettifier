@@ -4,22 +4,6 @@ runtime-version: '6'
 sdk: io.elementary.Sdk
 command: com.github.fleury08.prettifier
 
-build-options: 
-  cflags : "-O2 -g"
-  cxxflags : "-O2 -g"
-
-cleanup:
-  - "/include"
-  - "/lib/pkgconfig"
-  - "/man"
-  - "/share/doc"
-  - "/share/gtk-doc"
-  - "/share/man"
-  - "/share/pkgconfig"
-  - "/share/vala"
-  - "*.la"
-  - "*.a"
-
 finish-args:
   - '--share=ipc'
   - '--socket=fallback-x11'
