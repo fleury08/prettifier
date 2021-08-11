@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 17:41+0200\n"
+"POT-Creation-Date: 2021-08-11 12:55+0200\n"
 "PO-Revision-Date: 2019-01-28 13:27+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,48 +17,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: src/views/AppView.vala:26
+#: src/views/AppView.vala:27
 msgid "UNFORMATTED INPUT JSON/XML"
 msgstr "Nezformátovaný vstupní JSON/XML"
 
-#: src/views/AppView.vala:35
+#: src/views/AppView.vala:37
 msgid "Beautifully formatted JSON or XML"
 msgstr "Krásný JSON/XML výstup"
 
-#: src/widgets/HeaderBar.vala:39
+#: src/widgets/HeaderBar.vala:43
 msgid "Prettify input text"
 msgstr "Zkrášli vstupní text"
 
-#: src/widgets/HeaderBar.vala:46
+#: src/widgets/HeaderBar.vala:50
 msgid "Copy output to clipboard"
 msgstr "Zkopíruj výstup do schránky"
 
-#: src/widgets/HeaderBar.vala:87
+#: src/widgets/HeaderBar.vala:58
+msgid "JSON"
+msgstr ""
+
+#: src/widgets/HeaderBar.vala:59
+msgid "XML"
+msgstr ""
+
+#: src/widgets/HeaderBar.vala:84
 msgid "Clears out input and output window"
 msgstr "Vyčistí vstupní a výstupní okno"
 
-#: src/widgets/HeaderBar.vala:108
+#: src/widgets/HeaderBar.vala:105
 msgid "Auto Prettify"
 msgstr "Automaticky zkrášlit"
 
-#: src/widgets/HeaderBar.vala:114
+#: src/widgets/HeaderBar.vala:111
 #: data/com.github.fleury08.prettifier.desktop.in:4
+#: data/com.github.fleury08.prettifier.desktop.in:5
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
 msgstr "Prettifier"
 
-#: data/com.github.fleury08.prettifier.desktop.in:5
+#: src/widgets/HeaderBar.vala:117
+msgid "Indent"
+msgstr ""
+
+#: data/com.github.fleury08.prettifier.desktop.in:6
 #: data/com.github.fleury08.prettifier.appdata.xml.in:8
 msgid "Prettify your JSON/XML outputs"
 msgstr "Zkrášli své JSON/XML výstupy"
 
-#: data/com.github.fleury08.prettifier.desktop.in:6
+#: data/com.github.fleury08.prettifier.desktop.in:7
 msgid "com.github.fleury08.prettifier"
 msgstr "com.github.fleury08.prettifier"
 
-#: data/com.github.fleury08.prettifier.desktop.in:11
-msgid "app;vala;xml;json;pretty;"
-msgstr "app;vala;xml;json;pretty;"
+#: data/com.github.fleury08.prettifier.desktop.in:12
+msgid "xml;json;pretty;print;prettify;"
+msgstr ""
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:9
 msgid "Jaroslav Staněk"
@@ -73,5 +86,11 @@ msgstr ""
 "jako člověk."
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:27
-msgid "Added translations French and Czech"
-msgstr "Přidán překlad do francouštiny a češtiny"
+msgid "New version for elementaryOS 6 with little tweaks and reworks"
+msgstr ""
+
+#~ msgid "app;vala;xml;json;pretty;"
+#~ msgstr "app;vala;xml;json;pretty;"
+
+#~ msgid "Added translations French and Czech"
+#~ msgstr "Přidán překlad do francouštiny a češtiny"

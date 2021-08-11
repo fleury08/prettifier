@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.fleury08.prettifier\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-08 17:41+0200\n"
+"POT-Creation-Date: 2021-08-11 12:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,47 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/views/AppView.vala:26
+#: src/views/AppView.vala:27
 msgid "UNFORMATTED INPUT JSON/XML"
 msgstr ""
 
-#: src/views/AppView.vala:35
+#: src/views/AppView.vala:37
 msgid "Beautifully formatted JSON or XML"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:39
+#: src/widgets/HeaderBar.vala:43
 msgid "Prettify input text"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:46
+#: src/widgets/HeaderBar.vala:50
 msgid "Copy output to clipboard"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:87
+#: src/widgets/HeaderBar.vala:58
+msgid "JSON"
+msgstr ""
+
+#: src/widgets/HeaderBar.vala:59
+msgid "XML"
+msgstr ""
+
+#: src/widgets/HeaderBar.vala:84
 msgid "Clears out input and output window"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:108
+#: src/widgets/HeaderBar.vala:105
 msgid "Auto Prettify"
 msgstr ""
 
-#: src/widgets/HeaderBar.vala:114
+#: src/widgets/HeaderBar.vala:111
 #: data/com.github.fleury08.prettifier.desktop.in:4
+#: data/com.github.fleury08.prettifier.desktop.in:5
 #: data/com.github.fleury08.prettifier.appdata.xml.in:7
 msgid "Prettifier"
 msgstr ""
 
-#: data/com.github.fleury08.prettifier.desktop.in:5
+#: src/widgets/HeaderBar.vala:117
+msgid "Indent"
+msgstr ""
+
+#: data/com.github.fleury08.prettifier.desktop.in:6
 #: data/com.github.fleury08.prettifier.appdata.xml.in:8
 msgid "Prettify your JSON/XML outputs"
 msgstr ""
 
-#: data/com.github.fleury08.prettifier.desktop.in:6
+#: data/com.github.fleury08.prettifier.desktop.in:7
 msgid "com.github.fleury08.prettifier"
 msgstr ""
 
-#: data/com.github.fleury08.prettifier.desktop.in:11
-msgid "app;vala;xml;json;pretty;"
+#: data/com.github.fleury08.prettifier.desktop.in:12
+msgid "xml;json;pretty;print;prettify;"
 msgstr ""
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:9
@@ -71,5 +84,5 @@ msgid ""
 msgstr ""
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:27
-msgid "Added translations French and Czech"
+msgid "New version for elementaryOS 6 with little tweaks and reworks"
 msgstr ""
