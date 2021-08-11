@@ -22,7 +22,7 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>  
     <releases>
-      <release version="1.2.2" date="2021-08-09">
+      <release version="1.2.3" date="2021-08-11">
         <description>
           <p>New version for elementaryOS 6 with little tweaks and reworks</p>
         </description>
