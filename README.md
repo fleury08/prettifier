@@ -1,5 +1,5 @@
 <div align="center">
-  <span align="center"> <img width="128" height="128" class="center" src="https://github.com/fleury08/prettifier/blob/master/data/images/com.github.fleury08.prettifier.png" alt="Icon"></span>
+  <span align="center"> <img width="128" height="128" class="center" src="https://github.com/fleury08/prettifier/blob/main/data/images/com.github.fleury08.prettifier.png" alt="Icon"></span>
   <h1 align="center">Prettifier</h1>
   <h3 align="center">Prettify your JSON/XML outputs</h3>
 </div>
