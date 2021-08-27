@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/fleury08/prettifier/blob/master/LICENSE">
+  <a href="https://github.com/fleury08/prettifier/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
@@ -28,8 +28,8 @@
 </p>
 
 <p align="center">
-    <img  src="https://github.com/fleury08/prettifier/blob/master/data/images/PrettifierXML.png" alt="Screenshot"> <br>
-    <img  src="https://github.com/fleury08/prettifier/blob/master/data/images/PrettifierJSON.png" alt="Screenshot"> <br>
+    <img  src="https://github.com/fleury08/prettifier/blob/main/data/images/PrettifierXML.png" alt="Screenshot"> <br>
+    <img  src="https://github.com/fleury08/prettifier/blob/main/data/images/PrettifierJSON.png" alt="Screenshot"> <br>
   <a href="https://github.com/fleury08/prettifier/issues/new"> Report a problem! </a>
 </p>
 
