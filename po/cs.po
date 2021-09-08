@@ -82,7 +82,7 @@ msgid ""
 "Makes your outputs prettier, so you can read It like a human not like a "
 "machine."
 msgstr ""
-"Dělá Vaše výstupy krásnějšími, aby jste je nemuseli číst jako robot, ale "
+"Dělá Vaše výstupy krásnějšími, abyste je nemuseli číst jako robot, ale "
 "jako člověk."
 
 #: data/com.github.fleury08.prettifier.appdata.xml.in:27
