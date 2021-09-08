@@ -20,10 +20,10 @@
 
 <p align="center">
   <a href="https://github.com/fleury08/prettifier/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/License-GPL3-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.2.4-orange.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v%201.2.5-orange.svg?style=for-the-badge">
   </a>
 </p>
 

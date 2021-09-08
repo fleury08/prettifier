@@ -3,7 +3,7 @@
 <component type="desktop-application">
     <id>com.github.fleury08.prettifier</id>
     <metadata_license>CC0</metadata_license>
-    <project_license>MIT</project_license>
+    <project_license>GPL-3.0-only</project_license>
     <name>Prettifier</name>
     <summary>Prettify your JSON/XML outputs</summary>
     <developer_name>Jaroslav Staněk</developer_name>
@@ -20,13 +20,14 @@
     </screenshots>
     <description>
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
-    </description>  
+    </description>
     <releases>
-      <release version="1.2.4" date="2021-09-01">
-        <description>
-          <p>New version for elementaryOS 6 with little tweaks and reworks</p>
-        </description>
-      </release>
+        <release version="1.2.5" date="2021-09-08">
+            <description>
+                <p>Dark theme support</p>
+                <p>Czech grammar fix, thank you Michal Grňo</p>
+            </description>
+        </release>
     </releases>
     <content_rating type="oars-1.1" />
     <url type="homepage">https://jstanek.eu/</url>
