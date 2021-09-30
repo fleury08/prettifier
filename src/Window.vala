@@ -48,6 +48,9 @@ namespace App {
                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
             );
 
+            //style window for rounded corners
+            get_style_context ().add_class("rounded");
+
             // Save the window's position on close
             delete_event.connect (() => {
                 int root_x, root_y;
