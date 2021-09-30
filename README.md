@@ -23,12 +23,11 @@
     <img src="https://img.shields.io/badge/License-GPL3-blue.svg?style=for-the-badge">
   </a>
   <a href="https://github.com/fleury08/prettifier/releases">
-    <img src="https://img.shields.io/badge/Release-v%201.2.5-orange.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/Release-v%201.2.6-orange.svg?style=for-the-badge">
   </a>
 </p>
 
 <p align="center">
-    <img  src="https://github.com/fleury08/prettifier/blob/main/data/images/PrettifierXML.png" alt="Screenshot"> <br>
     <img  src="https://github.com/fleury08/prettifier/blob/main/data/images/PrettifierJSON.png" alt="Screenshot"> <br>
   <a href="https://github.com/fleury08/prettifier/issues/new"> Report a problem! </a>
 </p>

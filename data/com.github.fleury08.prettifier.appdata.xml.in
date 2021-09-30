@@ -12,9 +12,6 @@
     </provides>
     <screenshots>
         <screenshot type="default">
-            <image>https://github.com/fleury08/prettifier/raw/main/data/images/PrettifierXML.png</image>
-        </screenshot>
-        <screenshot type="default">
             <image>https://github.com/fleury08/prettifier/raw/main/data/images/PrettifierJSON.png</image>
         </screenshot>
     </screenshots>
@@ -22,10 +19,9 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>
     <releases>
-        <release version="1.2.5" date="2021-09-08">
+        <release version="1.2.6" date="2021-09-30">
             <description>
-                <p>Dark theme support</p>
-                <p>Czech grammar fix, thank you Michal Grňo</p>
+                <p>Fixed rounded corners. Thanks Jeyson Flores.</p>
             </description>
         </release>
     </releases>
