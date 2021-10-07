@@ -63,7 +63,7 @@ namespace App.Widgets {
                 Application.settings.set_enum ("selected-format", prettify.type_of_file);
                 if(auto_prettify.active) prettify_action();
             });
-            this.format_combobox.active = Application.settings.get_enum ("selected-format");
+    
             
             //Auto prettify button setup
             this.auto_prettify.active = Application.settings.get_boolean ("auto-prettify");

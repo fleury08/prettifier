@@ -29,7 +29,7 @@ public class Main {
         catch (Error error) {}
         
         if (version) {
-            stdout.printf (App.Configs.Constants.PROGRAME_NAME 
+            info (App.Configs.Constants.PROGRAME_NAME 
                            +" "
                            + App.Configs.Constants.VERSION + "\r\n");
             return 0;

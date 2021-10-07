@@ -36,11 +36,12 @@ namespace App{
         }
 
         public string prettify_xml(string text, int indent){
+            if(text.length == 0) return "";
             var doc = Xml.Parser.parse_doc(text);
-            var error = Xml.get_last_error().message;
             string pretty_xml;
             int length;
             doc->dump_memory_format(out pretty_xml,out length, true);
+            var error = Xml.get_last_error().message;
             if(length == 0) return error;
             return pretty_xml;
         }
