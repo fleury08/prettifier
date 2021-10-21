@@ -19,9 +19,9 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>
     <releases>
-        <release version="1.2.7" date="2021-10-07">
+        <release version="1.2.8" date="2021-10-21">
             <description>
-                <p>Fixed error when XML was selected. Sometimes the application did not parsed properly or crashed. Thanks Sergej Dobryak.</p>
+                <p>Small bugfix</p>
             </description>
         </release>
     </releases>

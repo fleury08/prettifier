@@ -41,8 +41,7 @@ namespace App{
             string pretty_xml;
             int length;
             doc->dump_memory_format(out pretty_xml,out length, true);
-            var error = Xml.get_last_error().message;
-            if(length == 0) return error;
+            if(length == 0) return Xml.get_last_error().message;
             return pretty_xml;
         }
 

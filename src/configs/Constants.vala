@@ -13,7 +13,7 @@ namespace App.Configs {
     public class Constants {
     
         public abstract const string ID = "com.github.fleury08.prettifier";
-        public abstract const string VERSION = "1.2.7";
+        public abstract const string VERSION = "1.2.8";
         public abstract const string PROGRAME_NAME = "Prettifier";
         public abstract const string APP_YEARS = "2019";
         public abstract const string APP_ICON = "com.github.fleury08.prettifier";
