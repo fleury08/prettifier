@@ -43,14 +43,27 @@ flatpak-builder build com.github.fleury08.prettifier.yml --user --install --forc
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ### Donations
-[![](https://img.shields.io/badge/PayPal-donate-red.svg?logo=paypal&style=for-the-badge)](https://paypal.me/jaroush)
 
-[![](data/images/bitcoin.png)]()
-[bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd](bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd)
+#### PayPal
+<div>
+  <a href="https://paypal.me/jaroush">
+    <img src="https://img.shields.io/badge/PayPal-donate-red.svg?logo=paypal&style=for-the-badge">
+  </a>
+</div>
 
-[![](data/images/monero.png)]() 
-[monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL](monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL)
+#### Bitcoin
+<div>
+  <a href="bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd">
+    <img src="data/images/bitcoin.png" alt="bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd">
+  </a>
+</div>
 
+#### Monero
+<div>
+  <a href="monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL">
+    <img src="data/images/monero.png" alt="monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL">
+  </a>
+</div>
 ### P.S.
 
 Big shout-out to [Archetype app](https://appcenter.elementary.io/com.github.kjlaw89.archetype.desktop), without it this app wouldn't happen.
