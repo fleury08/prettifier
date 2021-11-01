@@ -46,15 +46,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 #### PayPal
 ![PayPal donations QR Code](data/images/paypal.png)
-> [https://paypal.me/jaroush](https://paypal.me/jaroush)
+[https://paypal.me/jaroush](https://paypal.me/jaroush)
 
 #### Bitcoin
 ![Bitcoin donations QR Code](data/images/bitcoin.png)
-> [bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd](bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd)
+[bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd](bitcoin:bc1q7pt5gwkn7umnk72u763uvwuyd99kmwh0g24eekl6828x3wyezscskq65wd)
 
 #### Monero
 ![Monero donations QR Code](data/images/monero.png)
-> [monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL](monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL)
+[monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL](monero:48HY8Q9JE6rE4b99ixQduvCY6EB8Lc3zbbcni6zd2mcbUMX5TE64BEiSHtthbPfWNgR8bafB4dh1za1ar3DwKotB4XMDgwL)
 
 ### P.S.
 
