@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2018 Jaroslav Staněk <jaroslav-stanek@email.cz> -->
+<!-- Copyright 2018 Jaroslav Staněk <jaroslav-stanek@pm.me> -->
 <component type="desktop-application">
     <id>com.github.fleury08.prettifier</id>
     <metadata_license>CC0</metadata_license>
@@ -19,6 +19,14 @@
         <p>Makes your outputs prettier, so you can read It like a human not like a machine.</p>
     </description>
     <releases>
+        <release version="1.2.9" date="2022-07-13">
+            <description>
+                <ul>
+                    <li>Flatpak elementaryOS platform set to 6.1</li>
+                    <li>Manual light/dark theme control</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.2.8" date="2021-10-21">
             <description>
                 <p>Small bugfix</p>

@@ -1,1 +1,1 @@
-Jaroslav Staněk <jaroslav-stanek@email.cz>
+Jaroslav Staněk <jaroslav-stanek@pm.me>

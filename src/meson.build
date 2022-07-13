@@ -1,6 +1,7 @@
 sources += files(
     'configs/Constants.vala',
     'configs/TypeOfFile.vala',
+    'configs/ColorScheme.vala',
     
     'controllers/AppController.vala',
     

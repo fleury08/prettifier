@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@email.cz>
+* Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@pm.me>
 */
 
 using App.Configs;

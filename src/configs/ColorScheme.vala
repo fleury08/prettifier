@@ -4,7 +4,7 @@
 
 namespace App.Configs {
 
-    public enum TypeOfFile { 
-        JSON,XML;
+    public enum ColorScheme { 
+        AUTO,DARK,LIGHT;
     }
 }
