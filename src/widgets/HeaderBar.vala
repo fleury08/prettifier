@@ -18,6 +18,7 @@ namespace App.Widgets {
         public Gtk.Button prettify_button { get; private set;}
         //public Gtk.Switch format_switch { get; private set;}
         public Gtk.ComboBoxText format_combobox { get; private set;}
+        public Gtk.Image color_scheme_icon {get;private set;}
         public Gtk.ComboBoxText color_scheme_combobox { get; private set;}
         public Gtk.Button format_json {get; private set;}
         public Gtk.Button format_xml {get; private set;}
@@ -42,14 +43,14 @@ namespace App.Widgets {
             init_headerbar(app);         
 
             //Prettify Button setup
-            this.prettify_button.set_image (new Gtk.Image .from_icon_name ("media-playback-start", Gtk.IconSize.LARGE_TOOLBAR));
+            this.prettify_button.set_image (new Gtk.Image .from_icon_name ("media-playback-start", Gtk.IconSize.BUTTON));
             this.prettify_button.tooltip_text = _("Prettify input text");
             this.prettify_button.clicked.connect (() => {
                 prettify_action();
             });
 
             //Copy to clipboard button setup
-            this.copy_to_clipboard.set_image (new Gtk.Image .from_icon_name ("edit-copy", Gtk.IconSize.LARGE_TOOLBAR));
+            this.copy_to_clipboard.set_image (new Gtk.Image .from_icon_name ("edit-copy", Gtk.IconSize.BUTTON));
             this.copy_to_clipboard.tooltip_text = _("Copy output to clipboard");
             this.copy_to_clipboard.clicked.connect (()=>{
                 var clipboard = Gtk.Clipboard.get_default(app.window.get_display());
@@ -68,10 +69,11 @@ namespace App.Widgets {
             });
 
             //Combobox Color Scheme
+            this.color_scheme_icon = new Gtk.Image.from_icon_name("dark-mode", Gtk.IconSize.BUTTON);
             this.color_scheme_combobox.valign = Gtk.Align.CENTER;
-            this.color_scheme_combobox.append_text (_("AUTO"));
-            this.color_scheme_combobox.append_text (_("DARK"));
-            this.color_scheme_combobox.append_text (_("LIGHT"));
+            this.color_scheme_combobox.append_text (_("System"));
+            this.color_scheme_combobox.append_text (_("Dark"));
+            this.color_scheme_combobox.append_text (_("Light"));
             this.color_scheme_combobox.active = Application.settings.get_enum ("color-scheme");
             this.color_scheme_combobox.changed.connect (() => {
                 Application.change_color_scheme((ColorScheme)this.color_scheme_combobox.active);
@@ -93,7 +95,7 @@ namespace App.Widgets {
             });
 
             //Reset button setup
-            this.reset_button.set_image (new Gtk.Image .from_icon_name ("edit-clear", Gtk.IconSize.LARGE_TOOLBAR));
+            this.reset_button.set_image (new Gtk.Image .from_icon_name ("edit-clear", Gtk.IconSize.BUTTON));
             this.reset_button.tooltip_text = _("Clears out input and output window");
             this.reset_button.clicked.connect (()=>{
                 this.app.app_view.output_text.buffer.text = "";
@@ -127,6 +129,7 @@ namespace App.Widgets {
             
             //Adding from end/right
             this.pack_end (color_scheme_combobox);
+            this.pack_end (color_scheme_icon);
             this.pack_end (format_combobox);
             this.pack_end (indent_num);
             this.pack_end (new Gtk.Label(_("Indent")));
