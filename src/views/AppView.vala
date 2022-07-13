@@ -16,10 +16,15 @@ namespace App.Views {
 
         public Gtk.SourceView input_text {get;set;}
         public Gtk.SourceView output_text {get;set;}
+        public App.Widgets.ControlPanel control_panel {get;set;}
+
         /**
          * Constructs a new {@code AppView} object.
          */
         public AppView () {
+            //TOOLBAR
+            this.control_panel = new ControlPanel ();
+
             //INPUT TEXT
             this.input_text = new Gtk.SourceView ();
             this.input_text.set_wrap_mode (Gtk.WrapMode.WORD);

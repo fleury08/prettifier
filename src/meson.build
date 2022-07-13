@@ -8,6 +8,7 @@ sources += files(
     'views/AppView.vala',
 
     'widgets/HeaderBar.vala',
+    'widgets/ControlPanel.vala',
 
     'Application.vala',
     'Main.vala',

@@ -69,7 +69,7 @@ namespace App.Widgets {
             });
 
             //Combobox Color Scheme
-            this.color_scheme_icon = new Gtk.Image.from_icon_name("dark-mode", Gtk.IconSize.BUTTON);
+            this.color_scheme_icon = new Gtk.Image.from_icon_name("object-inverse", Gtk.IconSize.BUTTON);
             this.color_scheme_combobox.valign = Gtk.Align.CENTER;
             this.color_scheme_combobox.append_text (_("System"));
             this.color_scheme_combobox.append_text (_("Dark"));
