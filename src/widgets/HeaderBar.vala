@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@email.cz>
+* Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@pm.me>
 */
 
 using App.Configs;
@@ -14,10 +14,11 @@ namespace App.Widgets {
      */
     public class HeaderBar : Gtk.HeaderBar {
 
-        
+        public static GLib.Settings settings = new GLib.Settings (Constants.ID);
         public Gtk.Button prettify_button { get; private set;}
         //public Gtk.Switch format_switch { get; private set;}
         public Gtk.ComboBoxText format_combobox { get; private set;}
+        public Gtk.ComboBoxText color_scheme_combobox { get; private set;}
         public Gtk.Button format_json {get; private set;}
         public Gtk.Button format_xml {get; private set;}
         public Gtk.Button copy_to_clipboard {get; private set;}
@@ -27,6 +28,8 @@ namespace App.Widgets {
         private App.Controllers.AppController app {get; private set;}
         private App.Prettify prettify {get; private set;}
 
+
+
         /**
          * Constructs a new {@code HeaderBar} object.
          *
@@ -34,7 +37,7 @@ namespace App.Widgets {
          * @see icon_settings
          */
         public HeaderBar (App.Controllers.AppController app) {
-            
+
             //Initialization of properties of "this"
             init_headerbar(app);         
 
@@ -62,6 +65,16 @@ namespace App.Widgets {
                 prettify.type_of_file = (TypeOfFile)this.format_combobox.active;
                 Application.settings.set_enum ("selected-format", prettify.type_of_file);
                 if(auto_prettify.active) prettify_action();
+            });
+
+            //Combobox Color Scheme
+            this.color_scheme_combobox.valign = Gtk.Align.CENTER;
+            this.color_scheme_combobox.append_text (_("AUTO"));
+            this.color_scheme_combobox.append_text (_("DARK"));
+            this.color_scheme_combobox.append_text (_("LIGHT"));
+            this.color_scheme_combobox.active = Application.settings.get_enum ("color-scheme");
+            this.color_scheme_combobox.changed.connect (() => {
+                Application.change_color_scheme((ColorScheme)this.color_scheme_combobox.active);
             });
     
             
@@ -104,6 +117,7 @@ namespace App.Widgets {
             this.format_combobox = new Gtk.ComboBoxText();
             this.auto_prettify = new Gtk.CheckButton.with_label(_("Auto Prettify"));
             this.reset_button = new Gtk.Button();
+            this.color_scheme_combobox = new Gtk.ComboBoxText();
             this.prettify = new Prettify();
         }
 
@@ -112,6 +126,7 @@ namespace App.Widgets {
             this.show_close_button = true;
             
             //Adding from end/right
+            this.pack_end (color_scheme_combobox);
             this.pack_end (format_combobox);
             this.pack_end (indent_num);
             this.pack_end (new Gtk.Label(_("Indent")));
@@ -131,7 +146,6 @@ namespace App.Widgets {
             Application.settings.set_string ("output-text", this.app.app_view.output_text.buffer.text);
         }
 
-    
         
 
     }
