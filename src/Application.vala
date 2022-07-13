@@ -29,10 +29,10 @@ namespace App {
             
             //Dark theme support
             //load action for color scheme
-            change_color_scheme((ColorScheme)Application.settings.get_string ("color-scheme"));
+            change_color_scheme((ColorScheme)Application.settings.get_enum("color-scheme"));
             Granite.Settings.get_default ().notify["prefers-color-scheme"].connect (() => {
                 //automatic change of theme
-                change_color_scheme((ColorScheme)Application.settings.get_string ("color-scheme"));
+                change_color_scheme((ColorScheme)Application.settings.get_enum ("color-scheme"));
             });
 
             if (controller == null) {
@@ -43,15 +43,17 @@ namespace App {
         }
 
         public static void change_color_scheme(ColorScheme color_scheme){
+            //stdout.printf (Application.settings.get_string ("color-scheme")+"\n");
+            //stdout.printf ("Scheme changed"+"\n");
             settings.set_enum ("color-scheme", color_scheme);
-            stdout.printf (Application.settings.get_string ("color-scheme"));
+            //stdout.printf (Application.settings.get_string ("color-scheme")+"\n");
             var gtk_settings = Gtk.Settings.get_default ();
             switch (color_scheme) {
             case ColorScheme.DARK:
                 gtk_settings.gtk_application_prefer_dark_theme = true;
                 break;
             case ColorScheme.LIGHT:
-                gtk_settings.gtk_application_prefer_dark_theme = Granite.Settings.ColorScheme.;
+                gtk_settings.gtk_application_prefer_dark_theme = false;
                 break;
             default:
                 gtk_settings.gtk_application_prefer_dark_theme = Granite.Settings.get_default().prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
