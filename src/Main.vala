@@ -18,15 +18,13 @@ public class Main {
      * @since 1.0.0
      */
     public static int main (string [] args) {
-        var options_context = new OptionContext 
-			(App.Configs.Constants.PROGRAME_NAME +" "+ _("Options"));
+        var options_context = new OptionContext (App.Configs.Constants.PROGRAME_NAME +" "+ _("Options"));
         options_context.set_help_enabled (true);
         options_context.add_main_entries (options, null);
 
         try {
             options_context.parse (ref args);
-        }
-        catch (Error error) {}
+        }catch (Error error) {}
         
         if (version) {
             info (App.Configs.Constants.PROGRAME_NAME 

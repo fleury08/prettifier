@@ -44,6 +44,12 @@ namespace App{
             if(length == 0) return Xml.get_last_error().message;
             return pretty_xml;
         }
-
+        
+        public void prettify_action(Gtk.SourceView input, Gtk.SourceView output, int indent){
+            string prettified_text = this.prettify(input.buffer.text, indent);
+            output.buffer.text = prettified_text;
+            Application.settings.set_string ("input-text", input.buffer.text);
+            Application.settings.set_string ("output-text", output.buffer.text);
+        }
     }
 }
