@@ -4,13 +4,12 @@ using App.Configs;
 namespace App{
     public class Prettify : GLib.Object{
         
-        public TypeOfFile type_of_file { get; set;}
 
         public Prettify(){
         }           
     
         public string prettify(string text, int indent){
-            switch (this.type_of_file) {
+            switch (this.get_type_of_file()) {
             case TypeOfFile.JSON:
                 return this.prettify_json(text, indent);
             case TypeOfFile.XML:
@@ -46,10 +45,18 @@ namespace App{
         }
         
         public void prettify_action(Gtk.SourceView input, Gtk.SourceView output, int indent){
-            string prettified_text = this.prettify(input.buffer.text, indent);
-            output.buffer.text = prettified_text;
+            output.buffer.text = this.prettify(input.buffer.text, indent);
             Application.settings.set_string ("input-text", input.buffer.text);
             Application.settings.set_string ("output-text", output.buffer.text);
         }
+
+        public TypeOfFile get_type_of_file(){
+            return (TypeOfFile)Application.settings.get_enum("selected-format");
+        }
+
+        public void set_type_of_file(TypeOfFile tof){
+            Application.settings.set_enum("selected-format", tof);
+        }
+
     }
 }

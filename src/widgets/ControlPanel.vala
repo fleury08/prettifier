@@ -10,8 +10,6 @@ namespace App.Widgets{
         public Gtk.Button prettify_button { get; private set;}
         public Gtk.ComboBoxText format_combobox { get; private set;}
         public Gtk.ComboBoxText color_scheme_combobox { get; private set;}
-        public Gtk.Button format_json {get; private set;}
-        public Gtk.Button format_xml {get; private set;}
         public Gtk.Button copy_to_clipboard {get; private set;}
         public Gtk.Button reset_button {get; private set;}
         public Gtk.SpinButton indent_num {get; private set;}
@@ -20,9 +18,6 @@ namespace App.Widgets{
         private App.Prettify prettify {get; private set;}
 		
 		public ControlPanel(App.Controllers.AppController app) {
-			//  var icon = new Gtk.Button.from_icon_name ("object-inverse", Gtk.IconSize.BUTTON);
-			//  var item = new Gtk.ToolButton (icon, "test");
-			//  this.insert (item, 0);
 
 			 //Initialization of properties of "this"
             init_control_panel(app);         
@@ -46,10 +41,9 @@ namespace App.Widgets{
             this.format_combobox.valign = Gtk.Align.CENTER;
             this.format_combobox.append_text (_("JSON"));
             this.format_combobox.append_text (_("XML"));
-            this.format_combobox.active = Application.settings.get_enum ("selected-format");
+            this.format_combobox.active = this.prettify.get_type_of_file();
             this.format_combobox.changed.connect (() => {
-                prettify.type_of_file = (TypeOfFile)this.format_combobox.active;
-                Application.settings.set_enum ("selected-format", prettify.type_of_file);
+				this.prettify.set_type_of_file((TypeOfFile)this.format_combobox.active);
                 if(auto_prettify.active) this.app.app_view.run_prettify();
             });
 
@@ -137,8 +131,5 @@ namespace App.Widgets{
 			this.pack_start(sep);
         }	
 
-
-
-        
 	}
 }
