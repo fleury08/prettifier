@@ -4,6 +4,7 @@ using App.Configs;
 namespace App{
     public class Prettify : GLib.Object{
         
+        public Json.Node json;
 
         public Prettify(){
         }           
@@ -21,10 +22,10 @@ namespace App{
 
         public string prettify_json(string text, int indent){
             Json.Generator generator = new Json.Generator ();
-            Json.Node json;
+            this.json = null;
             try {
-                json = Json.from_string(text);
-                generator.set_root (json);
+                this.json = Json.from_string(text);
+                generator.set_root (this.json);
                 generator.set_pretty (true);
                 generator.set_indent (indent);
             } catch (Error e) {

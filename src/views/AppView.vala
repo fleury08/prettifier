@@ -1,7 +1,7 @@
 /*
 * Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@pm.me>
 */
-
+using App.Parser;
 using App.Configs;
 using App.Widgets;
 
@@ -47,11 +47,13 @@ namespace App.Views {
             this.output_text.set_show_line_numbers (true);
             this.output_text.buffer.text = Application.settings.get_string ("output-text") ?? _("Beautifully formatted JSON or XML");
             this.output_text.editable = false;
-            this.output_text.monospace = true;            
+            this.output_text.monospace = true;
+            this.output_text.move_cursor.connect(()=>{
+                new JSONPathParser(this.prettify.json);
+            });
 
             Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
             output_scrolled.add(output_text);
-            
             inputs_box.pack_start (input_scrolled, true, true, 0);
             inputs_box.pack_start (output_scrolled, true, true, 0);
             inputs_box.add(input_scrolled);
@@ -61,6 +63,7 @@ namespace App.Views {
             this.pack_start (inputs_box);
             this.add (control_panel);
             this.add (inputs_box);
+
         }
 
         public void run_prettify(){

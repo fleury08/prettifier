@@ -11,6 +11,8 @@ sources += files(
     'widgets/ControlPanel.vala',
 
     'Application.vala',
+    'JSONPathParser.vala',
+    'XMLPathParser.vala',
     'Main.vala',
     'Window.vala',
     'Prettify.vala'
