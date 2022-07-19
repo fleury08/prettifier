@@ -1,8 +1,9 @@
 /*
 * Copyright (C) 2018  Jaroslav Staněk <jaroslav-stanek@pm.me>
 */
-using App.Parser;
+using Gtk;
 using App.Configs;
+using App.Indexer;
 using App.Widgets;
 
 namespace App.Views {
@@ -32,9 +33,9 @@ namespace App.Views {
             this.input_text = new Gtk.SourceView ();
             this.input_text.set_wrap_mode (Gtk.WrapMode.WORD);
             this.input_text.set_show_line_numbers (true);
-            this.input_text.buffer.text = Application.settings.get_string ("input-text") ?? _("UNFORMATTED INPUT JSON/XML");
-            this.input_text.monospace = true;
-            this.input_text.buffer.changed.connect(()=>{
+            this.input_text.get_buffer().set_text(Application.settings.get_string ("input-text") ?? _("UNFORMATTED INPUT JSON/XML"));
+            this.input_text.set_monospace(true);
+            this.input_text.get_buffer().changed.connect(()=>{
                 if(Application.settings.get_boolean("auto-prettify")) this.run_prettify();
             });
 
@@ -45,11 +46,19 @@ namespace App.Views {
             this.output_text = new Gtk.SourceView ();
             this.output_text.set_wrap_mode (Gtk.WrapMode.WORD);
             this.output_text.set_show_line_numbers (true);
-            this.output_text.buffer.text = Application.settings.get_string ("output-text") ?? _("Beautifully formatted JSON or XML");
-            this.output_text.editable = false;
-            this.output_text.monospace = true;
-            this.output_text.move_cursor.connect(()=>{
-                new JSONPathParser(this.prettify.json);
+            this.output_text.get_buffer().set_text(Application.settings.get_string ("output-text") ?? _("Beautifully formatted JSON or XML"));
+            this.output_text.set_editable(false);
+            this.output_text.set_monospace(true);
+            this.output_text.get_buffer().changed.connect(()=>{
+               JsonIndexer ji = new JsonIndexer();
+               ji.crawl_string_and_index(this.output_text.get_buffer().text);
+            });
+            this.output_text.move_cursor.connect_after(()=>{
+                TextMark mark = this.output_text.get_buffer().get_insert();
+                TextIter iter;
+                this.output_text.get_buffer().get_iter_at_mark(out iter, mark);
+                stdout.printf ("row: %d \n", iter.get_line()+1);
+                stdout.flush();
             });
 
             Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);

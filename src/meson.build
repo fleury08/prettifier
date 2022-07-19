@@ -3,6 +3,11 @@ sources += files(
     'configs/TypeOfFile.vala',
     'configs/ColorScheme.vala',
     
+    'indexer/JsonIndexer.vala',
+    'indexer/LanguageTypeIndexer.vala',
+    'indexer/XmlIndexer.vala',
+    'indexer/RowIndexer.vala',
+
     'controllers/AppController.vala',
     
     'views/AppView.vala',
@@ -11,8 +16,6 @@ sources += files(
     'widgets/ControlPanel.vala',
 
     'Application.vala',
-    'JSONPathParser.vala',
-    'XMLPathParser.vala',
     'Main.vala',
     'Window.vala',
     'Prettify.vala'

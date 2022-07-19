@@ -46,7 +46,7 @@ namespace App{
         }
         
         public void prettify_action(Gtk.SourceView input, Gtk.SourceView output, int indent){
-            output.buffer.text = this.prettify(input.buffer.text, indent);
+            output.get_buffer().set_text(this.prettify(input.get_buffer().text, indent));
             Application.settings.set_string ("input-text", input.buffer.text);
             Application.settings.set_string ("output-text", output.buffer.text);
         }
