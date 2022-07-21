@@ -5,6 +5,7 @@ sources += files(
     
     'indexer/JsonIndexer.vala',
     'indexer/LanguageTypeIndexer.vala',
+    'indexer/ICrawlerIndexer.vala',
     'indexer/XmlIndexer.vala',
     'indexer/RowIndexer.vala',
 

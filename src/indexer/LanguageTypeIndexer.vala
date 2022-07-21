@@ -1,6 +1,6 @@
 
 namespace App.Indexer { 
-    class LanguageTypeIndexer : Object {
+    class LanguageTypeIndexer : ICrawlerIndexer, Object {
         private string root_sign {get;set;}
         private string separator {get;set;}
         private string line_splitter {get;set;}
@@ -15,16 +15,28 @@ namespace App.Indexer {
             this.line_splitter = line_splitter;
         }
 
+        
 
         public string[] crawl_string_and_index(string source){
             assert_nonnull(source);
             string[] lines = source.split(this.line_splitter);
-            foreach (string line in lines){
-                stdout.printf (line+"\n");
-                stdout.flush();
-            }
-            return lines;
+            return this.index_lines(lines);
         }
 
+        public string[] index_lines (string[] lines){
+            return new string[lines.length];
+        }
+        
+        public bool is_start_tag(string line){
+            return false;
+        }
+
+        public bool is_end_tag(string line){
+            return false;
+        }
+
+        public string[] parse_line(string line) throws Error{
+            return new string[0];
+        }
     }
 }
