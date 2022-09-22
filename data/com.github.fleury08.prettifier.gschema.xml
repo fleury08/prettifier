@@ -26,6 +26,12 @@
             <description>Most recent y position of Prettifier</description>
         </key>
 
+        <key name="separator-position" type="i">
+            <default>200</default>
+            <summary>Most recent position of pane separator</summary>
+            <description>Most recent position of pane separator</description>
+        </key>
+
         <key name="input-text" type="s">
             <default>'{"kenobi":"Hello There","greivous":"General Kenobi"}'</default>
             <summary></summary>

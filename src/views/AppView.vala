@@ -25,7 +25,7 @@ namespace App.Views {
          */
         public AppView (App.Controllers.AppController app) {
             this.set_orientation (Gtk.Orientation.VERTICAL);
-            var inputs_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 10);
+            var inputs_panes = new Gtk.Paned(Gtk.Orientation.HORIZONTAL);
             this.control_panel = new ControlPanel (app);
             this.prettify = new Prettify ();
 
@@ -63,16 +63,19 @@ namespace App.Views {
 
             Gtk.ScrolledWindow output_scrolled = new Gtk.ScrolledWindow (null, null);
             output_scrolled.add(output_text);
-            inputs_box.pack_start (input_scrolled, true, true, 0);
-            inputs_box.pack_start (output_scrolled, true, true, 0);
-            inputs_box.add(input_scrolled);
-            inputs_box.add(output_scrolled);
+            inputs_panes.add1(input_scrolled);
+            inputs_panes.add2(output_scrolled);
+            inputs_panes.set_position(Application.settings.get_int("separator-position"));
+            inputs_panes.size_allocate.connect(()=>{
+                Application.settings.set_int ("separator-position", inputs_panes.get_position());
+            });
+            
 
             this.pack_start (control_panel,false);
-            this.pack_start (inputs_box);
+            this.pack_start (inputs_panes);
             this.add (control_panel);
-            this.add (inputs_box);
-
+            this.add (inputs_panes);
+            
         }
 
         public void run_prettify(){
